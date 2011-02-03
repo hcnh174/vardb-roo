@@ -2,7 +2,7 @@
 git init
 git add .
 
-git commit -m 'first commit'
+git commit -m "first commit"
 git remote add origin git@github.com:hcnh174/vardb-roo.git
 git push origin master
 
