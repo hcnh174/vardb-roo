@@ -21,6 +21,11 @@
 		<env.properties>env-deploy.properties</env.properties>
 		<os.properties>os-linux.properties</os.properties>
     </properties>
+    <scm>
+    	<connection>scm:git:git@github.com:hcnh174/vardb-roo.git</connection>
+    	<developerConnection>scm:git:git@github.com:hcnh174/vardb-roo.git</developerConnection>
+    	<url>scm:git:git@github.com:hcnh174/vardb-roo.git</url>
+    </scm>
 	<repositories>
 		<repository>
 			<id>biojava-maven-repo</id>
