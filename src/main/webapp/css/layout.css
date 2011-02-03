@@ -1,0 +1,197 @@
+#doc-vardb
+{
+	margin: 0px;
+	padding: 0px;
+	text-align: left;
+	width:57.69em;
+	*width:56.301em;
+	min-width:750px;
+	position: absolute;
+	left: 2px;
+	top: 2px;
+	font-size: 105%;
+	background-color: white;
+}
+
+#yui-main .yui-b
+{
+	padding-right: 10px !important;
+}
+
+/*
+#head1, #head3
+{
+	background-color: @LIGHT_BLUE@;
+	vertical-align: middle;
+	border-top: 1px solid darkblue;
+	border-bottom: 1px solid darkblue;
+	padding: 0px;
+}
+
+#head3
+{
+	font-size: 95%;
+	text-align: left;
+	padding-top: 2px;
+}
+*/
+
+
+#head1
+{
+	background-color: @LIGHT_BLUE@;
+	vertical-align: middle;
+	border-top: 1px solid darkblue;
+	border-bottom: 1px solid darkblue;
+	padding: 0px;
+	
+	font-size: 70%;
+	text-align:right;
+	padding-bottom: 4px;
+	color: white;
+}
+
+#head1 a,
+#head1 a:hover,
+#head1 a:visited
+{
+	color: white;
+	text-decoration: none;
+}
+
+
+
+#head1alt, #head3
+{
+	border-top: 1px solid darkblue;
+	border-bottom: 1px solid darkblue;
+	background-color: #d5e2f2;
+}
+
+#head1alt
+{
+	text-align: right;
+	font-size: 70%;
+}
+
+#head1alt a,
+#head1alt a:hover,
+#head1alt a:visited
+{
+	text-decoration: none;
+}
+
+#head2 img
+{
+	border: none;
+}
+
+#head3
+{
+	height: 25px;
+}
+
+/*
+#head1 a,
+#head1 a:hover,
+#head1 a:visited
+{
+	color: white;
+	text-decoration: none;
+}
+
+#head3 a,
+#head3 a:hover,
+#head3 a:visited
+{
+	color: white;
+	text-decoration: underline;
+}
+*/
+
+#version
+{
+	position: absolute;
+	left: 490px;
+	top: 85px;
+	/* font-style: italic; */
+	font-weight: bold;
+	color: darkgray;
+}
+
+/********************************************/
+
+.breadcrumbs
+{
+	width: 600px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin-left: -2px;
+	margin-bottom: 5px;
+	border-bottom: 1px solid lightgrey;
+	white-space: nowrap;
+	font-size: smaller;
+}
+
+.breadcrumbs a
+{
+	text-decoration: underline;
+}
+
+.title
+{
+	position: relative;
+	margin-left: 0px;
+	font-size: 300%; /* 250%; */
+	line-height: 60%;
+}
+
+.subtitle
+{
+	font-size: 50%;
+	font-family: verdana;
+	font-weight: bold;
+}
+
+.kubic
+{
+	font-family: Times;
+	font-style: italic;
+	color: darkblue;
+	font-weight: bold;	
+}
+
+.karolinska
+{
+	color: rgb(132,0,77);
+	font-family: Century Gothic;
+	font-weight: bold;
+	letter-spacing: -4px;
+}
+
+.user
+{
+	
+}
+
+/********************************************/
+
+#ft
+{
+	margin: 0.25em 0 0 0;
+	border: 1px dashed darkblue;
+	padding: 0.5em;
+	text-align: right;
+
+}
+#ft div
+{
+	font-size: 70%;
+}
+
+#ft a, #ft a:visited
+{
+	text-decoration: underline;
+	color: black;
+}
+

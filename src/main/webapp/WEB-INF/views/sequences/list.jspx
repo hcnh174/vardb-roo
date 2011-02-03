@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_org_vardb_sequences_Sequence" items="${sequences}" z="HigkpgfXWjBVnYbYOnPcAIlw7aU=">
+        <table:table data="${sequences}" id="l_org_vardb_sequences_Sequence" path="/sequences" z="PKUjBvp6XMSE3AXb88ZQ/F/as2U=">
+            <table:column id="c_org_vardb_sequences_Sequence_identifier" property="identifier" z="LohtRk+mgqSq6Qr8PFH7vyIZnZ8="/>
+            <table:column id="c_org_vardb_sequences_Sequence_accession" property="accession" z="cRef47ZniEf3L0Zlt3C1HPi55d4="/>
+            <table:column id="c_org_vardb_sequences_Sequence_sequence" property="sequence" z="1RA2fpsbsIiJy78vRhfXWlE7JNQ="/>
+            <table:column id="c_org_vardb_sequences_Sequence_pathogen" property="pathogen" z="Ek4PLOTRGB8f22X2rqE4W0XuNiI="/>
+            <table:column id="c_org_vardb_sequences_Sequence_family" property="family" z="+hHoa33D+Sn5icuej+A9bV02GBU="/>
+        </table:table>
+    </page:list>
+</div>

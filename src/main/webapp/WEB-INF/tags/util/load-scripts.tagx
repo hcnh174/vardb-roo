@@ -1,0 +1,32 @@
+<jsp:root xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:fn="http://java.sun.com/jsp/jstl/functions" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+
+  <jsp:output omit-xml-declaration="yes" />
+
+  <c:set var="userLocale">
+    <c:out value="${pageContext.response.locale}" default="en" />
+  </c:set>
+
+	<link rel="shortcut icon" href="/vardb-roo/images/favicon.ico"/>
+	
+  <link rel="stylesheet" type="text/css" media="all" href="http://extjs.cachefly.net/ext-3.2.0/resources/css/ext-all.css"/>
+  <link href="/vardb-roo/css/yui-grid.css" rel="stylesheet" type="text/css" />
+  <link href="/vardb-roo/css/layout.css" rel="stylesheet" type="text/css" />
+  
+  
+
+  <script src="http://extjs.cachefly.net/ext-3.2.0/adapter/ext/ext-base.js" type="text/javascript"></script>
+  <script src="http://extjs.cachefly.net/ext-3.2.0/ext-all.js" type="text/javascript"></script>
+
+  
+  <script type="text/javascript">
+	<!--
+	Ext.onReady(function()
+	{
+		alert('I\'m ready!');
+	});
+	// -->
+</script>
+  
+  
+</jsp:root>
+
