@@ -1,0 +1,109 @@
+.text
+{
+	font-family: verdana,Helvetica,Arial,sans-serif;
+	font-size: 12px;
+	font-size-adjust: none;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	line-height: normal;
+	width: 95%;
+}
+
+.introduction
+{
+	color: #555555;
+	font-size: 12px;
+	font-family: verdana,geneva,lucida,'lucida grande',arial,helvetica,sans-serif;
+	line-height: 18px;
+	width: 95%;
+}
+
+.text ul
+{
+	padding-left: 20px;
+}
+
+.notes
+{
+	font-size: 90%;
+	color: gray;
+}
+
+/*******************************************************************/
+
+ul.bulleted
+{
+	list-style-image: url('../images/bullet.gif');
+	list-style-position: outside;
+	margin-left: 30px;
+}
+
+ul.bulleted ul
+{
+	list-style-type: square;
+	list-style-position: outside;
+	margin-left: 20px;
+}
+
+/*******************************************************************/
+
+.heading, .subheading, .subsubheading, .text
+{
+	padding-top: 8px;
+	padding-bottom: 6px;
+}
+
+.heading, .subheading, .subsubheading
+{
+	color: #1C417C;
+	font-family: Georgia, serif;
+}
+
+.heading
+{
+	font-size: 165%;
+}
+
+.subheading
+{
+	font-size: 120%;
+}
+
+.subsubheading
+{
+	font-size: 105%;
+}
+
+/*******************************************************************/
+
+div.figure
+{
+	width: 600px;
+	margin: 2px;
+	padding: 1px;
+}
+
+div.figure table
+{
+	border: 0px;
+}
+
+div.figure td + td
+{
+	vertical-align: bottom;
+}
+
+div.figure img
+{
+	width: 350px;
+	padding: 10px;
+	margin-right: 5px;
+	border: solid 1px silver;
+}
+
+.caption
+{
+	font-family: Arial, sans-serif;
+	font-size: 11px;
+}

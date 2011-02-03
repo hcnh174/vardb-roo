@@ -12,7 +12,7 @@ import javax.persistence.CascadeType;
 @RooJavaBean
 @RooToString
 @RooEntity
-public class Family extends AbstractResource {
+public class Family extends Resource {
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "pathogen")
     private Set<Sequence> sequences = new HashSet<Sequence>();

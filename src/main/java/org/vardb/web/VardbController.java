@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class VardbController {
 
-    @RequestMapping("homepage.html")
+    @RequestMapping("/homepage.html")
     public String index() {
-        return "vardb/index";
+        return "homepage";
     }
 }

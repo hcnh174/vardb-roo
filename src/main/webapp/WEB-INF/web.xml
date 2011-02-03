@@ -87,8 +87,11 @@
     
     <servlet-mapping>
 		<servlet-name>vardb-roo</servlet-name>
-		<url-pattern>*.html</url-pattern>
+		<url-pattern>/</url-pattern>
 	</servlet-mapping>
+	
+
+    
     
     <!-- 
     <servlet-mapping>

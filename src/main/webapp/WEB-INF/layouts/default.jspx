@@ -5,38 +5,29 @@
 	xmlns:util="urn:jsptagdir:/WEB-INF/tags/util"
 	xmlns:nav="urn:jsptagdir:/WEB-INF/tags/nav">  
 	
+	<jsp:output doctype-root-element="html"
+		doctype-public="-//W3C//DTD XHTML 1.0 Transitional//EN" 
+		doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" />
+	
 	<jsp:directive.page contentType="text/html;charset=UTF-8" />  
-	<jsp:directive.page pageEncoding="UTF-8" /> 
+	<jsp:directive.page pageEncoding="UTF-8" />
+	<jsp:output omit-xml-declaration="yes" />
 			
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-			
+	<title><tiles:getAsString name="title"/></title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />			
 		<util:load-scripts />
-	
-		<title>varDB</title>
 	</head>
 	
   	<body>
-	  	<div id="${yui_id}" class="yui-t1">
-			<div id="hd">
-				<tiles:insertAttribute name="header" ignore="true" />
-			</div> 
-			<div id="bd">		
-				<div class="yui-b">
-					<nav:navigation/>
-				</div>
-				<div id="yui-main">
-					<div class="yui-b">
-					[BREADCRUMBS]
-					<div class="heading">[TITLE]</div>
-					<tiles:insertAttribute name="body"/> 
-					<br/>
-					</div>
-				</div>
+	  	<div id="doc-vardb" class="yui-t1">
+			<tiles:insertAttribute name="header" ignore="true" />
+			<div id="bd">
+				<div class="heading"><tiles:getAsString name="title"/></div>
+				<tiles:insertAttribute name="body"/> 
+				<br/>
 			</div>
-			<div id="ft">
-				<tiles:insertAttribute name="footer" ignore="true"/>
-			</div> 
+			<tiles:insertAttribute name="footer" ignore="true"/> 
 		</div>
 	</body>
 </html>

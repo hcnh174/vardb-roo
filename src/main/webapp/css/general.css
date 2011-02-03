@@ -1,0 +1,660 @@
+body
+{
+	background-color: #EEEEEE;
+	text-align: left;
+	font:13px/1.231 verdana,arial,helvetica,clean,sans-serif;
+	*font-size:small;
+	*font:x-small;
+	padding-left: 2px;
+	padding-right: 2px;
+}
+
+a
+{
+	color: #004276; /*#6B86A4;*/
+}
+
+a:hover
+{
+	color:#ca0002;
+	text-decoration: underline;
+}
+
+pre,code,kbd,samp,tt
+{
+	font-family:monospace;
+	*font-size:108%;
+	line-height:100%;
+}
+
+table
+{
+	font-size:inherit;
+	font:100%;
+}
+
+/** *********************************************/
+
+input
+{
+	font-size: 12px;
+	font-family: verdana,arial,helvetica,sans-serif;
+}
+
+fieldset.padded
+{
+	width: 90%;
+	text-align: left;
+	margin-bottom: 10px;
+	border: 1px solid rgb(204, 204, 204);	/*#6B86A4;*/
+	padding: 8px;
+	font-size: 90%;
+}
+
+legend
+{
+	font-weight: bold;
+	color: black;
+}
+
+option.indented
+{
+	padding-left: 10px;
+}
+
+optgroup
+{
+	font-weight: normal;
+	font-style: normal;
+	color: gray;
+}
+
+optgroup option
+{
+	font-size: 100%;
+	color: black;
+	padding-left: 10px;
+}
+
+button.simple
+{
+	color: black;
+	font-size: 84%;
+	text-decoration: underline;
+	background-color: white;
+	border: 0px solid;
+}
+
+#spinner
+{
+	position: absolute;
+	right: 0px;
+	top: 0px;;
+	z-index: 10000;
+	background-color: red;
+	color: white;
+	visibility: hidden;
+}
+
+#logindiv
+{
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.error
+{
+	font-family: verdana;
+	color: red;
+	font-size: 10pt;
+}
+
+.message
+{
+	background-color: yellow;
+	font-family: verdana;
+	color: black;
+	font-size: 95%;
+}
+
+.highlight
+{
+	background-color: #FFFFCC;
+}
+
+.label
+{
+	font-weight: bold;
+}
+
+.species
+{
+	font-style: italic;
+}
+
+.gene
+{
+	font-style: italic;
+}
+
+.conservation
+{
+	color: blue;
+}
+
+.variability
+{
+	color: red;	
+}
+
+.binding
+{
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+	border-bottom-color: orange;
+	border-top-width: 2px;
+	border-top-style: solid;
+	border-top-color: orange;
+}
+
+.gap{background-color: white;color: black;}
+.stretch{background-color: white;color: black;}
+.cysteine{background-color: red;color: black;}
+.helix{background-color: green;color: white;}
+.beta{background-color: yellow;color: black;}
+
+.matches
+{
+	font-size: 6pt;
+	font-family: monospace;
+	color: black;
+}
+
+.match
+{
+	background-color: orange;
+}
+
+.XBBXBX
+{
+	background-color: lightgrey;
+	color: red;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: red;
+}
+
+.XBBXXBX
+{
+	background-color: lightgrey;
+	color: blue;
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: blue;
+}
+
+.XBBXXXBX
+{
+	background-color: lightgrey;
+	color: green;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: green;
+}
+
+.XBBBXXBX
+{
+	background-color: lightgrey;
+	color: black;
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: black;
+}
+
+/** tree *********************************************/
+
+div.tree
+{
+	border: 1px solid lightgrey;
+	font-size: smaller;
+	padding: 2px;
+	margin: 1px;
+}
+
+div.tree ul
+{
+	list-style-type: none;
+	margin-left: 30px;
+	padding-left: 0px;
+	text-indent: 0px;	
+}
+
+div.tree li
+{
+
+}
+
+div.tree a
+{
+	text-decoration: underline;
+	color: black;
+	font-family: verdana;
+	font-size: 90%;
+}
+
+div.tree a:hover
+{
+	text-decoration: underline;
+}
+
+/** hierarchy tree *****************************************/
+
+div.hierarchytree
+{
+	border: 1px solid lightgrey;
+	font-size: smaller;
+	padding: 2px;
+	margin: 1px;
+	font-weight: normal;
+}
+
+
+div.hierarchytree ul
+{
+	text-indent: 10px;	
+}
+
+div.hierarchytree li
+{
+
+}
+
+/******************************************************/
+
+.admin
+{
+	color: black;
+}
+
+.admin a
+{
+	color: black;
+}
+
+/*******************************************************/
+
+.checkboxcontrols
+{
+	font-family: verdana;
+	font-size: 90%;
+}
+
+#messages
+{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	background-color: red;
+	color: black;
+	font-size: 12pt;
+	border: 1px solid black;
+	visibility: hidden;
+}
+
+.references
+{
+	padding-left: 30px;
+	text-indent: -25px;
+	font-size: 80%;
+}
+
+.references a
+{
+	color: black;
+	text-decoration: underline;
+	font-size: 90%
+}
+
+.pmid, .pmid a
+{
+	font-size: 90%;
+}
+
+.pmid a
+{
+	color: darkblue;
+	text-decoration: underline;
+}
+
+.citation
+{
+	text-align: right;
+	font-size: 80%;
+	font-style: italic;
+}
+
+.family, .gene_family
+{
+	font-style: italic;
+}
+
+.udate
+{
+	font-size: 80%;
+	font-family: monospace;
+}
+
+.aligned
+{
+	font-family: monospace;
+	font-size: 80%;
+}
+
+ul.nobullets
+{
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+	text-indent: 0px;
+}
+
+.example
+{
+	font-size: smaller;
+	font-family: verdana;
+	color: gray;
+}
+	
+.last_modified
+{
+	color: darkgray;
+	font-size: 90%;
+	align: right;
+}
+
+.pfamfigure
+{
+	
+}
+
+#taxontree
+{
+	background: #fff;
+	font-size: 90%;
+}
+
+.news
+{
+	background-color: #FFFFCC;
+	font-family: Verdana,Helvetica,Arial,sans-serif;
+	font-size: 12px;
+	font-size-adjust: none;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	line-height: normal;
+}
+
+.rating
+{
+	font-weight: bold;
+	color: darkblue;
+}
+
+.start_end
+{
+	font-size: 80%;
+	text-align: right;
+}
+
+.kegg_image
+{
+	border: 1px solid black;
+}
+
+.kegg_image p, .kegg_image a
+{
+	font-family: verdana;
+	font-size: 80%;
+}
+
+.lineage
+{
+	font-family: verdana;
+	font-size: 90%;
+}
+
+.lineage a,
+.lineage a:visited
+{
+	text-decoration: underline;
+}
+
+.domains
+{
+	font-size: 80%;
+	font-family: monospace;
+}
+
+.detail, .detail a
+{
+	font-size: 80%;
+	color: gray;
+	text-decoration: none;
+}
+
+.location
+{
+	font-size: 90%;
+}
+/***************************************/
+
+.sequence_figure
+{
+	position: relative;
+	background-repeat: no-repeat;
+	border: 1px solid rgb(204, 204, 204);
+}
+
+.sequence_figure ul
+{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.sequence_figure a
+{
+	position: absolute;
+	width: 60px;
+	height: 26px;
+	text-indent:-1000em;
+}
+
+.sequence_figure a:hover
+{
+	border: 1px solid red;
+}
+
+/***************************************/
+
+#nucleotide_sequence_panel, #protein_sequence_panel
+{
+	padding: 2px;
+}
+
+/***************************************/
+
+.announcement-item
+{
+    font: normal 11px tahoma, arial, helvetica, sans-serif;
+    padding: 3px 10px 3px 10px;
+    border: 1px solid #fff;
+    border-bottom: 1px solid #eeeeee;
+    white-space: normal;
+    color: #555;
+}
+
+.announcement-item h3
+{
+    display: block;
+    font: inherit;
+    font-weight: bold;
+    color: #222;
+}
+
+.announcement-item h3 span
+{
+    float: right;
+    font-weight: normal;
+    margin: 0 0 5px 5px;
+    width: 100px;
+    display: block;
+    clear: none;
+}
+
+.announcement-item p
+{
+	clear: both;
+	width: 100%;
+}
+
+/***************************************/
+
+.comments-heading
+{
+	font-weight: bold;
+	color: #15428B;
+	font-family: tahoma,arial,verdana,sans-serif;
+}
+
+.comment-item
+{
+    font: normal 11px tahoma, arial, helvetica, sans-serif;
+    padding: 3px 10px 3px 10px;
+    border: 1px solid #fff;
+    border-bottom: 1px solid #eeeeee;
+    white-space: normal;
+    color: #555;
+}
+
+.comment-item h3
+{
+    display: block;
+    font: inherit;
+    font-weight: bold;
+    color: #222;
+}
+
+.comment-item h3 span
+{
+    float: right;
+    font-weight: normal;
+    margin: 0 0 5px 5px;
+    width: 150px;
+    display: block;
+    clear: none;
+}
+
+/***************************************/
+
+#beta_version
+{
+	position: absolute;
+	left: 510px;
+	top: 85px; /* 70px */
+	color: #3366FF; /* #FFCC00; */
+	font-style: italic;
+	font-weight: bold;
+	font-family: arial;
+	font-size: 20pt;
+}
+
+/***************************************/
+
+div#worldmap
+{
+	background-repeat: no-repeat;
+	width: 440px;
+	height: 220px;
+	border: solid 1px silver;
+	margin-right: 4px;
+}
+
+div#worldmap #maplegend
+{
+	position: relative;
+	width: auto;
+	height: auto;    
+	left: 5px;
+	top: 200px;
+}
+
+#maplegend div.level
+{
+	width: 10px;
+	height: 12px;
+	float: left;	
+}
+
+#maplegend div.label
+{
+	float: left;
+	font-weight: normal;
+	font-family: verdana;
+	font-size: 8pt;
+}
+
+/***************************************/
+
+.gsc-control
+{
+	width: 600px !important;
+}
+
+.thumbnail
+{
+   	padding: 4px;
+   	background-color: #e6e6e0;
+   	border: 1px solid #d6d6d0;
+   	float: left;
+   	margin-right: 10px;
+   	margin-bottom: 6px;
+}
+
+/************************************************************/
+
+table.codonusagebycolumn
+{
+	background-color: white;
+	font-size: 50%;
+}
+
+table.codonusagebycolumn th
+{
+	text-align: center;
+	font-weight: bold;
+}
+
+table.codonusagebycolumn div
+{
+	border-color: black;
+	border-width: 0px 1px 1px 1px;
+	border-style: solid;
+}
+
+table.codonusagebycolumn td > div:first-child
+{
+	border-width: 1px 1px 1px 1px;
+}
+
+/************************************************************/
+
+.custom-status-text-panel
+{
+	border-top: 1px solid #99BBE8;
+	border-right: 1px solid #fff;
+	border-bottom: 1px solid #fff;
+	border-left: 1px solid #99BBE8;
+	padding: 1px 2px 2px 1px;
+}
