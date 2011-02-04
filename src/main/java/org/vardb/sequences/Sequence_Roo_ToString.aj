@@ -12,6 +12,7 @@ privileged aspect Sequence_Roo_ToString {
         sb.append("Identifier: ").append(getIdentifier()).append(", ");
         sb.append("Accession: ").append(getAccession()).append(", ");
         sb.append("Sequence: ").append(getSequence()).append(", ");
+        sb.append("Disease: ").append(getDisease()).append(", ");
         sb.append("Pathogen: ").append(getPathogen()).append(", ");
         sb.append("Family: ").append(getFamily());
         return sb.toString();

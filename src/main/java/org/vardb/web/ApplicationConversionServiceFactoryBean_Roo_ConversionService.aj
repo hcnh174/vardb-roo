@@ -6,6 +6,7 @@ package org.vardb.web;
 import java.lang.String;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.format.FormatterRegistry;
+import org.vardb.resources.Disease;
 import org.vardb.resources.Family;
 import org.vardb.resources.Pathogen;
 import org.vardb.sequences.Sequence;
@@ -16,6 +17,14 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         return new Converter<Sequence, String>() {
             public String convert(Sequence source) {
                 return new StringBuilder().append(source.getIdentifier()).append(" ").append(source.getAccession()).append(" ").append(source.getSequence()).toString();
+            }
+        };
+    }
+    
+    Converter<Disease, String> ApplicationConversionServiceFactoryBean.getDiseaseConverter() {
+        return new Converter<Disease, String>() {
+            public String convert(Disease source) {
+                return new StringBuilder().append(source.getIdentifier()).append(" ").append(source.getName()).append(" ").append(source.getDescription()).toString();
             }
         };
     }
@@ -38,6 +47,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     
     public void ApplicationConversionServiceFactoryBean.installLabelConverters(FormatterRegistry registry) {
         registry.addConverter(getSequenceConverter());
+        registry.addConverter(getDiseaseConverter());
         registry.addConverter(getPathogenConverter());
         registry.addConverter(getFamilyConverter());
     }

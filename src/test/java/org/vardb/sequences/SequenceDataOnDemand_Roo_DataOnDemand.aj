@@ -21,6 +21,7 @@ privileged aspect SequenceDataOnDemand_Roo_DataOnDemand {
         obj.setIdentifier("identifier_" + index);
         obj.setAccession("accession_" + index);
         obj.setSequence("sequence_" + index);
+        obj.setDisease(null);
         obj.setPathogen(null);
         obj.setFamily(null);
         return obj;

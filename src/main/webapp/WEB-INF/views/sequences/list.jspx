@@ -9,6 +9,7 @@
             <table:column id="c_org_vardb_sequences_Sequence_sequence" property="sequence" z="1RA2fpsbsIiJy78vRhfXWlE7JNQ="/>
             <table:column id="c_org_vardb_sequences_Sequence_pathogen" property="pathogen" z="Ek4PLOTRGB8f22X2rqE4W0XuNiI="/>
             <table:column id="c_org_vardb_sequences_Sequence_family" property="family" z="+hHoa33D+Sn5icuej+A9bV02GBU="/>
+        <table:column id="c_org_vardb_sequences_Sequence_disease" property="disease" z="D7J1awjlKUpmhHPJKdH7s0vtltQ="/>
         </table:table>
     </page:list>
 </div>

@@ -4,6 +4,7 @@
 package org.vardb.sequences;
 
 import java.lang.String;
+import org.vardb.resources.Disease;
 import org.vardb.resources.Family;
 import org.vardb.resources.Pathogen;
 
@@ -31,6 +32,14 @@ privileged aspect Sequence_Roo_JavaBean {
     
     public void Sequence.setSequence(String sequence) {
         this.sequence = sequence;
+    }
+    
+    public Disease Sequence.getDisease() {
+        return this.disease;
+    }
+    
+    public void Sequence.setDisease(Disease disease) {
+        this.disease = disease;
     }
     
     public Pathogen Sequence.getPathogen() {

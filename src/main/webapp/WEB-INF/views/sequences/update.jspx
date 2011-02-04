@@ -8,5 +8,6 @@
         <field:input field="sequence" id="c_org_vardb_sequences_Sequence_sequence" required="true" z="TMPC4wO8O8FUWw16LR5x59VhMvc="/>
         <field:select field="pathogen" id="c_org_vardb_sequences_Sequence_pathogen" itemValue="id" items="${pathogens}" path="/pathogens" z="l9rCXzoOl/9Oqm17GMWGFX86YGA="/>
         <field:select field="family" id="c_org_vardb_sequences_Sequence_family" itemValue="id" items="${familys}" path="/familys" z="m2e1p8pzZ7hA+VUXJD1g1llL2vw="/>
+    <field:select field="disease" id="c_org_vardb_sequences_Sequence_disease" itemValue="id" items="${diseases}" path="/diseases" z="keeD1UnaoZt4IXJFYW+oqsL0yKc="/>
     </form:update>
 </div>

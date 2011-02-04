@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.util.UriUtils;
 import org.springframework.web.util.WebUtils;
+import org.vardb.resources.Disease;
 import org.vardb.resources.Family;
 import org.vardb.resources.Pathogen;
 import org.vardb.sequences.Sequence;
@@ -83,6 +84,11 @@ privileged aspect SequenceController_Roo_Controller {
         model.addAttribute("page", (page == null) ? "1" : page.toString());
         model.addAttribute("size", (size == null) ? "10" : size.toString());
         return "redirect:/sequences?page=" + ((page == null) ? "1" : page.toString()) + "&size=" + ((size == null) ? "10" : size.toString());
+    }
+    
+    @ModelAttribute("diseases")
+    public Collection<Disease> SequenceController.populateDiseases() {
+        return Disease.findAllDiseases();
     }
     
     @ModelAttribute("familys")

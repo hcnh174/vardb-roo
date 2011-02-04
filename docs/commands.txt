@@ -21,13 +21,14 @@ field string --fieldName identifier --notNull
 field string --fieldName accession --notNull
 field string --fieldName sequence --notNull
 
-entity --class ~.resources.AbstractResource --abstract
+entity --class ~.Resource --abstract
 field string --fieldName identifier --notNull
 field string --fieldName name --notNull
 field string --fieldName description --notNull
 
-entity --class ~.resources.Pathogen --extends ~.resources.AbstractResource --testAutomatically
-entity --class ~.resources.Family --extends ~.resources.AbstractResource --testAutomatically
+entity --class ~.resources.Disease --extends ~.resources.Resource --testAutomatically
+entity --class ~.resources.Pathogen --extends ~.resources.Resource --testAutomatically
+entity --class ~.resources.Family --extends ~.resources.Resource --testAutomatically
 
 field reference --fieldName pathogen --type ~.resources.Pathogen
 field reference --fieldName family --type ~.resources.Family
