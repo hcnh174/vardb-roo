@@ -4,8 +4,8 @@
 
   <link rel="shortcut icon" href="/vardb-roo/images/favicon.ico"/>
 	
-  <link rel="stylesheet" type="text/css" media="all" href="http://extjs.cachefly.net/ext-3.3.0/resources/css/ext-all.css"/>
-  <link href="/vardb-roo/css/yui-grid.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" type="text/css" media="all" href="${config.extjsurl}/resources/css/ext-all.css"/>
+  <link href="/vardb-roo/css/yui-grids.css" rel="stylesheet" type="text/css" />
   <link href="/vardb-roo/css/layout.css" rel="stylesheet" type="text/css" />
   
   <link href="/vardb-roo/css/layout.css" rel="stylesheet" type="text/css" />
@@ -14,13 +14,16 @@
   <link href="/vardb-roo/css/table.css" rel="stylesheet" type="text/css" />
   <link href="/vardb-roo/css/navigation.css" rel="stylesheet" type="text/css" />
 
-  <script src="http://extjs.cachefly.net/ext-3.3.0/adapter/ext/ext-base.js" type="text/javascript"><!-- spacer --></script>
-  <script src="http://extjs.cachefly.net/ext-3.3.0/ext-all.js" type="text/javascript"><!-- spacer --></script>
+  <script src="${config.extjsurl}/adapter/ext/ext-base.js" type="text/javascript"><!-- spacer --></script>
+  <script src="${config.extjsurl}/ext-all.js" type="text/javascript"><!-- spacer --></script>
   
-    <script type="text/javascript">
+  <script src="/vardb-roo/api.js" type="text/javascript"><!-- spacer --></script>
+  
+  <script type="text/javascript">
 
 	Ext.onReady(function()
 	{
+		Ext.Direct.addProvider(Ext.app.REMOTING_API);
 		//alert("I'm ready!");
 	});
 	</script>

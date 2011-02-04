@@ -55,7 +55,7 @@
 #head1 a:hover,
 #head1 a:visited
 {
-	color: white;
+	color: black; /* white */
 	text-decoration: none;
 }
 

@@ -1,0 +1,38 @@
+#set up git repository
+git init
+git add .
+
+git commit -m "first commit"
+git remote add origin git@github.com:hcnh174/vardb-roo.git
+git push origin master
+
+
+# to overwrite any changes
+git checkout -f
+
+
+project --topLevelPackage org.vardb --projectName vardb-roo --java 6
+perform command --mavenCommand install
+
+persistence setup --provider HIBERNATE --database POSTGRES
+
+entity --class ~.sequences.Sequence --testAutomatically
+field string --fieldName identifier --notNull
+field string --fieldName accession --notNull
+field string --fieldName sequence --notNull
+
+entity --class ~.resources.AbstractResource --abstract
+field string --fieldName identifier --notNull
+field string --fieldName name --notNull
+field string --fieldName description --notNull
+
+entity --class ~.resources.Pathogen --extends ~.resources.AbstractResource --testAutomatically
+entity --class ~.resources.Family --extends ~.resources.AbstractResource --testAutomatically
+
+field reference --fieldName pathogen --type ~.resources.Pathogen
+field reference --fieldName family --type ~.resources.Family
+
+field set --class ~.resources.Pathogen --fieldName sequences --type ~.sequences.Sequence --mappedBy family --notNull false --cardinality ONE_TO_MANY
+field set --class ~.resources.Family --fieldName sequences --type ~.sequences.Sequence --mappedBy pathogen --notNull false --cardinality ONE_TO_MANY
+
+controller class --class ~.web.VardbController

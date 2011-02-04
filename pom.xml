@@ -9,6 +9,7 @@
 	<properties>
 		<roo.version>1.1.1.RELEASE</roo.version>
 		<spring.version>3.0.5.RELEASE</spring.version>
+		<hibernate.version>3.6.1.Final</hibernate.version>
 		<aspectj.version>1.6.11.M1</aspectj.version>
 		<slf4j.version>1.6.1</slf4j.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -193,12 +194,12 @@
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
-            <version>3.6.0.Final</version>
+            <version>${hibernate.version}</version>
         </dependency>
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-entitymanager</artifactId>
-            <version>3.6.0.Final</version>
+            <version>${hibernate.version}</version>
             <exclusions>
                 <exclusion>
                     <groupId>cglib</groupId>

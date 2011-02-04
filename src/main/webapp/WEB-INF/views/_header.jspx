@@ -17,7 +17,7 @@
 	
 	<div id="head2">
 	<a href="/vardb-roo/homepage.html" title="About the logo: derived from Tolia et al. 2005 P. falciparum EBA-175 crystal structure"><img src="/vardb-roo/images/vardb-banner-home.png" alt="varDB logo" width="600" height="100"/></a>
-	<div id="version">@version@</div>
+	<div id="version">${config.version}</div>
 	</div>
 	
 	<div id="head3">

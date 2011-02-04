@@ -1,0 +1,6 @@
+# call from vardb_lib folder
+mvn install:install-file -Dfile="server\util\htmlcleaner-2.2.jar" -DgroupId=net.sourceforge.htmlcleaner -DartifactId=htmlcleaner -Dversion=2.2 -Dpackaging=jar -DgeneratePom=true
+#mvn install:install-file -Dfile="war\spring\spring-extjs-1.0.jar" -DgroupId=com.google.code.springextjs -DartifactId=spring-extjs-lib -Dversion=1.0 -Dpackaging=jar -DgeneratePom=true
+
+
+mvn install:install-file -Dfile="server\rcaller\RCaller.jar" -DgroupId=net.sourceforge.htmlcleaner -DartifactId=rcaller -Dversion=0.5.2 -Dpackaging=jar -DgeneratePom=true

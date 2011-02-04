@@ -1,0 +1,24 @@
+Roadmap of current and proposed changes/enhancements
+
+Git instead of SVN for source code management
+Maven instead of ANT to manage the build
+Spring Roo and AspectJ for rapid development
+JSPX instead of Freemarker
+Tiles for page composition instead of Freemarker macros
+Biojava3
+Spring Batch for managing batch processes (e.g., importing sequence data)
+Upgrade to ExtJS 4 when released
+Improved setup tool using JLine, groovy shell, BeanShell or similar
+JPA2 instead of Hibernate for ORM
+native SVG instead of converting to PNG
+Ext.Direct and extdirectspring for simpler Ajax interaction
+PostgreSQL 9
+MongoDB and Morphia (or Spring Data Document) for resources or tags
+Guava Table class instead of custom DataFrame
+EhCache annotations
+use shell scripts (or ant?) to manage external processes (hide details of e.g. cygwin)
+
+General Goals
+
+simple, standardized components with minimal custom code
+follow standard Java coding and naming conventions

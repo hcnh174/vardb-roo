@@ -7,4 +7,18 @@
   <jsp:output omit-xml-declaration="yes" />
   
   Homepage
+  
+  <script>
+  function testEcho(message)
+  {
+	  vardbDirect.doEcho(message,function(result,evt)
+	  {
+		 alert(result);
+	  });
+  }
+  </script>
+  
+  <form>
+  <input type="button" value="Echo" onclick="testEcho('Helllllo')"/>
+  </form>
 </div>
