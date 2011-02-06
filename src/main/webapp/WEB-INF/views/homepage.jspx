@@ -11,10 +11,67 @@
   <script>
   function testEcho(message)
   {
+	  createSequenceGrid();
+	  
 	  vardbDirect.doEcho(message,function(result,evt)
 	  {
 		 alert(result);
-	  });
+	  });	  
+  }
+  
+	function createSequenceGrid()
+	{
+		var fields =
+		[
+		 	{name: 'accession'},
+		 	{name: 'strain'},
+		 	{name: 'description'}
+		];
+
+		 var store = new Ext.data.DirectStore( {
+		    id: 'sequencestore',
+		    paramsAsHash: true,
+		    root: 'records',
+		    totalProperty: 'total',
+		    remoteSort: true,
+		    directFn: vardbDirect.loadSequences,
+		    fields: ['id', 'accession', 'strain', 'description']
+		  });
+  
+		 store.load({params:{start: 0, limit: 10}});
+		 
+		 var pagingToolbar = {
+		    xtype: 'paging',
+		    store: store,
+		    pageSize: 10,
+		    displayInfo: true
+		  };
+
+		 
+		 var grid = new Ext.grid.GridPanel({
+			 renderTo: Ext.getBody(),
+		    columns:
+		    [
+		     {
+		        header: 'Accession',
+		        dataIndex: 'accession'
+		     },
+		     {
+		        header: 'strain',
+		        dataIndex: 'strain'
+		     },
+		     {
+		        header: 'Description',
+		        dataIndex: 'description'
+		     }
+			],		    
+		    store: store,
+		    loadMask: true,
+		    tbar: pagingToolbar,
+		    stripeRows: true,
+		    viewConfig: {forceFit: true}
+		  });
+
   }
   </script>
   

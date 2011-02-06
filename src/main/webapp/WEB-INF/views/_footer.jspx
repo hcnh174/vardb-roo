@@ -13,6 +13,6 @@
 		<a href="http://www.kuicr.kyoto-u.ac.jp/">Institute for Chemical Research</a>, 
 		<a href="http://www.kyoto-u.ac.jp/index-e.html">Kyoto University</a>, Uji, Kyoto 611-0011, Japan
 	</div>
-	<div>System last updated @TODAY@ / SVN revision: @SVN_REVISION@</div>
+	<div>System last updated ${config.lastUpdated}</div>
 	<div>Username: ${config.username}</div>
 </div>

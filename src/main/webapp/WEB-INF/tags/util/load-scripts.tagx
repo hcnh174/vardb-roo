@@ -2,22 +2,33 @@
 
   <jsp:output omit-xml-declaration="yes" />
 
-  <link rel="shortcut icon" href="/vardb-roo/images/favicon.ico"/>
+  <link rel="shortcut icon" href="${config.webapp}/images/favicon.ico"/>
 	
   <link rel="stylesheet" type="text/css" media="all" href="${config.extjsurl}/resources/css/ext-all.css"/>
-  <link href="/vardb-roo/css/yui-grids.css" rel="stylesheet" type="text/css" />
-  <link href="/vardb-roo/css/layout.css" rel="stylesheet" type="text/css" />
+  <link href="${config.webapp}/css/yui-grids.css" rel="stylesheet" type="text/css" />
+  <link href="${config.webapp}/css/layout.css" rel="stylesheet" type="text/css" />
   
-  <link href="/vardb-roo/css/layout.css" rel="stylesheet" type="text/css" />
-  <link href="/vardb-roo/css/general.css" rel="stylesheet" type="text/css" />
-  <link href="/vardb-roo/css/text.css" rel="stylesheet" type="text/css" />
-  <link href="/vardb-roo/css/table.css" rel="stylesheet" type="text/css" />
-  <link href="/vardb-roo/css/navigation.css" rel="stylesheet" type="text/css" />
+  <link href="${config.webapp}/css/layout.css" rel="stylesheet" type="text/css" />
+  <link href="${config.webapp}/css/general.css" rel="stylesheet" type="text/css" />
+  <link href="${config.webapp}/css/text.css" rel="stylesheet" type="text/css" />
+  <link href="${config.webapp}/css/table.css" rel="stylesheet" type="text/css" />
+  <link href="${config.webapp}/css/navigation.css" rel="stylesheet" type="text/css" />
 
   <script src="${config.extjsurl}/adapter/ext/ext-base.js" type="text/javascript"><!-- spacer --></script>
   <script src="${config.extjsurl}/ext-all.js" type="text/javascript"><!-- spacer --></script>
   
-  <script src="/vardb-roo/api.js" type="text/javascript"><!-- spacer --></script>
+  <script src="${config.webapp}/api.js" type="text/javascript"><!-- spacer --></script>
+  <script src="${config.webapp}/js/vardb/namespace.js" type="text/javascript"><!-- spacer --></script>
+  <script src="${config.webapp}/js/vardb/vardb.js" type="text/javascript"><!-- spacer --></script>
+  <script src="${config.webapp}/js/vardb/util/vardb.js" type="text/javascript"><!-- spacer --></script>
+  <script src="${config.webapp}/js/vardb/controls/announcements.js" type="text/javascript"><!-- spacer --></script>
+  <script src="${config.webapp}/js/vardb/controls/browsebycategory.js" type="text/javascript"><!-- spacer --></script>
+  <script src="${config.webapp}/js/vardb/controls/comment.js" type="text/javascript"><!-- spacer --></script>
+  <script src="${config.webapp}/js/vardb/controls/comments.js" type="text/javascript"><!-- spacer --></script>
+  <script src="${config.webapp}/js/vardb/controls/feedback.js" type="text/javascript"><!-- spacer --></script>
+  <script src="${config.webapp}/js/vardb/controls/login.js" type="text/javascript"><!-- spacer --></script>
+  <script src="${config.webapp}/js/vardb/controls/mainmenu.js" type="text/javascript"><!-- spacer --></script>
+  <script src="${config.webapp}/js/vardb/controls/navigation.js" type="text/javascript"><!-- spacer --></script>
   
   <script type="text/javascript">
 
