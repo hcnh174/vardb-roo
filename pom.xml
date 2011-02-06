@@ -672,18 +672,14 @@
                 </configuration>
             </plugin>
             <plugin>
+            	<!--  mvn exec:java -->
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>exec-maven-plugin</artifactId>
-				<version>1.1</version>
-				<!-- 
+				<version>1.1</version>				
 				<configuration>
-					<mainClass>org.vardb.batch.SpringBatchHelloWorld</mainClass>
-					<arguments>
-						<argument>src/main/resources/META-INF/spring/batch-infrastructure.xml</argument>
-						<argument>job1</argument>
-					</arguments>
+					<mainClass>org.vardb.setup.Setup</mainClass>
 				</configuration>
-				 -->  
+				<!-- 
 				<configuration>
 					<mainClass>org.springframework.batch.core.launch.support.CommandLineJobRunner</mainClass>
 					<arguments>
@@ -691,6 +687,7 @@
 						<argument>importInvoices</argument>
 					</arguments>
 				</configuration>
+				 -->  
 			</plugin>
         </plugins>
         <filters>

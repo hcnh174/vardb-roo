@@ -8,8 +8,5 @@
             <menu:item id="i_sequence_new" messageCode="global_menu_new" url="/sequences?form" z="6raCVyIuhlSdosMfRHl/ZwkcXwA="/>
         <menu:item id="i_sequence_list" messageCode="global_menu_list" url="/sequences?page=1&amp;size=${empty param.size ? 10 : param.size}" z="szQrLeHK8S9JHuLhZIPcdXsI5Rs="/>
         </menu:category>
-    <menu:category id="c_controller" z="nj8Dm3hojIyIEyPkwE1UMDIs+K8=">
-            <menu:item id="i_controller__vardbindex_id" messageCode="global_generic" url="/vardb/index" z="L8xscvWEapw07H6ra4E5f3DL2Zc="/>
-        </menu:category>
     </menu:menu>
 </div>

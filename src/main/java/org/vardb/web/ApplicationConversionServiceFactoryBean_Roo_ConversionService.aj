@@ -16,7 +16,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     Converter<Sequence, String> ApplicationConversionServiceFactoryBean.getSequenceConverter() {
         return new Converter<Sequence, String>() {
             public String convert(Sequence source) {
-                return new StringBuilder().append(source.getIdentifier()).append(" ").append(source.getAccession()).append(" ").append(source.getSequence()).toString();
+                return new StringBuilder().append(source.getIdentifier()).append(" ").append(source.getAccession()).append(" ").append(source.getGenome()).toString();
             }
         };
     }

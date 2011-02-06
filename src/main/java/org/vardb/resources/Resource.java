@@ -7,7 +7,7 @@ import javax.validation.constraints.NotNull;
 
 @RooJavaBean
 @RooToString
-@RooEntity
+@RooEntity(table="resources")
 public abstract class Resource {
 
     @NotNull

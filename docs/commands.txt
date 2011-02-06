@@ -37,3 +37,16 @@ field set --class ~.resources.Pathogen --fieldName sequences --type ~.sequences.
 field set --class ~.resources.Family --fieldName sequences --type ~.sequences.Sequence --mappedBy pathogen --notNull false --cardinality ONE_TO_MANY
 
 controller class --class ~.web.VardbController
+
+
+entity --class ~.users.UserDetails  --testAutomatically
+field String username --notNull
+field string password --notNull
+field boolean enabled
+field string firstname
+field string lastname
+field string email
+field string affiliation
+
+
+

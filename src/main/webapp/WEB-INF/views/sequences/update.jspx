@@ -5,9 +5,28 @@
     <form:update id="fu_org_vardb_sequences_Sequence" modelAttribute="sequence" path="/sequences" z="f5VJrbGnIOkxF8irfkkZ3BwXWOo=">
         <field:input field="identifier" id="c_org_vardb_sequences_Sequence_identifier" required="true" z="GOkgLiyrNdnCkXeQ6UxZ4GY3l9w="/>
         <field:input field="accession" id="c_org_vardb_sequences_Sequence_accession" required="true" z="V7P2UEPMwg29Stz3f4f0LNYR570="/>
-        <field:input field="sequence" id="c_org_vardb_sequences_Sequence_sequence" required="true" z="TMPC4wO8O8FUWw16LR5x59VhMvc="/>
+        <field:input field="sequence" id="c_org_vardb_sequences_Sequence_sequence" z="Fr22vr1Jpl134SomU6dKrm4sWko="/>
         <field:select field="pathogen" id="c_org_vardb_sequences_Sequence_pathogen" itemValue="id" items="${pathogens}" path="/pathogens" z="l9rCXzoOl/9Oqm17GMWGFX86YGA="/>
         <field:select field="family" id="c_org_vardb_sequences_Sequence_family" itemValue="id" items="${familys}" path="/familys" z="m2e1p8pzZ7hA+VUXJD1g1llL2vw="/>
     <field:select field="disease" id="c_org_vardb_sequences_Sequence_disease" itemValue="id" items="${diseases}" path="/diseases" z="keeD1UnaoZt4IXJFYW+oqsL0yKc="/>
+    <field:input field="genome" id="c_org_vardb_sequences_Sequence_genome" z="sVZtSUddmEzFH0lBIO0ocgMz2MQ="/>
+        <field:input field="strain" id="c_org_vardb_sequences_Sequence_strain" z="90jhTFpHnqBf7Y9T4FKtNLjJQ9Q="/>
+        <field:input field="taxid" id="c_org_vardb_sequences_Sequence_taxid" z="uTORuqjQ34hrC5/EfdU0mVUmi2Q="/>
+        <field:input field="source" id="c_org_vardb_sequences_Sequence_source" z="YSZSnSdY2VepSSrNB6wWgaS5iXU="/>
+        <field:input field="chromosome" id="c_org_vardb_sequences_Sequence_chromosome" z="E7IIRrXf0da9C8DIhzkfHp03rsY="/>
+        <field:input field="cds" id="c_org_vardb_sequences_Sequence_cds" z="gX+yaB0/CCg6FdaZUps3ZzsBuX8="/>
+        <field:input field="translation" id="c_org_vardb_sequences_Sequence_translation" z="trvSmajUA9zEhoZogYRV0409INM="/>
+        <field:input field="start" id="c_org_vardb_sequences_Sequence_start" z="lsb0FVkD0VSQFW44Pb0mopn7MKQ="/>
+        <field:input field="end" id="c_org_vardb_sequences_Sequence_end" z="M/Y2m+ht6Y5I+pmLFQYDMVQCcss="/>
+        <field:input field="strand" id="c_org_vardb_sequences_Sequence_strand" z="GFrrMjpjyNbqhE/gsE8mB+RIfuo="/>
+        <field:input field="numexons" id="c_org_vardb_sequences_Sequence_numexons" z="nSfZmRr4scZN1rhuEMebBEu7LRw="/>
+        <field:input field="splicing" id="c_org_vardb_sequences_Sequence_splicing" z="8LkoZKgJ17srsqCWfaKRqNJS3lk="/>
+        <field:input field="pseudogene" id="c_org_vardb_sequences_Sequence_pseudogene" z="S2RCd5g7dGYJA3c5Mjq2V8MjDj4="/>
+        <field:input field="method" id="c_org_vardb_sequences_Sequence_method" z="Mtf0tHMhUKmU9GAoGc6IZwckw0k="/>
+        <field:input field="model" id="c_org_vardb_sequences_Sequence_model" z="/kiFWAEEhT7MqzuxBUyPn3bx9mE="/>
+        <field:input field="score" id="c_org_vardb_sequences_Sequence_score" z="rG7SRxJwKVFFPYOh9dlBBBQzsCE="/>
+        <field:input field="evalue" id="c_org_vardb_sequences_Sequence_evalue" z="HCUzTGY4y5LDyT/AP5gwpxopMic="/>
+        <field:input field="hmmloc" id="c_org_vardb_sequences_Sequence_hmmloc" z="jpEGDjbpR51PInJANhx6QRwmAeg="/>
+        <field:input field="description" id="c_org_vardb_sequences_Sequence_description" z="mrh/wby1txMux0BS90u0xQtPfKc="/>
     </form:update>
 </div>

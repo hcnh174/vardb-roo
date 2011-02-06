@@ -9,5 +9,24 @@
         <field:display field="pathogen" id="s_org_vardb_sequences_Sequence_pathogen" object="${sequence}" z="3FOZNNW1+AQNT7OsceaNmBwN05E="/>
         <field:display field="family" id="s_org_vardb_sequences_Sequence_family" object="${sequence}" z="RnsZh5fjamxi5QvDzyksSqPnC90="/>
     <field:display field="disease" id="s_org_vardb_sequences_Sequence_disease" object="${sequence}" z="+BaXLegmE52VY9QprT+ZlUsFWac="/>
+    <field:display field="genome" id="s_org_vardb_sequences_Sequence_genome" object="${sequence}" z="HriVGB45w9GPFp+xr3WvBZgn1wo="/>
+        <field:display field="strain" id="s_org_vardb_sequences_Sequence_strain" object="${sequence}" z="rgrXK+/bH7N4UX5VoHi4qCSsRTU="/>
+        <field:display field="taxid" id="s_org_vardb_sequences_Sequence_taxid" object="${sequence}" z="1oQkHUwkwd62fb3IWld+uMieDgM="/>
+        <field:display field="source" id="s_org_vardb_sequences_Sequence_source" object="${sequence}" z="bdYNqpumV8hHrBBL+tHLp7R8mfU="/>
+        <field:display field="chromosome" id="s_org_vardb_sequences_Sequence_chromosome" object="${sequence}" z="ywkre+isHNBMosSDOHxK3SKwVSY="/>
+        <field:display field="cds" id="s_org_vardb_sequences_Sequence_cds" object="${sequence}" z="M781xwbVhfM1lX8b+03NgZXV/Mo="/>
+        <field:display field="translation" id="s_org_vardb_sequences_Sequence_translation" object="${sequence}" z="eItLsR2Lx0cNF2s02FC93KAk2m8="/>
+        <field:display field="start" id="s_org_vardb_sequences_Sequence_start" object="${sequence}" z="6/vklDYg1Zm6fUzRuaGGF5kjVXg="/>
+        <field:display field="end" id="s_org_vardb_sequences_Sequence_end" object="${sequence}" z="OflZCNNtNXOQ37Fs2P3r0Hw+HJ8="/>
+        <field:display field="strand" id="s_org_vardb_sequences_Sequence_strand" object="${sequence}" z="w5IaZsQxDW4Bhlc0jWlzfpPpAwY="/>
+        <field:display field="numexons" id="s_org_vardb_sequences_Sequence_numexons" object="${sequence}" z="ojVxjEJAibQTuSScd0CLYjTEHNo="/>
+        <field:display field="splicing" id="s_org_vardb_sequences_Sequence_splicing" object="${sequence}" z="YvxR3uAp4A/Tkdw1uUBsjd4rT5I="/>
+        <field:display field="pseudogene" id="s_org_vardb_sequences_Sequence_pseudogene" object="${sequence}" z="zhAU33woXVzmvXDBh0bWhVUBiWk="/>
+        <field:display field="method" id="s_org_vardb_sequences_Sequence_method" object="${sequence}" z="UgARCd7mDIQlu3XdsvYiUstTuZo="/>
+        <field:display field="model" id="s_org_vardb_sequences_Sequence_model" object="${sequence}" z="XYaLB81+J7ciYRQK+CljA4r0w0M="/>
+        <field:display field="score" id="s_org_vardb_sequences_Sequence_score" object="${sequence}" z="/f9RnqyCUvRtnuMzu2akpdHkmvs="/>
+        <field:display field="evalue" id="s_org_vardb_sequences_Sequence_evalue" object="${sequence}" z="6in2tGWTW4vvq88UUA5bbwfVWOc="/>
+        <field:display field="hmmloc" id="s_org_vardb_sequences_Sequence_hmmloc" object="${sequence}" z="EMm1UlU+w8NdH/9s8bO2rMt+6Ro="/>
+        <field:display field="description" id="s_org_vardb_sequences_Sequence_description" object="${sequence}" z="8IdG5uAzHbya90wFtxme4WiD+Lo="/>
     </page:show>
 </div>

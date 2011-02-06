@@ -1,3 +1,12 @@
 // Spring Roo 1.1.1.RELEASE [rev 156ccd6] log opened at 2011-02-05 00:18:49
 // [failed] entity --class ~.resources.Disease --extends ~.Resource --testAutomatically
 // [failed] entity --class ~.resources.Disease --extends ~.resources.Resource --testAutomatically
+// [failed] entity --class ~.users.User  --testAutomatically
+entity --class ~.users.UserDetails  --testAutomatically
+field string password --notNull
+field boolean enabled
+// [failed] field string firstname
+field string lastname
+// [failed] field string lastname
+field string email
+field string affiliation

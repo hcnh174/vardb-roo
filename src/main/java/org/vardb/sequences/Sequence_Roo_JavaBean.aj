@@ -26,12 +26,164 @@ privileged aspect Sequence_Roo_JavaBean {
         this.accession = accession;
     }
     
+    public String Sequence.getGenome() {
+        return this.genome;
+    }
+    
+    public void Sequence.setGenome(String genome) {
+        this.genome = genome;
+    }
+    
+    public String Sequence.getStrain() {
+        return this.strain;
+    }
+    
+    public void Sequence.setStrain(String strain) {
+        this.strain = strain;
+    }
+    
+    public String Sequence.getTaxid() {
+        return this.taxid;
+    }
+    
+    public void Sequence.setTaxid(String taxid) {
+        this.taxid = taxid;
+    }
+    
+    public String Sequence.getSource() {
+        return this.source;
+    }
+    
+    public void Sequence.setSource(String source) {
+        this.source = source;
+    }
+    
+    public String Sequence.getChromosome() {
+        return this.chromosome;
+    }
+    
+    public void Sequence.setChromosome(String chromosome) {
+        this.chromosome = chromosome;
+    }
+    
     public String Sequence.getSequence() {
         return this.sequence;
     }
     
     public void Sequence.setSequence(String sequence) {
         this.sequence = sequence;
+    }
+    
+    public String Sequence.getCds() {
+        return this.cds;
+    }
+    
+    public void Sequence.setCds(String cds) {
+        this.cds = cds;
+    }
+    
+    public String Sequence.getTranslation() {
+        return this.translation;
+    }
+    
+    public void Sequence.setTranslation(String translation) {
+        this.translation = translation;
+    }
+    
+    public String Sequence.getStart() {
+        return this.start;
+    }
+    
+    public void Sequence.setStart(String start) {
+        this.start = start;
+    }
+    
+    public String Sequence.getEnd() {
+        return this.end;
+    }
+    
+    public void Sequence.setEnd(String end) {
+        this.end = end;
+    }
+    
+    public String Sequence.getStrand() {
+        return this.strand;
+    }
+    
+    public void Sequence.setStrand(String strand) {
+        this.strand = strand;
+    }
+    
+    public String Sequence.getNumexons() {
+        return this.numexons;
+    }
+    
+    public void Sequence.setNumexons(String numexons) {
+        this.numexons = numexons;
+    }
+    
+    public String Sequence.getSplicing() {
+        return this.splicing;
+    }
+    
+    public void Sequence.setSplicing(String splicing) {
+        this.splicing = splicing;
+    }
+    
+    public String Sequence.getPseudogene() {
+        return this.pseudogene;
+    }
+    
+    public void Sequence.setPseudogene(String pseudogene) {
+        this.pseudogene = pseudogene;
+    }
+    
+    public String Sequence.getMethod() {
+        return this.method;
+    }
+    
+    public void Sequence.setMethod(String method) {
+        this.method = method;
+    }
+    
+    public String Sequence.getModel() {
+        return this.model;
+    }
+    
+    public void Sequence.setModel(String model) {
+        this.model = model;
+    }
+    
+    public String Sequence.getScore() {
+        return this.score;
+    }
+    
+    public void Sequence.setScore(String score) {
+        this.score = score;
+    }
+    
+    public String Sequence.getEvalue() {
+        return this.evalue;
+    }
+    
+    public void Sequence.setEvalue(String evalue) {
+        this.evalue = evalue;
+    }
+    
+    public String Sequence.getHmmloc() {
+        return this.hmmloc;
+    }
+    
+    public void Sequence.setHmmloc(String hmmloc) {
+        this.hmmloc = hmmloc;
+    }
+    
+    public String Sequence.getDescription() {
+        return this.description;
+    }
+    
+    public void Sequence.setDescription(String description) {
+        this.description = description;
     }
     
     public Disease Sequence.getDisease() {
