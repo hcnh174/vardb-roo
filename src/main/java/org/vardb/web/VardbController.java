@@ -9,8 +9,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.vardb.util.CDateHelper;
 import org.vardb.util.CFileHelper;
 import org.vardb.util.CStringHelper;
@@ -52,4 +55,36 @@ public class VardbController {
     public String login() {
         return "login";
     }
+    
+    @RequestMapping(value = "/contact.html", method = RequestMethod.GET)
+	public String contact(Model model)
+	{
+		//CUserDetails user = (CUserDetails)acegiService.getUserDetails();
+		//CFeedback feedback = new CFeedback(user);
+		//model.addAttribute("feedback", feedback);
+		return "users/contact";
+	}
+
+	@RequestMapping(value = "/contact.html", method = RequestMethod.POST)
+	public String contactSubmitted(Model model,
+			@RequestParam("name") String name,
+			@RequestParam("affiliation") String affiliation,
+			@RequestParam("email") String email,
+			@RequestParam("purpose") String purpose,
+			@RequestParam("comments") String comments)
+	{
+		//resourceService.contact(name, affiliation, email, purpose, comments);
+		return "users/contactsubmitted";
+	}
+	
+	/////////////////////////////////////////////////////////////
+	
+	@RequestMapping("/ajax/announcements.xml")
+	public void announcementsRss(HttpServletResponse response)
+	{
+		response.setContentType(CWebHelper.ContentType.XML);
+		String rssFeed="http://groups.google.com/group/vardb-announce/feed/rss_v2_0_msgs.xml";
+		int rssMax=10;
+		CWebHelper.write(response,CWebHelper.readRss(rssFeed,rssMax));
+	}
 }
