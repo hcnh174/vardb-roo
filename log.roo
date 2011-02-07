@@ -10,3 +10,4 @@ field string lastname
 // [failed] field string lastname
 field string email
 field string affiliation
+// Spring Roo 1.1.1.RELEASE [rev 156ccd6] log closed at 2011-02-07 00:35:23
