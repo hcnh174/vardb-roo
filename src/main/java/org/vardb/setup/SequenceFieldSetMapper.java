@@ -1,12 +1,8 @@
 package org.vardb.setup;
 
-import javax.persistence.ManyToOne;
-import javax.validation.constraints.NotNull;
-
 import org.springframework.batch.item.file.mapping.FieldSetMapper;
 import org.springframework.batch.item.file.transform.FieldSet;
 import org.springframework.validation.BindException;
-import org.vardb.resources.Disease;
 import org.vardb.sequences.Sequence;
 
 public class SequenceFieldSetMapper implements FieldSetMapper<Sequence>

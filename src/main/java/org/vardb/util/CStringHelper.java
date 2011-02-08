@@ -274,7 +274,11 @@ public final class CStringHelper
 		return list;
 	}
 	
-	
+	public static String[] splitAsArray(String raw, String delimiter)
+	{
+		Iterable<String> iter=Splitter.on(delimiter).split(raw);
+		return Iterables.toArray(iter, String.class);
+	}
 	
 	/*
 	public static List<String> split(String raw, String delimiter)

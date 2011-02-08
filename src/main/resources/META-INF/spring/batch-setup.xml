@@ -38,19 +38,26 @@
 	<property name="jobRepository" ref="jobRepository" />
 </bean>
 
+<bean id="lineTokenizer" class="org.springframework.batch.item.file.transform.DelimitedLineTokenizer">
+	<!-- <property name="names" value="SEQUENCE,family,genome,strain,taxid,source,chromosome,sequence,cds,translation,start,end,strand,numexons,splicing,pseudogene,method,model,score,evalue,hmmloc,description" />  -->
+	<!-- <property name="delimiter" value="&#9;" /> -->
+</bean>
+
 <bean id="reader" class="org.springframework.batch.item.file.FlatFileItemReader" scope="step">
 	<property name="resource" value="file:#{jobParameters[resource]}" />
 	<property name="linesToSkip" value="1" />
+	<property name="skippedLinesCallback">
+		<bean class="org.vardb.setup.HeaderCallbackHandler">
+			<property name="lineTokenizer" ref="lineTokenizer"/>
+			<property name="delimiter" value="&#9;" />
+		</bean>
+	</property>
 	<property name="lineMapper">
+		<!-- org.springframework.batch.sample.domain.order.internal.mapper.HeaderFieldSetMapper -->
 		<bean class="org.springframework.batch.item.file.mapping.DefaultLineMapper">
-			<property name="lineTokenizer">
-				<bean class="org.springframework.batch.item.file.transform.DelimitedLineTokenizer">
-					<property name="names" value="SEQUENCE,family,genome,strain,taxid,source,chromosome,sequence,cds,translation,start,end,strand,numexons,splicing,pseudogene,method,model,score,evalue,hmmloc,description" />
-					<property name="delimiter" value="&#9;" />
-				</bean>
-			</property>
+			<property name="lineTokenizer" ref="lineTokenizer"/>
 			<property name="fieldSetMapper">
-				<bean class="org.vardb.setup.SequenceFieldSetMapper" />
+				<bean class="org.vardb.setup.SequenceFieldSetMapper"/>
 			</property>
 		</bean>
 	</property>
@@ -63,8 +70,7 @@
 <job id="loadSequences" xmlns="http://www.springframework.org/schema/batch">
 	<step id="readWriteSequences">
 		<tasklet transaction-manager="transactionManager">
-			<chunk reader="reader" writer="writer" commit-interval="5" />
-			<!-- <transaction-attributes isolation="DEFAULT" propagation="REQUIRED"/> -->			
+			<chunk reader="reader" writer="writer" commit-interval="100" />			
 		</tasklet>
 	</step>
 </job>
