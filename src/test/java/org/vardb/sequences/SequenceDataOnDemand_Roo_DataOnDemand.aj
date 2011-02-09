@@ -26,8 +26,8 @@ privileged aspect SequenceDataOnDemand_Roo_DataOnDemand {
         obj.setSource("source_" + index);
         obj.setChromosome("chromosome_" + index);
         obj.setSequence(null);
-        obj.setCds("cds_" + index);
-        obj.setTranslation("translation_" + index);
+        obj.setCds(null);
+        obj.setTranslation(null);
         obj.setStart("start_" + index);
         obj.setEnd(null);
         obj.setStrand("strand_" + index);

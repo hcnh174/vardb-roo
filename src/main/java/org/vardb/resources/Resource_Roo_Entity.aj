@@ -13,6 +13,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Table;
 import javax.persistence.Version;
 import org.springframework.transaction.annotation.Transactional;
 import org.vardb.resources.Resource;
@@ -20,6 +21,8 @@ import org.vardb.resources.Resource;
 privileged aspect Resource_Roo_Entity {
     
     declare @type: Resource: @Entity;
+    
+    declare @type: Resource: @Table(name = "resources");
     
     @PersistenceContext
     transient EntityManager Resource.entityManager;
