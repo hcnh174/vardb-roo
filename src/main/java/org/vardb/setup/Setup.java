@@ -2,22 +2,7 @@ package org.vardb.setup;
 
 //import groovy.lang.GroovyShell;
 
-import java.util.List;
-
 import javax.swing.JFrame;
-
-import org.springframework.batch.core.Job;
-import org.springframework.batch.core.JobExecution;
-import org.springframework.batch.core.JobParameters;
-import org.springframework.batch.core.JobParametersBuilder;
-import org.springframework.batch.core.launch.JobLauncher;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.vardb.util.CException;
-import org.vardb.util.CFileHelper;
-import org.vardb.util.CMessageWriter;
-import org.vardb.util.CXmlHelper;
-import org.vardb.util.CXmlValidationException;
 
 import bsh.Interpreter;
 import bsh.util.JConsole;

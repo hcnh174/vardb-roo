@@ -43,7 +43,7 @@ privileged aspect SequenceController_Roo_Controller {
     }
     
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public String SequenceController.show(@PathVariable("id") Long id, Model model) {
+    public String SequenceController.show(@PathVariable("id") String id, Model model) {
         model.addAttribute("sequence", Sequence.findSequence(id));
         model.addAttribute("itemId", id);
         return "sequences/show";
@@ -73,13 +73,13 @@ privileged aspect SequenceController_Roo_Controller {
     }
     
     @RequestMapping(value = "/{id}", params = "form", method = RequestMethod.GET)
-    public String SequenceController.updateForm(@PathVariable("id") Long id, Model model) {
+    public String SequenceController.updateForm(@PathVariable("id") String id, Model model) {
         model.addAttribute("sequence", Sequence.findSequence(id));
         return "sequences/update";
     }
     
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public String SequenceController.delete(@PathVariable("id") Long id, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model model) {
+    public String SequenceController.delete(@PathVariable("id") String id, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model model) {
         Sequence.findSequence(id).remove();
         model.addAttribute("page", (page == null) ? "1" : page.toString());
         model.addAttribute("size", (size == null) ? "10" : size.toString());

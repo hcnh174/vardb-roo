@@ -39,8 +39,7 @@ field set --class ~.resources.Family --fieldName sequences --type ~.sequences.Se
 controller class --class ~.web.VardbController
 
 
-entity --class ~.users.UserDetails  --testAutomatically
-field String username --notNull
+entity --class ~.users.User --testAutomatically --table users --identifierField username --identifierType java.lang.String --permitReservedWords true
 field string password --notNull
 field boolean enabled
 field string firstname

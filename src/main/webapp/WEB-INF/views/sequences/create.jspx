@@ -28,6 +28,9 @@
         <field:input field="evalue" id="c_org_vardb_sequences_Sequence_evalue" z="HCUzTGY4y5LDyT/AP5gwpxopMic="/>
         <field:input field="hmmloc" id="c_org_vardb_sequences_Sequence_hmmloc" z="jpEGDjbpR51PInJANhx6QRwmAeg="/>
         <field:input field="description" id="c_org_vardb_sequences_Sequence_description" z="mrh/wby1txMux0BS90u0xQtPfKc="/>
+    <field:input field="domainnum" id="c_org_vardb_sequences_Sequence_domainnum" validationMessageCode="field_invalid_integer" z="m3fIOgeDfi6aqNAbqt/1bTeLIN4="/>
+        <field:input field="totaldomainnum" id="c_org_vardb_sequences_Sequence_totaldomainnum" validationMessageCode="field_invalid_integer" z="ia/z9rHmoKUMjmMmmOB4qXlASW8="/>
+        <field:input field="domains" id="c_org_vardb_sequences_Sequence_domains" z="xj8sEtv7hVCN45hWZ/TRFdo408Y="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_org_vardb_sequences_Sequence" render="${not empty dependencies}" z="6di0WL0KUoTV3Cu3lPsD3BGIxeQ="/>
 </div>

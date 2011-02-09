@@ -1,6 +1,9 @@
 package org.vardb.sequences;
 
 import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
@@ -15,11 +18,9 @@ import org.vardb.resources.Pathogen;
 
 @RooJavaBean
 @RooToString
-@RooEntity
-@Table(name="sequences")
+@RooEntity(identifierField = "id", identifierType = String.class, table = "sequences")
 public class Sequence {
 
-    @NotNull private String identifier;
     @NotNull private String accession;    
     private String genome;
     private String strain;
@@ -40,7 +41,10 @@ public class Sequence {
     private String score;
     private String evalue;
     private String hmmloc;
-    private String description; 
+    private String description;
+    private Integer domainnum;
+    private Integer totaldomainnum;
+    @Column(columnDefinition="TEXT") private String domains;
 
     @ManyToOne
     private Disease disease;

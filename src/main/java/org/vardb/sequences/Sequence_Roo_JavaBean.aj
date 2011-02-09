@@ -3,20 +3,13 @@
 
 package org.vardb.sequences;
 
+import java.lang.Integer;
 import java.lang.String;
 import org.vardb.resources.Disease;
 import org.vardb.resources.Family;
 import org.vardb.resources.Pathogen;
 
 privileged aspect Sequence_Roo_JavaBean {
-    
-    public String Sequence.getIdentifier() {
-        return this.identifier;
-    }
-    
-    public void Sequence.setIdentifier(String identifier) {
-        this.identifier = identifier;
-    }
     
     public String Sequence.getAccession() {
         return this.accession;
@@ -184,6 +177,30 @@ privileged aspect Sequence_Roo_JavaBean {
     
     public void Sequence.setDescription(String description) {
         this.description = description;
+    }
+    
+    public Integer Sequence.getDomainnum() {
+        return this.domainnum;
+    }
+    
+    public void Sequence.setDomainnum(Integer domainnum) {
+        this.domainnum = domainnum;
+    }
+    
+    public Integer Sequence.getTotaldomainnum() {
+        return this.totaldomainnum;
+    }
+    
+    public void Sequence.setTotaldomainnum(Integer totaldomainnum) {
+        this.totaldomainnum = totaldomainnum;
+    }
+    
+    public String Sequence.getDomains() {
+        return this.domains;
+    }
+    
+    public void Sequence.setDomains(String domains) {
+        this.domains = domains;
     }
     
     public Disease Sequence.getDisease() {

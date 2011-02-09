@@ -28,5 +28,8 @@
         <field:display field="evalue" id="s_org_vardb_sequences_Sequence_evalue" object="${sequence}" z="6in2tGWTW4vvq88UUA5bbwfVWOc="/>
         <field:display field="hmmloc" id="s_org_vardb_sequences_Sequence_hmmloc" object="${sequence}" z="EMm1UlU+w8NdH/9s8bO2rMt+6Ro="/>
         <field:display field="description" id="s_org_vardb_sequences_Sequence_description" object="${sequence}" z="8IdG5uAzHbya90wFtxme4WiD+Lo="/>
+    <field:display field="domainnum" id="s_org_vardb_sequences_Sequence_domainnum" object="${sequence}" z="363kfIvgf2Et+7zLaHTAbAZNdO4="/>
+        <field:display field="totaldomainnum" id="s_org_vardb_sequences_Sequence_totaldomainnum" object="${sequence}" z="25aOC+fc+xbcaH1dPJ1Gimxl1TI="/>
+        <field:display field="domains" id="s_org_vardb_sequences_Sequence_domains" object="${sequence}" z="5nzJDHC7ML27Qv3b7/2HNEL+aOY="/>
     </page:show>
 </div>

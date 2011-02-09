@@ -9,7 +9,7 @@ public class SequenceFieldSetMapper implements FieldSetMapper<Sequence>
 {
 	public Sequence mapFieldSet(FieldSet fieldSet) throws BindException {
 		Sequence sequence = new Sequence();
-		sequence.setIdentifier(fieldSet.readString("SEQUENCE"));
+		sequence.setId(fieldSet.readString("SEQUENCE"));
 		sequence.setAccession(fieldSet.readString("SEQUENCE"));
 		//sequence.setFamily(fieldSet.readString("family"));		
 		sequence.setGenome(fieldSet.readString("genome"));
@@ -31,7 +31,10 @@ public class SequenceFieldSetMapper implements FieldSetMapper<Sequence>
 		sequence.setScore(fieldSet.readString("score"));
 		sequence.setEvalue(fieldSet.readString("evalue"));
 		sequence.setHmmloc(fieldSet.readString("hmmloc"));
-		sequence.setDescription(fieldSet.readString("description"));	
+		sequence.setDescription(fieldSet.readString("description"));
+		sequence.setDomainnum(fieldSet.readInt("domainnum"));
+		sequence.setTotaldomainnum(fieldSet.readInt("totaldomainnum"));
+		sequence.setDomains(fieldSet.readString("domains"));
 		return sequence;
 	}
 }

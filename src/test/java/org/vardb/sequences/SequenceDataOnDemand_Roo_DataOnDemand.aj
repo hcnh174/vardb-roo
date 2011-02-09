@@ -40,6 +40,9 @@ privileged aspect SequenceDataOnDemand_Roo_DataOnDemand {
         obj.setEvalue("evalue_" + index);
         obj.setHmmloc("hmmloc_" + index);
         obj.setDescription("description_" + index);
+        obj.setDomainnum(new Integer(index));
+        obj.setTotaldomainnum(new Integer(index));
+        obj.setDomains(null);
         obj.setDisease(null);
         obj.setPathogen(null);
         obj.setFamily(null);

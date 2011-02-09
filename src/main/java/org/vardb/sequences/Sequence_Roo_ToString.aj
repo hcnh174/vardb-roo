@@ -9,7 +9,6 @@ privileged aspect Sequence_Roo_ToString {
     
     public String Sequence.toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Identifier: ").append(getIdentifier()).append(", ");
         sb.append("Accession: ").append(getAccession()).append(", ");
         sb.append("Genome: ").append(getGenome()).append(", ");
         sb.append("Strain: ").append(getStrain()).append(", ");
@@ -31,6 +30,9 @@ privileged aspect Sequence_Roo_ToString {
         sb.append("Evalue: ").append(getEvalue()).append(", ");
         sb.append("Hmmloc: ").append(getHmmloc()).append(", ");
         sb.append("Description: ").append(getDescription()).append(", ");
+        sb.append("Domainnum: ").append(getDomainnum()).append(", ");
+        sb.append("Totaldomainnum: ").append(getTotaldomainnum()).append(", ");
+        sb.append("Domains: ").append(getDomains()).append(", ");
         sb.append("Disease: ").append(getDisease()).append(", ");
         sb.append("Pathogen: ").append(getPathogen()).append(", ");
         sb.append("Family: ").append(getFamily());
