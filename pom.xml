@@ -492,7 +492,17 @@
 			<groupId>com.google.code.morphia</groupId>
 			<artifactId>morphia</artifactId>
 			<version>1.00-SNAPSHOT</version>
-		</dependency>		
+		</dependency>
+		<dependency>
+	        <groupId>com.google.code.morphia</groupId>
+	        <artifactId>morphia-validation</artifactId>
+	        <version>0.99</version>
+		</dependency>
+		<dependency>
+	        <groupId>com.google.code.morphia</groupId>
+	        <artifactId>morphia-logging-slf4j</artifactId>
+	        <version>0.99</version>
+		</dependency>
 		<dependency>
 		  <groupId>ro.isdc.wro4j</groupId>
 		  <artifactId>wro4j-core</artifactId>
