@@ -4,7 +4,7 @@
 package org.vardb.users;
 
 import java.lang.Integer;
-import java.lang.String;
+import java.lang.Long;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -29,19 +29,19 @@ privileged aspect User_Roo_Entity {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "username")
-    private String User.username;
+    @Column(name = "id")
+    private Long User.id;
     
     @Version
     @Column(name = "version")
     private Integer User.version;
     
-    public String User.getUsername() {
-        return this.username;
+    public Long User.getId() {
+        return this.id;
     }
     
-    public void User.setUsername(String id) {
-        this.username = id;
+    public void User.setId(Long id) {
+        this.id = id;
     }
     
     public Integer User.getVersion() {
@@ -64,7 +64,7 @@ privileged aspect User_Roo_Entity {
         if (this.entityManager.contains(this)) {
             this.entityManager.remove(this);
         } else {
-            User attached = User.findUser(this.username);
+            User attached = User.findUser(this.id);
             this.entityManager.remove(attached);
         }
     }
@@ -97,8 +97,8 @@ privileged aspect User_Roo_Entity {
         return entityManager().createQuery("select o from User o", User.class).getResultList();
     }
     
-    public static User User.findUser(String id) {
-        if (id == null || 0 == id.length()) return null;
+    public static User User.findUser(Long id) {
+        if (id == null) return null;
         return entityManager().find(User.class, id);
     }
     

@@ -9,6 +9,7 @@ privileged aspect Sequence_Roo_ToString {
     
     public String Sequence.toString() {
         StringBuilder sb = new StringBuilder();
+        sb.append("Identifier: ").append(getIdentifier()).append(", ");
         sb.append("Accession: ").append(getAccession()).append(", ");
         sb.append("Genome: ").append(getGenome()).append(", ");
         sb.append("Strain: ").append(getStrain()).append(", ");

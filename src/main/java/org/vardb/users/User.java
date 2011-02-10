@@ -7,9 +7,12 @@ import javax.validation.constraints.NotNull;
 
 @RooJavaBean
 @RooToString
-@RooEntity(identifierField = "username", identifierType = String.class, table = "users")
+@RooEntity(table = "users")
 public class User {
 
+	@NotNull
+	private String uername;
+	
     @NotNull
     private String password;
 

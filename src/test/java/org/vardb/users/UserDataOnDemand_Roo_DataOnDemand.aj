@@ -18,6 +18,7 @@ privileged aspect UserDataOnDemand_Roo_DataOnDemand {
     
     public User UserDataOnDemand.getNewTransientUser(int index) {
         org.vardb.users.User obj = new org.vardb.users.User();
+        obj.setUername("uername_" + index);
         obj.setPassword("password_" + index);
         obj.setEnabled(Boolean.TRUE);
         obj.setFirstname("firstname_" + index);
@@ -32,13 +33,13 @@ privileged aspect UserDataOnDemand_Roo_DataOnDemand {
         if (index < 0) index = 0;
         if (index > (data.size() - 1)) index = data.size() - 1;
         User obj = data.get(index);
-        return User.findUser(obj.getUsername());
+        return User.findUser(obj.getId());
     }
     
     public User UserDataOnDemand.getRandomUser() {
         init();
         User obj = data.get(rnd.nextInt(data.size()));
-        return User.findUser(obj.getUsername());
+        return User.findUser(obj.getId());
     }
     
     public boolean UserDataOnDemand.modifyUser(User obj) {

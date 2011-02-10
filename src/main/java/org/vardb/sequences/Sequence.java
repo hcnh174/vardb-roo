@@ -18,9 +18,10 @@ import org.vardb.resources.Pathogen;
 
 @RooJavaBean
 @RooToString
-@RooEntity(identifierField = "id", identifierType = String.class, table = "sequences")
+@RooEntity(table = "sequences")
 public class Sequence {
 
+	@NotNull private String identifier;   
     @NotNull private String accession;    
     private String genome;
     private String strain;

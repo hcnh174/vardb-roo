@@ -13,6 +13,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Table;
 import javax.persistence.Version;
 import org.springframework.transaction.annotation.Transactional;
 import org.vardb.sequences.Sequence;
@@ -21,14 +22,27 @@ privileged aspect Sequence_Roo_Entity {
     
     declare @type: Sequence: @Entity;
     
+    declare @type: Sequence: @Table(name = "sequences");
+    
     @PersistenceContext
     transient EntityManager Sequence.entityManager;
     
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
+    private Long Sequence.id;
     
     @Version
     @Column(name = "version")
     private Integer Sequence.version;
-
+    
+    public Long Sequence.getId() {
+        return this.id;
+    }
+    
+    public void Sequence.setId(Long id) {
+        this.id = id;
+    }
     
     public Integer Sequence.getVersion() {
         return this.version;
@@ -83,7 +97,7 @@ privileged aspect Sequence_Roo_Entity {
         return entityManager().createQuery("select o from Sequence o", Sequence.class).getResultList();
     }
     
-    public static Sequence Sequence.findSequence(String id) {
+    public static Sequence Sequence.findSequence(Long id) {
         if (id == null) return null;
         return entityManager().find(Sequence.class, id);
     }

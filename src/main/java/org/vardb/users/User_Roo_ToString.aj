@@ -9,6 +9,7 @@ privileged aspect User_Roo_ToString {
     
     public String User.toString() {
         StringBuilder sb = new StringBuilder();
+        sb.append("Uername: ").append(getUername()).append(", ");
         sb.append("Password: ").append(getPassword()).append(", ");
         sb.append("Enabled: ").append(getEnabled()).append(", ");
         sb.append("Firstname: ").append(getFirstname()).append(", ");

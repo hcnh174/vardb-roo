@@ -33,7 +33,7 @@ privileged aspect SequenceIntegrationTest_Roo_IntegrationTest {
     public void SequenceIntegrationTest.testFindSequence() {
         org.vardb.sequences.Sequence obj = dod.getRandomSequence();
         org.junit.Assert.assertNotNull("Data on demand for 'Sequence' failed to initialize correctly", obj);
-        java.lang.String id = obj.getId();
+        java.lang.Long id = obj.getId();
         org.junit.Assert.assertNotNull("Data on demand for 'Sequence' failed to provide an identifier", id);
         obj = org.vardb.sequences.Sequence.findSequence(id);
         org.junit.Assert.assertNotNull("Find method for 'Sequence' illegally returned null for id '" + id + "'", obj);
@@ -64,7 +64,7 @@ privileged aspect SequenceIntegrationTest_Roo_IntegrationTest {
     public void SequenceIntegrationTest.testFlush() {
         org.vardb.sequences.Sequence obj = dod.getRandomSequence();
         org.junit.Assert.assertNotNull("Data on demand for 'Sequence' failed to initialize correctly", obj);
-        java.lang.String id = obj.getId();
+        java.lang.Long id = obj.getId();
         org.junit.Assert.assertNotNull("Data on demand for 'Sequence' failed to provide an identifier", id);
         obj = org.vardb.sequences.Sequence.findSequence(id);
         org.junit.Assert.assertNotNull("Find method for 'Sequence' illegally returned null for id '" + id + "'", obj);
@@ -78,7 +78,7 @@ privileged aspect SequenceIntegrationTest_Roo_IntegrationTest {
     public void SequenceIntegrationTest.testMerge() {
         org.vardb.sequences.Sequence obj = dod.getRandomSequence();
         org.junit.Assert.assertNotNull("Data on demand for 'Sequence' failed to initialize correctly", obj);
-        java.lang.String id = obj.getId();
+        java.lang.Long id = obj.getId();
         org.junit.Assert.assertNotNull("Data on demand for 'Sequence' failed to provide an identifier", id);
         obj = org.vardb.sequences.Sequence.findSequence(id);
         boolean modified =  dod.modifySequence(obj);
@@ -104,7 +104,7 @@ privileged aspect SequenceIntegrationTest_Roo_IntegrationTest {
     public void SequenceIntegrationTest.testRemove() {
         org.vardb.sequences.Sequence obj = dod.getRandomSequence();
         org.junit.Assert.assertNotNull("Data on demand for 'Sequence' failed to initialize correctly", obj);
-        java.lang.String id = obj.getId();
+        java.lang.Long id = obj.getId();
         org.junit.Assert.assertNotNull("Data on demand for 'Sequence' failed to provide an identifier", id);
         obj = org.vardb.sequences.Sequence.findSequence(id);
         obj.remove();

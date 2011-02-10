@@ -11,6 +11,14 @@ import org.vardb.resources.Pathogen;
 
 privileged aspect Sequence_Roo_JavaBean {
     
+    public String Sequence.getIdentifier() {
+        return this.identifier;
+    }
+    
+    public void Sequence.setIdentifier(String identifier) {
+        this.identifier = identifier;
+    }
+    
     public String Sequence.getAccession() {
         return this.accession;
     }

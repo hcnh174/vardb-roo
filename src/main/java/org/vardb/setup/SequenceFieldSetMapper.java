@@ -9,7 +9,7 @@ public class SequenceFieldSetMapper implements FieldSetMapper<Sequence>
 {
 	public Sequence mapFieldSet(FieldSet fieldSet) throws BindException {
 		Sequence sequence = new Sequence();
-		sequence.setId(fieldSet.readString("SEQUENCE"));
+		sequence.setIdentifier(fieldSet.readString("SEQUENCE"));
 		sequence.setAccession(fieldSet.readString("SEQUENCE"));
 		//sequence.setFamily(fieldSet.readString("family"));		
 		sequence.setGenome(fieldSet.readString("genome"));

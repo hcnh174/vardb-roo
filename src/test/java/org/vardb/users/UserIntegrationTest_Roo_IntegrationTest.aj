@@ -33,11 +33,11 @@ privileged aspect UserIntegrationTest_Roo_IntegrationTest {
     public void UserIntegrationTest.testFindUser() {
         org.vardb.users.User obj = dod.getRandomUser();
         org.junit.Assert.assertNotNull("Data on demand for 'User' failed to initialize correctly", obj);
-        java.lang.String id = obj.getUsername();
+        java.lang.Long id = obj.getId();
         org.junit.Assert.assertNotNull("Data on demand for 'User' failed to provide an identifier", id);
         obj = org.vardb.users.User.findUser(id);
         org.junit.Assert.assertNotNull("Find method for 'User' illegally returned null for id '" + id + "'", obj);
-        org.junit.Assert.assertEquals("Find method for 'User' returned the incorrect identifier", id, obj.getUsername());
+        org.junit.Assert.assertEquals("Find method for 'User' returned the incorrect identifier", id, obj.getId());
     }
     
     @Test
@@ -64,7 +64,7 @@ privileged aspect UserIntegrationTest_Roo_IntegrationTest {
     public void UserIntegrationTest.testFlush() {
         org.vardb.users.User obj = dod.getRandomUser();
         org.junit.Assert.assertNotNull("Data on demand for 'User' failed to initialize correctly", obj);
-        java.lang.String id = obj.getUsername();
+        java.lang.Long id = obj.getId();
         org.junit.Assert.assertNotNull("Data on demand for 'User' failed to provide an identifier", id);
         obj = org.vardb.users.User.findUser(id);
         org.junit.Assert.assertNotNull("Find method for 'User' illegally returned null for id '" + id + "'", obj);
@@ -78,14 +78,14 @@ privileged aspect UserIntegrationTest_Roo_IntegrationTest {
     public void UserIntegrationTest.testMerge() {
         org.vardb.users.User obj = dod.getRandomUser();
         org.junit.Assert.assertNotNull("Data on demand for 'User' failed to initialize correctly", obj);
-        java.lang.String id = obj.getUsername();
+        java.lang.Long id = obj.getId();
         org.junit.Assert.assertNotNull("Data on demand for 'User' failed to provide an identifier", id);
         obj = org.vardb.users.User.findUser(id);
         boolean modified =  dod.modifyUser(obj);
         java.lang.Integer currentVersion = obj.getVersion();
         org.vardb.users.User merged = (org.vardb.users.User) obj.merge();
         obj.flush();
-        org.junit.Assert.assertEquals("Identifier of merged object not the same as identifier of original object", merged.getUsername(), id);
+        org.junit.Assert.assertEquals("Identifier of merged object not the same as identifier of original object", merged.getId(), id);
         org.junit.Assert.assertTrue("Version for 'User' failed to increment on merge and flush directive", (currentVersion != null && obj.getVersion() > currentVersion) || !modified);
     }
     
@@ -94,17 +94,17 @@ privileged aspect UserIntegrationTest_Roo_IntegrationTest {
         org.junit.Assert.assertNotNull("Data on demand for 'User' failed to initialize correctly", dod.getRandomUser());
         org.vardb.users.User obj = dod.getNewTransientUser(Integer.MAX_VALUE);
         org.junit.Assert.assertNotNull("Data on demand for 'User' failed to provide a new transient entity", obj);
-        org.junit.Assert.assertNull("Expected 'User' identifier to be null", obj.getUsername());
+        org.junit.Assert.assertNull("Expected 'User' identifier to be null", obj.getId());
         obj.persist();
         obj.flush();
-        org.junit.Assert.assertNotNull("Expected 'User' identifier to no longer be null", obj.getUsername());
+        org.junit.Assert.assertNotNull("Expected 'User' identifier to no longer be null", obj.getId());
     }
     
     @Test
     public void UserIntegrationTest.testRemove() {
         org.vardb.users.User obj = dod.getRandomUser();
         org.junit.Assert.assertNotNull("Data on demand for 'User' failed to initialize correctly", obj);
-        java.lang.String id = obj.getUsername();
+        java.lang.Long id = obj.getId();
         org.junit.Assert.assertNotNull("Data on demand for 'User' failed to provide an identifier", id);
         obj = org.vardb.users.User.findUser(id);
         obj.remove();

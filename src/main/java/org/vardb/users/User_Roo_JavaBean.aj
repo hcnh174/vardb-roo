@@ -8,6 +8,14 @@ import java.lang.String;
 
 privileged aspect User_Roo_JavaBean {
     
+    public String User.getUername() {
+        return this.uername;
+    }
+    
+    public void User.setUername(String uername) {
+        this.uername = uername;
+    }
+    
     public String User.getPassword() {
         return this.password;
     }
