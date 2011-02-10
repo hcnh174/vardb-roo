@@ -1,0 +1,348 @@
+package org.vardb.tags;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.vardb.util.CStringHelper;
+
+public class CTagQueryHelper extends CAbstractQueryHelper
+{	
+	public CTagQueryHelper()
+	{
+		super("attribute");
+	}
+
+	public String convert(String query)
+	{
+		System.out.println("trying to convert filter: "+query);
+		query=preprocessQuery(query);
+		if (!CStringHelper.hasContent(query))
+			return "";
+		CFilter.Filter filter=CQueryParser.parse(query);
+		System.out.println("parsed query: "+filter.getText());
+		String sql=getSql(filter);
+		System.out.println("converted sql: "+sql);
+		return sql;
+	}
+	
+	@Override
+	public String getSql(CFilter.ElementaryFilter filter)
+	{
+		System.out.println("ElementaryFilter");
+		if (filter.getValue().equals(""))
+			return "";
+		String field=filter.getField();
+		if ("any".equals(field))
+			return handleAnyField(filter);
+		/*
+		else if ("disease".equals(field))
+			return handleDiseaseField(filter);
+		else if ("pathogen".equals(field))
+			return handlePathogenField(filter);
+		else if ("family".equals(field))
+			return handleFamilyField(filter);
+		else if ("genome".equals(field))
+			return handleGenomeField(filter);
+		else if ("chromosome".equals(field))
+			return handleChromosomeField(filter);
+		else if ("ortholog".equals(field))
+			return handleOrthologField(filter);
+		else if ("paralog".equals(field))
+			return handleParalogField(filter);
+		else if ("sequenceset".equals(field))
+			return handleSequencesetField(filter);
+		else if ("subgroup".equals(field))
+			return handleSubgroupField(filter);
+		else if ("pfam".equals(field))
+			return handlePfamField(filter);
+		else if ("clan".equals(field))
+			return handleClanField(filter);
+		else if ("taxon".equals(field))
+			return handleTaxIdField(filter);
+		else if ("after".equals(field))
+			return handleAfterField(filter);
+		else if ("before".equals(field))
+			return handleBeforeField(filter);
+		else if ("country".equals(field))
+			return handleCountryField(filter);
+		else if ("ref".equals(field))
+			return handleRefField(filter);
+		else if ("structure".equals(field))
+			return handleStructureField(filter);
+		else if ("chain".equals(field))
+			return handleChainField(filter);
+		else if ("divison".equals(field))
+			return handleDivisionField(filter);
+		else if ("pseudogene".equals(field))
+			return handlePseudogeneField(filter);
+		else if ("truncated".equals(field))
+			return handleTruncatedField(filter);
+		else if ("region".equals(field))
+			return handleRegionField(filter);
+		else if ("bundle".equals(field))
+			return handleBundleField(filter);
+		else if ("tag".equals(field))
+			return handleTagField(filter);
+		else if ("cart".equals(field) || "query".equals(field))
+			return handleSequenceListField(filter);
+		else if ("group".equals(field))
+			return handleGroupField(filter);
+		else if ("regex".equals(field))
+			return handleRegexField(filter);
+		else if ("prosite".equals(field))
+			return handlePrositeField(filter);
+		else if ("pattern".equals(field))
+			return handlePatternField(filter);
+		else if ("gag".equals(field))
+			return handleGagField(filter);
+		*/
+		else
+		{
+			//CSequenceProperties.Property property=CSequenceProperties.findProperty(field);
+			//if (property!=null && property.getSearchable())
+			//	return createSubquery(property.getField(),filter.getSqlOperator(),filter.getValue());
+			return createSubquery(field,filter.getSqlOperator(),filter.getValue());
+		}
+		//throw new CException("No handler for search term: "+filter.getText());
+	}
+	
+	private String handleAnyField(CFilter.ElementaryFilter filter)
+	{
+		CSqlOperator operator=filter.getSqlOperator();
+		String value=filter.getValue();
+		List<String> subqueries=new ArrayList<String>();
+		//subqueries.add(createSubquery("å€‹äººID",operator,value));
+		//subqueries.add(createSubquery("æ‚£è€…No",operator,value));
+		subqueries.add(createSubquery("æ°�å��",operator,value));
+		subqueries.add(createSubquery("æ°�å��ã‚«ãƒŠ",operator,value));
+		/*
+		subqueries.add(handleDiseaseField(filter));
+		subqueries.add(handleTaxonField(filter));
+		subqueries.add(handlePathogenField(filter));
+		subqueries.add(handleFamilyField(filter));
+		*/
+		return handleAnyField(filter,subqueries);
+	}
+	
+	/*
+	private String handleDiseaseField(CFilter.ElementaryFilter filter)
+	{
+		if (CMathHelper.isInteger(filter.getValue()))
+			return createSubquery("disease_id",CSqlOperator.NUMBER_EQUAL,filter.getValue());
+		List<String> fields=new ArrayList<String>();
+		fields.add("disease_name");
+		fields.add("disease_identifier");
+		return createSubquery(fields,filter.getSqlOperator(),filter.getValue());
+	}
+	
+	private String handlePathogenField(CFilter.ElementaryFilter filter)
+	{
+		if (CMathHelper.isInteger(filter.getValue()))
+			return createSubquery("pathogen_id",CSqlOperator.NUMBER_EQUAL,filter.getValue());
+		List<String> fields=new ArrayList<String>();
+		fields.add("pathogen_name");
+		fields.add("pathogen_identifier");
+		return createSubquery(fields,filter.getSqlOperator(),filter.getValue());
+	}
+
+	private String handleFamilyField(CFilter.ElementaryFilter filter)
+	{
+		if (CMathHelper.isInteger(filter.getValue()))
+			return createSubquery("family_id",CSqlOperator.NUMBER_EQUAL,filter.getValue());
+		List<String> fields=new ArrayList<String>();
+		fields.add("family_name");
+		fields.add("family_identifier");
+		fields.add("family_alias");
+		return createSubquery(fields,filter.getSqlOperator(),filter.getValue());
+	}
+	
+	private String handleGenomeField(CFilter.ElementaryFilter filter)
+	{
+		if (CMathHelper.isInteger(filter.getValue()))
+			return createSubquery("genome_id",CSqlOperator.NUMBER_EQUAL,filter.getValue());
+		List<String> fields=new ArrayList<String>();
+		fields.add("genome_name");
+		fields.add("genome_identifier");
+		return createSubquery(fields,filter.getSqlOperator(),filter.getValue());
+	}
+	
+	private String handleChromosomeField(CFilter.ElementaryFilter filter)
+	{
+		if (CMathHelper.isInteger(filter.getValue()))
+			return createSubquery("chromosome_id",CSqlOperator.NUMBER_EQUAL,filter.getValue());
+		List<String> fields=new ArrayList<String>();
+		fields.add("chromosome_name");
+		fields.add("chromosome_identifier");
+		return createSubquery(fields,filter.getSqlOperator(),filter.getValue());
+	}
+	
+	private String handleSubgroupField(CFilter.ElementaryFilter filter)
+	{
+		if (CMathHelper.isInteger(filter.getValue()))
+			return createSubquery("subgroup_id",CSqlOperator.NUMBER_EQUAL,filter.getValue());
+		List<String> fields=new ArrayList<String>();
+		fields.add("subgroup_name");
+		fields.add("subgroup_identifier");
+		return createSubquery(fields,filter.getSqlOperator(),filter.getValue());
+	}
+
+	private String handleSequencesetField(CFilter.ElementaryFilter filter)
+	{
+		if (CMathHelper.isInteger(filter.getValue()))
+			return createSubquery("sequenceset_id",CSqlOperator.NUMBER_EQUAL,filter.getValue());
+		List<String> fields=new ArrayList<String>();
+		fields.add("sequenceset_identifier");
+		return createSubquery(fields,filter.getSqlOperator(),filter.getValue());
+	}
+
+	private String handleOrthologField(CFilter.ElementaryFilter filter)
+	{
+		if (CMathHelper.isInteger(filter.getValue()))
+			return createSubquery("ortholog_id",CSqlOperator.NUMBER_EQUAL,filter.getValue());
+		List<String> fields=new ArrayList<String>();
+		fields.add("ortholog_name");
+		fields.add("ortholog_identifier");
+		return createSubquery(fields,filter.getSqlOperator(),filter.getValue());
+	}
+	
+	private String handleParalogField(CFilter.ElementaryFilter filter)
+	{
+		if (CMathHelper.isInteger(filter.getValue()))
+			return createSubquery("paralog_id",CSqlOperator.NUMBER_EQUAL,filter.getValue());
+		List<String> fields=new ArrayList<String>();
+		fields.add("paralog_name");
+		fields.add("paralog_identifier");
+		return createSubquery(fields,filter.getSqlOperator(),filter.getValue());
+	}
+
+	private String handlePfamField(CFilter.ElementaryFilter filter)
+	{
+		String value=filter.getValue();
+		StringBuilder buffer=new StringBuilder();
+		buffer.append("SELECT sequences_pfams.sequence_id\n");
+		buffer.append("FROM sequences_pfams, pfams\n");
+		buffer.append("WHERE sequences_pfams.pfam_id=pfams.id\n");
+		if (CMathHelper.isInteger(value))
+			buffer.append("AND pfams.id=").append(Integer.parseInt(value)).append("\n)");
+		else buffer.append("AND pfams.identifier ilike '").append(escape(value)).append("'\n");
+		return createSubquery("id",CSqlOperator.SUBQUERY,buffer.toString());
+	}
+	
+	private String handleClanField(CFilter.ElementaryFilter filter)
+	{
+		String value=filter.getValue();
+		StringBuilder buffer=new StringBuilder();
+		buffer.append("SELECT sequences_pfams.sequence_id\n");
+		buffer.append("FROM sequences_pfams, pfams, clans\n");
+		buffer.append("WHERE sequences_pfams.pfam_id=pfams.id\n");
+		buffer.append("AND pfams.clan_id=clans.id\n");
+		if (CMathHelper.isInteger(value))
+			buffer.append("AND clans.id=").append(Integer.parseInt(value)).append("\n");
+		else buffer.append("AND clans.identifier ilike '").append(escape(value)).append("'\n"); // e.g. DBL
+		return createSubquery("id",CSqlOperator.SUBQUERY,buffer.toString());
+	}
+	
+	private String handleTaxonField(CFilter.ElementaryFilter filter)
+	{
+		StringBuilder buffer=new StringBuilder();
+		buffer.append("SELECT t1.id\n");
+		buffer.append("FROM taxons t1, taxons t2\n");
+		buffer.append("WHERE t1.lft>=t2.lft AND t1.rght<=t2.rght\n");
+		buffer.append("AND t2.name ilike '").append(CStringHelper.escape(filter.getValue())).append("'\n");
+		return createSubquery("taxon_id",CSqlOperator.SUBQUERY,buffer.toString());
+	}
+	
+	private String handleTaxIdField(CFilter.ElementaryFilter filter)
+	{
+		StringBuilder buffer=new StringBuilder();
+		buffer.append("SELECT t1.id\n");
+		buffer.append("FROM taxons t1, taxons t2\n");
+		buffer.append("WHERE t1.lft>=t2.lft AND t1.rght<=t2.rght\n");
+		buffer.append("AND t2.id=").append(filter.getValue()).append("\n");
+		return createSubquery("taxon_id",CSqlOperator.SUBQUERY,buffer.toString());
+	}
+	
+	private String handleAfterField(CFilter.ElementaryFilter filter)
+	{
+		return createSubquery("udate",CSqlOperator.DATE_GREATER_OR_EQUAL,filter.getValue());
+	}
+	
+	private String handleBeforeField(CFilter.ElementaryFilter filter)
+	{
+		return createSubquery("udate",CSqlOperator.DATE_LESS_OR_EQUAL,filter.getValue());
+	}
+	
+	private String handleCountryField(CFilter.ElementaryFilter filter)
+	{
+		return createSubquery("country_name",filter.getSqlOperator(),filter.getValue());
+	}
+	
+	private String handleRefField(CFilter.ElementaryFilter filter)
+	{		
+		List<String> fields=new ArrayList<String>();
+		fields.add("ref_name");
+		fields.add("ref_identifier");
+		return createSubquery(fields,filter.getSqlOperator(),filter.getValue());
+	}
+	
+	private String handleStructureField(CFilter.ElementaryFilter filter)
+	{		
+		String value=filter.getValue();
+		StringBuilder buffer=new StringBuilder();
+		buffer.append("SELECT sequences_chains.sequence_id\n");
+		buffer.append("FROM sequences_chains, chains, structures\n");
+		buffer.append("WHERE sequences_chains.chain_id=chains.id\n");
+		buffer.append("AND chains.structure_id=structures.id\n");
+		if (CMathHelper.isInteger(value))
+			buffer.append("AND structures.id="+Integer.parseInt(value)+"\n");
+		else buffer.append("AND structures.identifier ilike '"+value+"'\n");
+		return createSubquery("id",CSqlOperator.SUBQUERY,buffer.toString());
+	}
+	
+	private String handleChainField(CFilter.ElementaryFilter filter)
+	{		
+		String value=filter.getValue();
+		StringBuilder buffer=new StringBuilder();
+		buffer.append("SELECT sequences_chains.sequence_id\n");
+		buffer.append("FROM sequences_chains, chains\n");
+		buffer.append("WHERE sequences_chains.chain_id=chains.id\n");
+		if (CMathHelper.isInteger(value))
+			buffer.append("AND chains.id="+Integer.parseInt(value)+"\n");
+		else buffer.append("AND chains.identifier ilike '"+value+"'\n");
+		return createSubquery("id",CSqlOperator.SUBQUERY,buffer.toString());
+	}
+
+	private String handleDivisionField(CFilter.ElementaryFilter filter)
+	{
+		return createSubquery("pathogen_dtype",filter.getSqlOperator(),filter.getValue());
+	}
+	
+	private String handlePseudogeneField(CFilter.ElementaryFilter filter)
+	{
+		String value=filter.getValue().toLowerCase();
+		if (!"true".equals(value) && !"false".equals(value))
+			return "1=1";
+		return createSubquery("pseudogene",filter.getSqlOperator(),value);
+	}
+	
+	private String handleTruncatedField(CFilter.ElementaryFilter filter)
+	{
+		String value=filter.getValue().toLowerCase();
+		if (!"true".equals(value) && !"false".equals(value))
+			return "1=1";
+		return createSubquery("truncated",filter.getSqlOperator(),value);
+	}
+	
+	private String handleRegionField(CFilter.ElementaryFilter filter)
+	{
+		String value=escape(filter.getValue());
+		String subquery="SELECT id FROM countries WHERE region ILIKE '"+value+"'";
+		return createSubquery("country_id",CSqlOperator.SUBQUERY,subquery);
+	}
+
+	private String handleUsernameField(CFilter.ElementaryFilter filter)
+	{
+		return createSubquery("username",filter.getSqlOperator(),filter.getValue());
+	}
+	*/
+}

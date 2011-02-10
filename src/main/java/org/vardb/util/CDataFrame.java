@@ -302,8 +302,7 @@ public class CDataFrame
 		return column.getRownamesByColValue(value); 
 	}
 	
-	/*
-	public IdList getUniqueIds(String colname)
+	public CIdList getUniqueIds(String colname)
 	{
 		CDataFrame.Column column=getColumn(colname);
 		return column.getUniqueIds();
@@ -322,7 +321,6 @@ public class CDataFrame
 		}
 		return attlist;
 	}
-	*/
 	
 	@JsonProperty
 	public Integer getTotalCount()
@@ -415,8 +413,7 @@ public class CDataFrame
 			return uniquevalues;
 		}
 
-		/*
-		public IdList getUniqueIds()
+		public CIdList getUniqueIds()
 		{
 			Set<Integer> uniquevalues=new LinkedHashSet<Integer>();
 			for (Object val : values.values())
@@ -427,7 +424,6 @@ public class CDataFrame
 			}
 			return new CIdList(uniquevalues);
 		}
-		*/
 		
 		public Collection<Object> getRownamesByColValue(Object val)
 		{
