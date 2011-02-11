@@ -1,6 +1,5 @@
 package org.vardb.bio;
 
-
 public interface ISequence
 {
 	String getIdentifier();

@@ -24,3 +24,8 @@ field string lastname
 field string email
 field string affiliation
 // Spring Roo 1.1.1.RELEASE [rev 156ccd6] log opened at 2011-02-10 12:05:45
+// Spring Roo 1.1.1.RELEASE [rev 156ccd6] log opened at 2011-02-11 18:34:17
+focus --class ~.users.User
+finder list --filter username
+finder add --finderName findUsersByUsername
+finder add --finderName findUsersByUsername

@@ -28,6 +28,8 @@ import org.springframework.util.StringUtils;
 import com.google.common.base.Charsets;
 import com.google.common.base.Splitter;
 import com.google.common.collect.Iterables;
+import com.oreilly.servlet.Base64Decoder;
+import com.oreilly.servlet.Base64Encoder;
 
 public final class CStringHelper
 {
@@ -680,7 +682,6 @@ public final class CStringHelper
 		return (!CStringHelper.hasContent(str) || "null".equals(str) || "{}".equals(str));
 	}
 	
-	/*
 	public static String encodeBase64(String unencoded)
 	{
 		return Base64Encoder.encode(unencoded);
@@ -690,7 +691,6 @@ public final class CStringHelper
 	{
 		return Base64Decoder.decode(encoded);
 	}
-	*/
 	
 	public static boolean isEmailAddress(String email)
 	{

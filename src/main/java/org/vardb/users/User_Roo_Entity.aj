@@ -36,6 +36,10 @@ privileged aspect User_Roo_Entity {
     @Column(name = "version")
     private Integer User.version;
     
+    public User.new() {
+        super();
+    }
+
     public Long User.getId() {
         return this.id;
     }

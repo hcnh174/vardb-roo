@@ -5,15 +5,16 @@ package org.vardb.users;
 
 import java.lang.Boolean;
 import java.lang.String;
+import java.util.Date;
 
 privileged aspect User_Roo_JavaBean {
     
-    public String User.getUername() {
-        return this.uername;
+    public String User.getUsername() {
+        return this.username;
     }
     
-    public void User.setUername(String uername) {
-        this.uername = uername;
+    public void User.setUsername(String username) {
+        this.username = username;
     }
     
     public String User.getPassword() {
@@ -30,6 +31,14 @@ privileged aspect User_Roo_JavaBean {
     
     public void User.setEnabled(Boolean enabled) {
         this.enabled = enabled;
+    }
+    
+    public Boolean User.getAdministrator() {
+        return this.administrator;
+    }
+    
+    public void User.setAdministrator(Boolean administrator) {
+        this.administrator = administrator;
     }
     
     public String User.getFirstname() {
@@ -62,6 +71,22 @@ privileged aspect User_Roo_JavaBean {
     
     public void User.setAffiliation(String affiliation) {
         this.affiliation = affiliation;
+    }
+    
+    public Date User.getCreated() {
+        return this.created;
+    }
+    
+    public void User.setCreated(Date created) {
+        this.created = created;
+    }
+    
+    public Date User.getUpdated() {
+        return this.updated;
+    }
+    
+    public void User.setUpdated(Date updated) {
+        this.updated = updated;
     }
     
 }
