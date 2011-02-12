@@ -20,7 +20,7 @@
   <script src="${config.webapp}/api.js" type="text/javascript"><!-- spacer --></script>
   <script src="${config.webapp}/js/vardb/namespace.js" type="text/javascript"><!-- spacer --></script>
   <script src="${config.webapp}/js/vardb/vardb.js" type="text/javascript"><!-- spacer --></script>
-  <script src="${config.webapp}/js/vardb/util/vardb.js" type="text/javascript"><!-- spacer --></script>
+  <script src="${config.webapp}/js/vardb/util/utils.js" type="text/javascript"><!-- spacer --></script>
   <script src="${config.webapp}/js/vardb/controls/announcements.js" type="text/javascript"><!-- spacer --></script>
   <script src="${config.webapp}/js/vardb/controls/browsebycategory.js" type="text/javascript"><!-- spacer --></script>
   <script src="${config.webapp}/js/vardb/controls/comment.js" type="text/javascript"><!-- spacer --></script>

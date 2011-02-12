@@ -51,3 +51,5 @@ focus --class ~.users.User
 finder list --filter username
 finder add --finderName findUsersByUsername
 
+email sender setup --hostServer mbi3.kuicr.kyoto-u.ac.jp
+

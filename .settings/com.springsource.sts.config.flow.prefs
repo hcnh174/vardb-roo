@@ -1,4 +1,4 @@
-#Tue Feb 08 13:34:01 JST 2011
-//com.springsource.sts.config.flow.coordinates\:http\://www.springframework.org/schema/batch\:/vardb-roo/src/main/resources/META-INF/spring/batch-setup.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<graph>\r\n<element clazz\="JobModelElement" type\="job">\r\n<structure end\="3701" endstart\="3695" start\="3435" startend\="3511"/>\r\n<bounds height\="118" width\="154" x\="15" y\="17"/>\r\n</element>\r\n</graph>
+#Sat Feb 12 14:11:48 JST 2011
+//com.springsource.sts.config.flow.coordinates\:http\://www.springframework.org/schema/batch\:/vardb-roo/src/main/resources/META-INF/spring/batch-setup.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<graph>\r\n<element clazz\="JobModelElement" type\="job">\r\n<structure end\="3626" endstart\="3620" start\="3366" startend\="3442"/>\r\n<bounds height\="118" width\="180" x\="15" y\="17"/>\r\n</element>\r\n</graph>
 //com.springsource.sts.config.flow.coordinates\:http\://www.springframework.org/schema/batch\:/vardb-roo/src/main/resources/batch-setup.xml=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<graph>\r\n<element clazz\="JobModelElement" type\="job">\r\n<structure end\="2211" endstart\="2205" start\="1998" startend\="2074"/>\r\n<bounds height\="118" width\="164" x\="15" y\="17"/>\r\n</element>\r\n</graph>
 eclipse.preferences.version=1

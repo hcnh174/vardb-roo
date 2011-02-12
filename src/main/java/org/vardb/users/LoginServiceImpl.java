@@ -133,6 +133,7 @@ public class LoginServiceImpl implements LoginService
 		return authorities;
 	}
 	
+	/*
 	public String getSavedRequest(HttpServletRequest request)
 	{
 		HttpSession session=request.getSession(false);
@@ -143,6 +144,7 @@ public class LoginServiceImpl implements LoginService
 			return null;
 		return savedrequest.getRedirectUrl();//.getFullRequestUrl();
 	}
+	*/
 	
 	public AuthenticationException getLastException(HttpServletRequest request)
 	{

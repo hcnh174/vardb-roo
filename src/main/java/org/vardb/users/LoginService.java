@@ -21,7 +21,7 @@ public interface LoginService
 	String LAST_EXCEPTION=WebAttributes.AUTHENTICATION_EXCEPTION;
 	String ACCESS_DENIED=WebAttributes.ACCESS_DENIED_403;
 	String LAST_USERNAME=UsernamePasswordAuthenticationFilter.SPRING_SECURITY_LAST_USERNAME_KEY;
-	String SAVED_REQUEST=WebAttributes.SAVED_REQUEST;
+	//String SAVED_REQUEST=WebAttributes.SAVED_REQUEST;
 
 	void setUser(UserDetails user);
 	boolean isAnonymous();
@@ -29,7 +29,7 @@ public interface LoginService
 	UserDetails getUserDetails(boolean nullokay);
 	//String getUserId(String dflt);
 	Collection<GrantedAuthority> getAuthorities(final List<String> roles);
-	String getSavedRequest(HttpServletRequest request);
+	//String getSavedRequest(HttpServletRequest request);
 	AuthenticationException getLastException(HttpServletRequest request);
 	String getReason(HttpServletRequest request);
 	String getLastUsername(HttpServletRequest request);

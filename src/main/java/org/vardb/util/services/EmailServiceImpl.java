@@ -21,15 +21,11 @@ public class EmailServiceImpl implements EmailService
 	@Resource(name="freemarkerService") private FreemarkerService freemarkerService;
 	
 	private MailSender mailSender;
-	//private List<String> emailExceptions=new ArrayList<String>();
 	private List<String> emailHostnames=new ArrayList<String>();
 	private String fromAddress;	
 	
 	public MailSender getMailSender(){return this.mailSender;}
 	@Required public void setMailSender(MailSender mailSender){this.mailSender=mailSender;}
-	
-	//public List<String> getEmailExceptions(){return this.emailExceptions;}
-	//public void setEmailExceptions(List<String> emailExceptions){this.emailExceptions=emailExceptions;}
 	
 	public String getFromAddress(){return this.fromAddress;}
 	@Required public void setFromAddress(final String fromAddress){this.fromAddress=fromAddress;}

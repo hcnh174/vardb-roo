@@ -34,10 +34,11 @@ public class VardbController {
 		config.put("version","Release 6");
 		if (user!=null && user.getName()!=null)
 			config.put("username",user);
-		config.put("lastUpdated", getLastUpdatedDate());
+		config.put("lastUpdated", new Date());//getLastUpdatedDate());  // hack!
 		return config;
 	}
 	
+	/*
 	public static Date getLastUpdatedDate()
 	{
 		String str=CFileHelper.getResource("classpath:META-INF/maven/org.vardb/vardb-roo/pom.properties");
@@ -45,7 +46,7 @@ public class VardbController {
 		Date date=CDateHelper.parse(lines.get(1).substring(1),CDateHelper.EXCEL_PATTERN);
 		return date;
 	}
-	
+	*/
     @RequestMapping("/homepage.html")
     public String homepage() {
         return "homepage";

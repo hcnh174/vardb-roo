@@ -29,3 +29,7 @@ focus --class ~.users.User
 finder list --filter username
 finder add --finderName findUsersByUsername
 finder add --finderName findUsersByUsername
+// Spring Roo 1.1.1.RELEASE [rev 156ccd6] log closed at 2011-02-12 17:45:59
+// Spring Roo 1.1.1.RELEASE [rev 156ccd6] log opened at 2011-02-12 18:18:25
+email sender setup --hostServer mbi3.kuicr.kyoto-u.ac.jp
+email sender setup --hostServer mbi3.kuicr.kyoto-u.ac.jp

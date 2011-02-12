@@ -4,29 +4,39 @@ import java.io.IOException;
 import java.io.Reader;
 import java.io.StringReader;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
 import org.springframework.stereotype.Repository;
+import org.vardb.users.User;
 import org.vardb.util.CAbstractDaoImpl;
 
 import freemarker.cache.TemplateLoader;
 
 //http://nurkiewicz.blogspot.com/2010/01/writing-custom-freemarker-template.html
 @Repository
-public class DatabaseTemplateLoader<T> extends CAbstractDaoImpl implements TemplateLoader
+public class DatabaseTemplateLoader<T> implements TemplateLoader //extends CAbstractDaoImpl 
 {
+	@PersistenceContext
+    private transient EntityManager entityManager;
+	
+	@Override
 	public Object findTemplateSource(String name) throws IOException
 	{
 		System.out.println("CDatabaseTemplateLoader.findTemplateSource: "+name);
-		return super.get(FreemarkerTemplate.class, name);
+		return entityManager.find(FreemarkerTemplate.class, name);
 	}
 
+	@Override
 	public long getLastModified(Object templateSource)
 	{
 		System.out.println("CDatabaseTemplateLoader.getLastModified: "+templateSource.getClass().getName());
 		final FreemarkerTemplate template = (FreemarkerTemplate) templateSource;
-		getSession().refresh(template);
+		entityManager.refresh(template);
 		return template.getUpdated().getTimeInMillis();
 	}
 
+	@Override
 	public Reader getReader(Object templateSource, String encoding) throws IOException
 	{
 		FreemarkerTemplate template=(FreemarkerTemplate)templateSource;
@@ -34,6 +44,7 @@ public class DatabaseTemplateLoader<T> extends CAbstractDaoImpl implements Templ
 		return new StringReader(template.getContent());
 	}
 
+	@Override
 	public void closeTemplateSource(Object templateSource) throws IOException
 	{
 	}
