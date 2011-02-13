@@ -1,12 +1,12 @@
 /*global Ext, vardb */
-Ext.ux.vardb.JalviewForm = Ext.extend(Ext.ux.vardb.AbstractForm,
+vardb.analysis.JalviewForm = Ext.extend(vardb.util.AbstractForm,
 {	
 	title: 'Open alignment in Jalview',
 	width: 580,
 	labelWidth: 50,
 	standardSubmit: true,
 	fileUpload: true,
-	url: vardb.webapp+'/jalview.html',
+	url: utils.webapp+'/jalview.html',
 	
 	initComponent:function()
 	{
@@ -21,7 +21,7 @@ Ext.ux.vardb.JalviewForm = Ext.extend(Ext.ux.vardb.AbstractForm,
 			[
 				this.createRow(
 				[
-					this.createControl(new Ext.ux.vardb.UserAlignmentSelectList({hiddenName: 'alignmentIdentifier'}))
+					this.createControl(new vardb.UserAlignmentSelectList({hiddenName: 'alignmentIdentifier'}))
 				]),
 				this.createRow(
 				[
@@ -39,7 +39,7 @@ Ext.ux.vardb.JalviewForm = Ext.extend(Ext.ux.vardb.AbstractForm,
 			]
 		};
 		Ext.apply(this, Ext.apply(this.initialConfig, config));
-		Ext.ux.vardb.JalviewForm.superclass.initComponent.apply(this, arguments);
+		vardb.analysis.JalviewForm.superclass.initComponent.apply(this, arguments);
 	},
 	
 	checkValidation:function()

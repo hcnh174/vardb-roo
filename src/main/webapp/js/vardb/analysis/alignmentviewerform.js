@@ -1,12 +1,12 @@
 /*global Ext, vardb */
-Ext.ux.vardb.AlignmentViewerForm = Ext.extend(Ext.ux.vardb.AbstractForm,
+vardb.analysis.AlignmentViewerForm = Ext.extend(vardb.util.AbstractForm,
 {	
 	title: 'Inspect alignments using a simple browser-based alignment viewer',
 	width: 580,
 	labelWidth: 50,
 	standardSubmit: true,
 	fileUpload: true,
-	url: vardb.webapp+'/alignments/view.html',
+	url: util.webapp+'/alignments/view.html',
 	
 	initComponent:function()
 	{
@@ -21,7 +21,7 @@ Ext.ux.vardb.AlignmentViewerForm = Ext.extend(Ext.ux.vardb.AbstractForm,
 			[
 				this.createRow(
 				[
-					this.createControl(new Ext.ux.vardb.UserAlignmentSelectList({hiddenName: 'alignmentIdentifier'}))
+					this.createControl(new vardb.UserAlignmentSelectList({hiddenName: 'alignmentIdentifier'}))
 				]),
 				this.createRow(
 				[
@@ -39,7 +39,7 @@ Ext.ux.vardb.AlignmentViewerForm = Ext.extend(Ext.ux.vardb.AbstractForm,
 			]
 		};
 		Ext.apply(this, Ext.apply(this.initialConfig, config));
-		Ext.ux.vardb.AlignmentViewerForm.superclass.initComponent.apply(this, arguments);
+		vardb.analysis.AlignmentViewerForm.superclass.initComponent.apply(this, arguments);
 	},
 	
 	checkValidation:function()

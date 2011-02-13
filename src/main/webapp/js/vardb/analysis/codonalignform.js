@@ -1,5 +1,5 @@
 /*global Ext, vardb */
-Ext.ux.vardb.AbstractCodonAlignForm = Ext.extend(Ext.ux.vardb.AbstractForm,
+vardb.AbstractCodonAlignForm = Ext.extend(vardb.util.AbstractForm,
 {	
 	width: 580,
 	standardSubmit: true,
@@ -27,7 +27,7 @@ Ext.ux.vardb.AbstractCodonAlignForm = Ext.extend(Ext.ux.vardb.AbstractForm,
 			]
 		};
 		Ext.apply(this, Ext.apply(this.initialConfig, config));
-		Ext.ux.vardb.AbstractCodonAlignForm.superclass.initComponent.apply(this, arguments);
+		vardb.analysis.AbstractCodonAlignForm.superclass.initComponent.apply(this, arguments);
 	},
 	
 	createNucleotideFieldset:function()
@@ -53,7 +53,7 @@ Ext.ux.vardb.AbstractCodonAlignForm = Ext.extend(Ext.ux.vardb.AbstractForm,
 			/*
 			this.createRow(
 			[
-				this.createControl(new Ext.ux.vardb.UserAlignmentSelectList({hiddenName: 'alignmentIdentifier'}))
+				this.createControl(new vardb.UserAlignmentSelectList({hiddenName: 'alignmentIdentifier'}))
 			]),
 			*/
 			this.createRow(
@@ -88,19 +88,19 @@ Ext.ux.vardb.AbstractCodonAlignForm = Ext.extend(Ext.ux.vardb.AbstractForm,
 	}
 });
 
-Ext.ux.vardb.Pal2NalForm = Ext.extend(Ext.ux.vardb.AbstractCodonAlignForm,
+vardb.Pal2NalForm = Ext.extend(vardb.AbstractCodonAlignForm,
 {	
 	title: 'PAL2NAL',
-	url: vardb.webapp+'/analysis/pal2nal.html'
+	url: utils.webapp+'/analysis/pal2nal.html'
 });
 
-Ext.ux.vardb.RevTransForm = Ext.extend(Ext.ux.vardb.AbstractCodonAlignForm,
+vardb.RevTransForm = Ext.extend(vardb.AbstractCodonAlignForm,
 {	
 	title: 'RevTrans',
-	url: vardb.webapp+'/analysis/revtrans.html'
+	url: utils.webapp+'/analysis/revtrans.html'
 });
 
-Ext.ux.vardb.CodonAlignForm = Ext.extend(Ext.TabPanel,
+vardb.CodonAlignForm = Ext.extend(Ext.TabPanel,
 {	
 	activeTab: 0,
 	width: 600,
@@ -115,11 +115,11 @@ Ext.ux.vardb.CodonAlignForm = Ext.extend(Ext.TabPanel,
 			defaults: {autoHeight: true},
 			items:
 			[
-				new Ext.ux.vardb.RevTransForm({}),
-				new Ext.ux.vardb.Pal2NalForm({})
+				new vardb.RevTransForm({}),
+				new vardb.Pal2NalForm({})
 			]
 		};
 		Ext.apply(this, Ext.apply(this.initialConfig, config));
-		Ext.ux.vardb.CodonAlignForm.superclass.initComponent.apply(this, arguments);
+		vardb.CodonAlignForm.superclass.initComponent.apply(this, arguments);
 	}
 });

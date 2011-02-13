@@ -145,7 +145,7 @@ public class Ref
 	public String getHtml()
 	{
 		StringBuilder buffer=new StringBuilder();
-		buffer.append("(<a href=\"javascript:void(0)\" onclick=\"Ext.vardb.VarDB.refPopup('").append(this.identifier).append("')\">");
+		buffer.append("(<a href=\"javascript:void(0)\" onclick=\"vardb.VarDB.refPopup('").append(this.identifier).append("')\">");
 		buffer.append(this.name);
 		buffer.append("</a>)");
 		return buffer.toString();

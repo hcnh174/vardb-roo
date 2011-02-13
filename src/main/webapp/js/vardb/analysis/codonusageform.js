@@ -1,5 +1,5 @@
 /*global Ext, vardb */
-Ext.ux.vardb.CodonUsageForm = Ext.extend(Ext.ux.vardb.AbstractForm,
+vardb.analysis.CodonUsageForm = Ext.extend(vardb.util.AbstractForm,
 {	
 	title: 'Codon Usage',
 	width: 580,
@@ -7,7 +7,7 @@ Ext.ux.vardb.CodonUsageForm = Ext.extend(Ext.ux.vardb.AbstractForm,
 	labelWidth: 30,
 	standardSubmit: true,
 	fileUpload: true,
-	url: vardb.webapp+'/analysis/codonusage.html',
+	url: utils.webapp+'/analysis/codonusage.html',
 	
 	initComponent:function()
 	{
@@ -22,7 +22,7 @@ Ext.ux.vardb.CodonUsageForm = Ext.extend(Ext.ux.vardb.AbstractForm,
 			[
 				this.createRow(
 				[
-					this.createControl(new Ext.ux.vardb.UserAlignmentSelectList({hiddenName: 'alignmentIdentifier', sequenceType: 'NT'}))
+					this.createControl(new vardb.UserAlignmentSelectList({hiddenName: 'alignmentIdentifier', sequenceType: 'NT'}))
 				]),
 				this.createRow(
 				[
@@ -41,7 +41,7 @@ Ext.ux.vardb.CodonUsageForm = Ext.extend(Ext.ux.vardb.AbstractForm,
 			]
 		};
 		Ext.apply(this, Ext.apply(this.initialConfig, config));
-		Ext.ux.vardb.CodonUsageForm.superclass.initComponent.apply(this, arguments);
+		vardb.analysis.CodonUsageForm.superclass.initComponent.apply(this, arguments);
 	},
 	
 	checkValidation:function()

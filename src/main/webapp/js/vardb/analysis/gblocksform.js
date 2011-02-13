@@ -1,5 +1,5 @@
 /*global Ext, vardb */
-Ext.ux.vardb.GblocksForm = Ext.extend(Ext.ux.vardb.AbstractForm,
+vardb.analysis.GblocksForm = Ext.extend(vardb.util.AbstractForm,
 {	
 	title: 'Gblocks',
 	width: 580,
@@ -7,7 +7,7 @@ Ext.ux.vardb.GblocksForm = Ext.extend(Ext.ux.vardb.AbstractForm,
 	labelWidth: 50,
 	standardSubmit: true,
 	fileUpload: true,
-	url: vardb.webapp+'/analysis/gblocks.html',	
+	url: utils.webapp+'/analysis/gblocks.html',	
 	
 	initComponent:function()
 	{
@@ -42,7 +42,7 @@ Ext.ux.vardb.GblocksForm = Ext.extend(Ext.ux.vardb.AbstractForm,
 			]
 		};
 		Ext.apply(this, Ext.apply(this.initialConfig, config));
-		Ext.ux.vardb.GblocksForm.superclass.initComponent.apply(this, arguments);
+		vardb.analysis.GblocksForm.superclass.initComponent.apply(this, arguments);
 	},
 
 	gblocksFieldset:function()
@@ -82,7 +82,7 @@ Ext.ux.vardb.GblocksForm = Ext.extend(Ext.ux.vardb.AbstractForm,
 		[
 			this.createRow(
 			[
-				this.createControl(new Ext.ux.vardb.UserAlignmentSelectList())
+				this.createControl(new vardb.UserAlignmentSelectList())
 			]),
 			this.createRow(
 			[

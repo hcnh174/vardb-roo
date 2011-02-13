@@ -1,11 +1,11 @@
 /*global Ext, vardb */
-Ext.ux.vardb.MafftForm = Ext.extend(Ext.ux.vardb.AbstractForm,
+vardb.analysis.MafftForm = Ext.extend(vardb.util.AbstractForm,
 {
 	title: 'Align sequences using MAFFT',
 	width: 600,
 	standardSubmit: true,
 	fileUpload: true,
-	url: vardb.webapp+'/mafft.html',
+	url: utils.webapp+'/mafft.html',
 	
 	strategy: 'AUTO',
 	scorematrix: 'BLOSUM45',
@@ -36,7 +36,7 @@ Ext.ux.vardb.MafftForm = Ext.extend(Ext.ux.vardb.AbstractForm,
 		};
 		
 		Ext.apply(this, Ext.apply(this.initialConfig, config));
-		Ext.ux.vardb.MafftForm.superclass.initComponent.apply(this, arguments);
+		vardb.analysis.MafftForm.superclass.initComponent.apply(this, arguments);
 	},
 	
 	paramFieldset:function()

@@ -14,6 +14,7 @@ privileged aspect Pathogen_Roo_ToString {
         sb.append("Identifier: ").append(getIdentifier()).append(", ");
         sb.append("Name: ").append(getName()).append(", ");
         sb.append("Description: ").append(getDescription()).append(", ");
+        sb.append("Attributes: ").append(getAttributes() == null ? "null" : getAttributes().size()).append(", ");
         sb.append("Sequences: ").append(getSequences() == null ? "null" : getSequences().size());
         return sb.toString();
     }

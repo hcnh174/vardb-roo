@@ -1,12 +1,12 @@
 /*global Ext, vardb */
-Ext.ux.vardb.HvAlignForm = Ext.extend(Ext.ux.vardb.AbstractForm,
+vardb.analysis.HvAlignForm = Ext.extend(vardb.util.AbstractForm,
 {	
 	title: 'Align protein hypervariable regions',
 	width: 580,
 	labelWidth: 50,
 	standardSubmit: true,
 	fileUpload: true,
-	url: vardb.webapp+'/analysis/hvalign.html',
+	url: utils.webapp+'/analysis/hvalign.html',
 	
 	initComponent:function()
 	{
@@ -32,12 +32,12 @@ Ext.ux.vardb.HvAlignForm = Ext.extend(Ext.ux.vardb.AbstractForm,
 			]
 		};
 		Ext.apply(this, Ext.apply(this.initialConfig, config));
-		Ext.ux.vardb.HvAlignForm.superclass.initComponent.apply(this, arguments);
+		vardb.analysis.HvAlignForm.superclass.initComponent.apply(this, arguments);
 	},
 	
 	gblocksFieldset:function()
 	{
-		var gblocks_gaps=new Ext.ux.vardb.SelectList(
+		var gblocks_gaps=new vardb.SelectList(
 		{
 			data: [['NONE','None'],['HALF','With half'],['ALL','All']],
 			hiddenName: 'gblocks_gaps',

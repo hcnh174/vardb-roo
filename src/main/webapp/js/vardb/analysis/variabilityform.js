@@ -1,5 +1,5 @@
 /*global Ext, vardb */
-Ext.ux.vardb.VariabilityForm = Ext.extend(Ext.ux.vardb.AbstractForm,
+vardb.analysis.VariabilityForm = Ext.extend(vardb.util.AbstractForm,
 {	
 	title: 'Variability',
 	width: 580,
@@ -7,7 +7,7 @@ Ext.ux.vardb.VariabilityForm = Ext.extend(Ext.ux.vardb.AbstractForm,
 	labelWidth: 30,
 	standardSubmit: true,
 	fileUpload: true,
-	url: vardb.webapp+'/analysis/variability.html',
+	url: utils.webapp+'/analysis/variability.html',
 	
 	initComponent:function()
 	{	
@@ -22,7 +22,7 @@ Ext.ux.vardb.VariabilityForm = Ext.extend(Ext.ux.vardb.AbstractForm,
 			[
 				this.createRow(
 				[
-					this.createControl(new Ext.ux.vardb.UserAlignmentSelectList({hiddenName: 'alignmentIdentifier'}))
+					this.createControl(new vardb.UserAlignmentSelectList({hiddenName: 'alignmentIdentifier'}))
 				]),
 				this.createRow(
 				[
@@ -41,7 +41,7 @@ Ext.ux.vardb.VariabilityForm = Ext.extend(Ext.ux.vardb.AbstractForm,
 			]
 		};
 		Ext.apply(this, Ext.apply(this.initialConfig, config));
-		Ext.ux.vardb.VariabilityForm.superclass.initComponent.apply(this, arguments);
+		vardb.analysis.VariabilityForm.superclass.initComponent.apply(this, arguments);
 	},
 	
 	checkValidation:function()

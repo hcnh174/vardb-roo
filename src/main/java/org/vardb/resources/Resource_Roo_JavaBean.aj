@@ -4,6 +4,7 @@
 package org.vardb.resources;
 
 import java.lang.String;
+import java.util.Map;
 
 privileged aspect Resource_Roo_JavaBean {
     
@@ -29,6 +30,14 @@ privileged aspect Resource_Roo_JavaBean {
     
     public void Resource.setDescription(String description) {
         this.description = description;
+    }
+    
+    public Map<String, String> Resource.getAttributes() {
+        return this.attributes;
+    }
+    
+    public void Resource.setAttributes(Map<String, String> attributes) {
+        this.attributes = attributes;
     }
     
 }

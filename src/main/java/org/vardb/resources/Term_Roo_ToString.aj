@@ -5,14 +5,14 @@ package org.vardb.resources;
 
 import java.lang.String;
 
-privileged aspect Resource_Roo_ToString {
+privileged aspect Term_Roo_ToString {
     
-    public String Resource.toString() {
+    public String Term.toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Identifier: ").append(getIdentifier()).append(", ");
-        sb.append("Name: ").append(getName()).append(", ");
-        sb.append("Description: ").append(getDescription()).append(", ");
-        sb.append("Attributes: ").append(getAttributes() == null ? "null" : getAttributes().size());
+        sb.append("Term: ").append(getTerm()).append(", ");
+        sb.append("Definition: ").append(getDefinition()).append(", ");
+        sb.append("Pages: ").append(getPages());
         return sb.toString();
     }
     

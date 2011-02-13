@@ -1,5 +1,5 @@
 /*global Ext, vardb */
-Ext.ux.vardb.VariabilityGrid = Ext.extend(Ext.ux.vardb.Grid,
+vardb.analysis.VariabilityGrid = Ext.extend(vardb.util.Grid,
 {	
 	frame: true,
 	width: 600,
@@ -39,7 +39,7 @@ Ext.ux.vardb.VariabilityGrid = Ext.extend(Ext.ux.vardb.Grid,
 			width: 20
 		});
 		
-		var r=Ext.ux.vardb.Renderer;
+		var r=vardb.Renderer;
 		var format='0.000';
 		var config=
 		{
@@ -73,6 +73,6 @@ Ext.ux.vardb.VariabilityGrid = Ext.extend(Ext.ux.vardb.Grid,
 			})
 		};
 		Ext.apply(this, Ext.apply(this.initialConfig, config));
-		Ext.ux.vardb.VariabilityGrid.superclass.initComponent.apply(this, arguments);
+		vardb.analysis.VariabilityGrid.superclass.initComponent.apply(this, arguments);
 	}
 });

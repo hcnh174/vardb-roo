@@ -1,10 +1,10 @@
 /*global Ext, vardb */
-Ext.ux.vardb.blast.BlastClustForm = Ext.extend(Ext.ux.vardb.AbstractForm,
+vardb.analysis.BlastClustForm = Ext.extend(vardb.util.AbstractForm,
 {
 	title: 'BLASTclust',
 	width: 580,
 	labelWidth: 35,
-	url: vardb.webapp+'/analysis/blastclust.html',
+	url: utils.webapp+'/analysis/blastclust.html',
 	
 	initComponent:function()
 	{
@@ -51,7 +51,7 @@ Ext.ux.vardb.blast.BlastClustForm = Ext.extend(Ext.ux.vardb.AbstractForm,
 		};
 	
 		Ext.apply(this, Ext.apply(this.initialConfig, config));
-		Ext.ux.vardb.blast.BlastClustForm.superclass.initComponent.apply(this, arguments);		
+		vardb.analysis.BlastClustForm.superclass.initComponent.apply(this, arguments);		
 	},
 	
 	checkValidation:function()

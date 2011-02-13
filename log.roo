@@ -33,3 +33,4 @@ finder add --finderName findUsersByUsername
 // Spring Roo 1.1.1.RELEASE [rev 156ccd6] log opened at 2011-02-12 18:18:25
 email sender setup --hostServer mbi3.kuicr.kyoto-u.ac.jp
 email sender setup --hostServer mbi3.kuicr.kyoto-u.ac.jp
+// Spring Roo 1.1.1.RELEASE [rev 156ccd6] log closed at 2011-02-13 23:08:04

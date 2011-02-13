@@ -1,5 +1,5 @@
 /*global Ext, vardb */
-Ext.ux.vardb.CodonUsageTable=Ext.extend(Ext.TabPanel,
+vardb.analysis.CodonUsageTable=Ext.extend(Ext.TabPanel,
 {
 	title: 'Codon usage',
 	frame: true,
@@ -28,7 +28,7 @@ Ext.ux.vardb.CodonUsageTable=Ext.extend(Ext.TabPanel,
 		};
 		
 		Ext.apply(this, Ext.apply(this.initialConfig, config));
-		Ext.ux.vardb.CodonUsageTable.superclass.initComponent.apply(this, arguments);
+		vardb.analysis.CodonUsageTable.superclass.initComponent.apply(this, arguments);
 	},
 	
 	createGcTab:function()

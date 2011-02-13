@@ -1,5 +1,5 @@
 /*global Ext, vardb */
-Ext.ux.vardb.OligoRepForm = Ext.extend(Ext.ux.vardb.AbstractForm,
+vardb.analysis.OligoRepForm = Ext.extend(vardb.util.AbstractForm,
 {	
 	title: 'Oligo Repeat Finder',
 	width: 580,
@@ -7,7 +7,7 @@ Ext.ux.vardb.OligoRepForm = Ext.extend(Ext.ux.vardb.AbstractForm,
 	labelWidth: 30,
 	standardSubmit: true,
 	fileUpload: true,
-	url: vardb.webapp+'/analysis/oligorep.html',
+	url: utils.webapp+'/analysis/oligorep.html',
 	
 	initComponent:function()
 	{	
@@ -60,7 +60,7 @@ Ext.ux.vardb.OligoRepForm = Ext.extend(Ext.ux.vardb.AbstractForm,
 			]
 		};
 		Ext.apply(this, Ext.apply(this.initialConfig, config));
-		Ext.ux.vardb.OligoRepForm.superclass.initComponent.apply(this, arguments);
+		vardb.analysis.OligoRepForm.superclass.initComponent.apply(this, arguments);
 	},
 	
 	checkValidation:function()

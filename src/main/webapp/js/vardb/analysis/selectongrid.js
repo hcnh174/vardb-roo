@@ -1,5 +1,5 @@
 /*global Ext, vardb */
-Ext.ux.vardb.SelectonGrid = Ext.extend(Ext.ux.vardb.Grid,
+vardb.analysis.SelectonGrid = Ext.extend(vardb.util.Grid,
 {	
 	frame: true,
 	width: 500,
@@ -38,7 +38,7 @@ Ext.ux.vardb.SelectonGrid = Ext.extend(Ext.ux.vardb.Grid,
 			width: 20
 		});
 		
-		var r=Ext.ux.vardb.Renderer;
+		var r=vardb.Renderer;
 		var format='0.000';
 		var config=
 		{
@@ -62,7 +62,7 @@ Ext.ux.vardb.SelectonGrid = Ext.extend(Ext.ux.vardb.Grid,
 			})
 		};
 		Ext.apply(this, Ext.apply(this.initialConfig, config));
-		Ext.ux.vardb.SelectonGrid.superclass.initComponent.apply(this, arguments);
+		vardb.analysis.SelectonGrid.superclass.initComponent.apply(this, arguments);
 	},
 	
 	levelRenderer:function(value, p, r)

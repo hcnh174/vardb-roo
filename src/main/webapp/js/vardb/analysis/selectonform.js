@@ -1,5 +1,5 @@
 /*global Ext, vardb */
-Ext.ux.vardb.SelectonForm = Ext.extend(Ext.ux.vardb.AbstractForm,
+vardb.analysis.SelectonForm = Ext.extend(vardb.util.AbstractForm,
 {	
 	title: 'Selecton',
 	width: 580,
@@ -7,7 +7,7 @@ Ext.ux.vardb.SelectonForm = Ext.extend(Ext.ux.vardb.AbstractForm,
 	labelWidth: 30,
 	standardSubmit: true,
 	fileUpload: true,
-	url: vardb.webapp+'/analysis/selecton.html',
+	url: utils.webapp+'/analysis/selecton.html',
 	
 	initComponent:function()
 	{	
@@ -37,7 +37,7 @@ Ext.ux.vardb.SelectonForm = Ext.extend(Ext.ux.vardb.AbstractForm,
 			]
 		};
 		Ext.apply(this, Ext.apply(this.initialConfig, config));
-		Ext.ux.vardb.SelectonForm.superclass.initComponent.apply(this, arguments);
+		vardb.analysis.SelectonForm.superclass.initComponent.apply(this, arguments);
 	},
 	
 	checkValidation:function()
