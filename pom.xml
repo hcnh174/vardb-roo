@@ -17,9 +17,9 @@
 		<hibernate.version>3.6.1.Final</hibernate.version>
 		<aspectj.version>1.6.11.M1</aspectj.version>
 		<slf4j.version>1.6.1</slf4j.version>				
-		<biojava.version>3.0</biojava.version>
-		<biojava.legacy.version>1.8</biojava.legacy.version>
-		<wro4j.version>1.3.3</wro4j.version>
+		<biojava.version>3.0.1</biojava.version>
+		<biojava.legacy.version>1.8.1</biojava.legacy.version>
+		<wro4j.version>1.3.4</wro4j.version>
 		<jackson.version>1.7.1</jackson.version>
 		<env.properties>env-deploy.properties</env.properties>
 		<os.properties>os-linux.properties</os.properties>

@@ -25,7 +25,7 @@ public class User implements UserDetails {
     @NotNull
     private String username;
 
-    @NotNull
+    //@NotNull
     private String password;
 
     private Boolean enabled;

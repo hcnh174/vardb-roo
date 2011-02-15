@@ -2,9 +2,9 @@ package org.vardb.web;
 
 import java.security.Principal;
 import java.util.Date;
-import java.util.List;
 import java.util.Map;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -14,9 +14,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.vardb.util.CDateHelper;
-import org.vardb.util.CFileHelper;
-import org.vardb.util.CStringHelper;
+import org.vardb.users.UserService;
 import org.vardb.util.CWebHelper;
 
 import com.google.common.collect.Maps;
@@ -24,6 +22,8 @@ import com.google.common.collect.Maps;
 @Controller
 public class VardbController {
 
+	@Resource(name="userService") private UserService userService;	
+	
 	@ModelAttribute("config")
 	public Map<String,Object> preloadConfig(HttpServletRequest request, HttpServletResponse response, Principal user)
 	{
@@ -49,6 +49,7 @@ public class VardbController {
 	*/
     @RequestMapping("/homepage.html")
     public String homepage() {
+    	userService.testUserRepository();
         return "homepage";
     }
     

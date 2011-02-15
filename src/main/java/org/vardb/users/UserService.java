@@ -25,4 +25,6 @@ public interface UserService extends UserDetailsService
 	//void changePassword(String user_id, String password);
 	
 	User loadUser(Element node);
+	
+	void testUserRepository();
 }

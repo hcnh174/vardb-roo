@@ -7,9 +7,8 @@ import java.util.List;
 import javax.annotation.Resource;
 
 import org.dom4j.Element;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
-import org.springframework.security.authentication.dao.ReflectionSaltSource;
-import org.springframework.security.authentication.encoding.ShaPasswordEncoder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
@@ -17,6 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.vardb.util.CBeanHelper;
 import org.vardb.util.CDateHelper;
 import org.vardb.util.CDom4jHelper;
+import org.vardb.util.CStringHelper;
 import org.vardb.util.services.EmailService;
 
 @Service("userService")
@@ -31,6 +31,8 @@ public class UserServiceImpl implements UserService
 	//@Resource(name="saltSource") private ReflectionSaltSource saltSource;
 
 	@Resource(name = "loginService") private LoginService loginService;
+	
+	@Autowired private UserRepository repository;
 		
 	//public void setEmailService(final EmailService emailService){this.emailService=emailService;}
 	//public void setRecaptcha(final ReCaptchaImpl recaptcha){this.recaptcha=recaptcha;}
@@ -205,5 +207,38 @@ public class UserServiceImpl implements UserService
 		}
 		user.merge();
 		return user;
+	}
+	
+	///////////////////////////////////////////////////////
+	
+
+	public void testUserRepository()
+	{
+		User user;
+		
+		for (int index=0;index<100;index++)
+		{
+			user=new User("abc"+index);
+			user.setLastname(CStringHelper.getRandomWord(5,10));
+			System.out.println("lastname="+user.getLastname());
+			repository.save(user);
+		}
+		user=new User("me");
+		user.setLastname("Lastname");
+		repository.save(user);
+		
+		user=new User("me2");
+		user.setLastname("Lastname");
+		repository.save(user);
+		
+		//Pageable pageable=new PageRequest(0,2);
+		//Page<User> users=repository.findByLastname("Lastname",pageable);
+		
+		//for (User curuser : repository.findAll())
+		for (User curuser : repository.findByLastname("Lastname"))
+		{
+			System.out.println("user="+user.toString());
+		}
+		repository.deleteAll();
 	}
 }

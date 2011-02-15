@@ -35,6 +35,7 @@ public final class CStringHelper
 {
 	public static final String EMPTY_STRING="";
 	public static final String UNICODE_SPACE=" ";
+	public static final String ALPHABET="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	
 	private CStringHelper(){}
 	
@@ -909,6 +910,17 @@ public final class CStringHelper
 	{
 		List<String> items=clean(iter);
 		return join(items,delimiter);
+	}
+	
+	public static String getRandomWord(int min, int max)
+	{
+		int length=min+CMathHelper.randomInteger(max);
+		StringBuilder buffer=new StringBuilder();
+		for (int index=0;index<length;index++)
+		{
+			buffer.append(ALPHABET.charAt(CMathHelper.randomInteger(26)));
+		}
+		return buffer.toString();
 	}
 	
 	/////////////////////////////////////
