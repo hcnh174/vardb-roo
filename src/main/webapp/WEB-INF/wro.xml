@@ -12,13 +12,15 @@
 	<css>/css/navigation.css</css>
   </group>
   
-  <!-- 
   <group name="vardb">
+	<js>/js/vardb/vardb.js</js>
   	<js>/js/vardb/util/utils.js</js>
 	<js>/js/vardb/controls/mainmenu.js</js>
 	<js>/js/vardb/controls/navigation.js</js>
 	<js>/js/vardb/controls/comment.js</js>
 	<js>/js/vardb/controls/comments.js</js>
+	<!-- <js>/js/vardb/controls/announcements.js</js> -->
+	<js>/js/vardb/controls/browsebycategory.js</js>  
   </group>
- -->
+
 </groups>

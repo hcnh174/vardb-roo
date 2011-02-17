@@ -1,5 +1,4 @@
 /*global Ext, nelson, vardb */
-
 Ext.define('vardb.controls.Announcements',
 {
 	extend: 'Ext.grid.GridPanel',
@@ -26,27 +25,14 @@ Ext.define('vardb.controls.Announcements',
 			{name: 'content'}
 		];
 
+		/*
 		var expander = new Ext.ux.grid.RowExpander({
 	        tpl : new Ext.Template(
 	            '<p>{description}</p>'
 	        )
 	    });
+	    */
 		
-	    /*
-	    Ext.regModel('announcementmodel', {
-		    fields: [
-		        {type: 'string', name: 'identifier'},
-		        {type: 'string', name: 'name'}
-		    ]
-		});
-		
-		// The data store holding the states
-		var store = new Ext.data.Store({
-		    model: 'announcementmodel'
-		});
-		*/
-	    
-	    
 		var store = new Ext.data.Store({
 			url: utils.webapp+'/ajax/announcements.xml',
 			reader: new Ext.data.XmlReader({record: 'item'},fields),
@@ -54,7 +40,7 @@ Ext.define('vardb.controls.Announcements',
 		});
 
 		store.on('load', function(){
-			expander.expandRow(0);
+			//expander.expandRow(0);
 		});
 		store.load();
 
@@ -64,12 +50,12 @@ Ext.define('vardb.controls.Announcements',
 			viewConfig: {forceFit: true},
 			columns:
 			[
-				expander,
+				//expander,
 				{header: "Title", sortable: true, dataIndex: 'title', width: 250, renderer: this.renderTitle},
 				{header: "Date", dataIndex: 'pubDate', width: 50, renderer: Ext.util.Format.dateRenderer('M j, Y')},
 				{header: "Link", dataIndex: 'link', width: 20, renderer: this.renderLink}
 			],
-			plugins: expander,
+			//plugins: expander,
 			bbar: new Ext.PagingToolbar(
 			{
 				pageSize: 1,

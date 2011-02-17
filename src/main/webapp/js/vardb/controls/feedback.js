@@ -1,6 +1,7 @@
 /*global Ext, nelson, vardb */
-vardb.controls.FeedbackForm = Ext.extend(Ext.form.FormPanel,
-{	
+Ext.define('vardb.controls.FeedbackForm',
+{
+	extend: 'Ext.form.FormPanel',
 	title: 'Please use the form below to send your comments or suggestions to varDB. ',
 	labelWidth: 75,
 	frame: true,

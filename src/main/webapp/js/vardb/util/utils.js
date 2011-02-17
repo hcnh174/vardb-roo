@@ -3,14 +3,14 @@ Ext.define('vardb.util.Utils',
 {	
 	statics:
 	{
-		getWebapp:function()
+		webapp:function()
 		{
 			var path=window.location.pathname;
 			var webapp=path.substring(0,path.indexOf('/',1));
 			return webapp;
 		},
 			
-		webapp: function(){return this.getWebapp()},
+		//webapp: function(){return this.getWebapp()},
 		
 		gotoUrl:function(url,params)
 		{

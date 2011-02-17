@@ -1,6 +1,7 @@
 /*global Ext, vardb */
-vardb.popups.TermPopup=Ext.extend(Ext.Window,
+Ext.define('vardb.popups.TermPopup',
 {
+	extend: 'Ext.window.Window',
 	layout: 'fit',
 	width: 400,
 	height: 250,

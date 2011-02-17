@@ -27,6 +27,7 @@
   <script src="/static/controls/comments.js" type="text/javascript"><!-- spacer --></script>
   <script src="/static/controls/announcements.js" type="text/javascript"><!-- spacer --></script>
   <script src="/static/controls/browsebycategory.js" type="text/javascript"><!-- spacer --></script>
+  <script src="/static/graphics/demo.js" type="text/javascript"><!-- spacer --></script>
   
   
   <script type="text/javascript">
@@ -410,12 +411,16 @@
 		Ext.Direct.addProvider(Ext.app.REMOTING_API);
 		utils=vardb.util.Utils;
 
+		
 		new vardb.controls.Navigation({renderTo: 'nav', data: navigation, cur: 'homepage'});
 		
 		new vardb.controls.MainMenu(
 		{
 			renderTo: 'mainmenudiv'
 		});
+		
+		
+		new vardb.graphics.Demo();
 		
 		var commentsgrid=new vardb.controls.Comments(
 		{
@@ -426,6 +431,8 @@
 		
 		new vardb.controls.Announcements({renderTo: 'announcements'});
 		new vardb.controls.BrowseByCategory({renderTo: 'browse_by_category', data: categories});
+		
+		
 	});
 	</script>
 </jsp:root>

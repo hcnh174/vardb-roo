@@ -1,5 +1,6 @@
 package org.vardb.web;
 
+import java.security.Principal;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -40,5 +41,13 @@ public class VardbDirect {
 		int total=(int)Comment.countComments();
 		List<Comment> sequences=Comment.findCommentEntries(start, limit);
 		return new ExtDirectStoreResponse<Comment>(total,sequences);
+	}
+	
+	@ExtDirectMethod
+	public String submitComment(String type, String identifier, String text, Principal user) {
+		String username=user==null ? "anonymous" : user.getName();
+		Comment comment=new Comment(username,type,identifier,text);
+		comment.persist();
+		return "comment submitted";
 	}
 }

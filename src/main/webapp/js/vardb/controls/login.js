@@ -1,6 +1,7 @@
-/*global Ext, nelson, utils, window */
-vardb.controls.Login = Ext.extend(Ext.form.FormPanel,
+/*global Ext,  utils, window */
+Ext.define('vardb.controls.Login',
 {
+	extend: 'Ext.form.FormPanel',
 	title: 'Login',
 	labelWidth: 100,
 	url: utils.webapp+'/j_spring_security_check',

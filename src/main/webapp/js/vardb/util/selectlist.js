@@ -1,40 +1,59 @@
 /*global Ext, vardb */
-vardb.util.SelectList = Ext.extend(Ext.form.ComboBox,
+Ext.define('vardb.util.SelectList',
 {	
+	extend: 'Ext.form.ComboBox',
 	valueField: 'value',
 	displayField: 'display',
 	width: 150,
-	mode: 'local',
-	triggerAction: 'all',
-	selectOnFocus: true,
-	forceSelection: true,
+	queryMode: 'local',
+	typeAhead: true,
+	//triggerAction: 'all',
+	//selectOnFocus: true,
+	//forceSelection: true,
 
 	initComponent:function()
 	{
-		if (!(this.data instanceof Array))
+		Ext.regModel('selectlistmodel', {
+		    fields: [
+		        {type: 'string', name: 'value'},
+		        {type: 'string', name: 'display'}
+		    ]
+		});
+		
+		var store = new Ext.data.Store({
+		    model: 'selectlistmodel',
+		    data: this.prepareData(this.data)
+		});
+		
+		var config=
 		{
-			var arr=this.data.split(',');
+			store: new Ext.data.Store({
+			    model: 'selectlistmodel',
+			    data: this.prepareData(this.data)
+			});
+		};
+		
+		
+		Ext.apply(this, Ext.apply(this.initialConfig, config));
+		vardb.util.SelectList.superclass.initComponent.apply(this, arguments);
+	},
+	
+	prepareData: function(data)
+	{
+		if (!(data instanceof Array))
+		{
+			var arr=data.split(',');
 			var index,value,display;
-			this.data=[];
+			data=[];
 			for (index=0;index<arr.length;index++)
 			{
 				value=display=arr[index];
 				if (display===' ')
 					{display='&nbsp;';}
-				this.data.push([value,display]);
+				data.push([value,display]);
 			}
 		}
-		var config=
-		{
-			store: new Ext.data.ArrayStore(
-			{
-				fields: [this.valueField, this.displayField],
-				data: this.data
-			})
-		};
-		
-		Ext.apply(this, Ext.apply(this.initialConfig, config));
-		vardb.util.SelectList.superclass.initComponent.apply(this, arguments);
+		return data;
 	}
 });
 

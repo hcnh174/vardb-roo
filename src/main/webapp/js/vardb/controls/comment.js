@@ -64,6 +64,18 @@ Ext.define('vardb.controls.CommentWindow',
 		var self=this;
 		// get rid of the annoying extra character
 		var value=this.form.getForm().findField('text').getValue().trim();
+		VardbDirect.submitComment(type, identifier, value, function(result, evt)
+		{
+			if (self.callback)
+				{self.callback();}
+			self.close();
+			Ext.MessageBox.alert('Success', 'Your comment was successfully submitted');
+		});
+		
+		/*
+		var self=this;
+		// get rid of the annoying extra character
+		var value=this.form.getForm().findField('text').getValue().trim();
 		this.form.getForm().findField('text').setValue(value);
 		this.form.getForm().submit(
 		{
@@ -82,5 +94,6 @@ Ext.define('vardb.controls.CommentWindow',
 				Ext.MessageBox.alert('Success', 'Your comment was successfully submitted');
 			}			
 		});
+		*/
 	}
 });
