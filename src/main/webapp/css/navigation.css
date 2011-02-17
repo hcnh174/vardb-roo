@@ -4,7 +4,7 @@
 	margin-top: 1px;
 	margin-bottom: 1em;
 	font-family: verdana;
-	background-color: @LIGHT_BLUE@;
+	background-color: #508fc4;
 	font-size: 95%;
 }
 
@@ -14,9 +14,9 @@
 	margin-top: -2px;
 	border-top: 1px solid darkblue;
 	border-bottom: 1px solid darkblue;
-	background-color: @LIGHTEST_BLUE@;
+	background-color: #90bade;
 	padding: 3px;
-	color: @DARK_BLUE@;
+	color: #1958b7;
 }
 
 #nav ul
@@ -29,7 +29,7 @@
 	
 #nav li
 {
-	border-bottom: 1px solid @LIGHTEST_BLUE@;
+	border-bottom: 1px solid #90bade;
 	margin: 0;
 }
 	
@@ -37,9 +37,9 @@
 {
 	display: block;
 	padding: 5px 5px 5px 0.5em;
-	border-left: 10px solid @DARK_BLUE@;
-	border-right: 10px solid @LIGHT_BLUE@;
-	background-color: @BLUE@;
+	border-left: 10px solid #1958b7;
+	border-right: 10px solid #508fc4;
+	background-color: #2175bc;
 	color: #dddddd;
 	text-decoration: none;
 	width: 100%;

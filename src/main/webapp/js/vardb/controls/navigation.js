@@ -1,5 +1,5 @@
-/*global Ext, nelson, vardb */
-vardb.controls.Navigation = Ext.extend(Ext.util.Observable,
+/*global Ext, vardb */
+Ext.define('vardb.controls.Navigation',
 {
 	constructor: function(config)
 	{
@@ -13,7 +13,7 @@ vardb.controls.Navigation = Ext.extend(Ext.util.Observable,
 				'<ul>',
 				'<tpl for="links">',
 					'<li <tpl if="name==this.cur">class="current"</tpl>>',
-					'<a href="{utils.webapp}/{href}" title="{tooltip}">{[this.replaceSpaces(values.label)]}</a>',
+					'<a href="{webapp}/{href}" title="{tooltip}">{[this.replaceSpaces(values.label)]}</a>',
 					'</li>',
 				'</tpl>',
 				'</ul>',
@@ -21,6 +21,7 @@ vardb.controls.Navigation = Ext.extend(Ext.util.Observable,
 			'<h5>&nbsp;</h5>',
 			{
 				cur: config.cur,
+				webapp: utils.webapp,
 				replaceSpaces: function(value)
 				{
 					return value.split(' ').join('&nbsp;');

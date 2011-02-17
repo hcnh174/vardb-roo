@@ -22,10 +22,25 @@
   	<body>
 	  	<div id="doc-vardb" class="yui-t1">
 			<tiles:insertAttribute name="header" ignore="true" />
-			<div id="bd">
-				<div class="heading"><tiles:getAsString name="title"/></div>
-				<tiles:insertAttribute name="body"/> 
-				<br/>
+			<div id="bd">		
+				<div class="yui-b">
+					<div id="nav">spacer</div>
+				</div>
+				<div id="yui-main">
+					<div class="yui-b">
+						<div class="heading"><tiles:getAsString name="title"/></div>
+						<tiles:insertAttribute name="body"/> 
+						<br/>
+						
+						Here is a term: <a href="javascript:vardb.Vardb.getTerm('antigenic_variation')" id='term_antigenic_variation_link'>antigenic variation</a><br/>
+	
+						<div id="announcements">spacer</div><br/>
+						<div id="browse_by_category">spacer</div><br/>
+						
+						<br/>
+						<div id="commentsdiv">spacer</div>
+					</div>
+				</div>
 			</div>
 			<tiles:insertAttribute name="footer" ignore="true"/> 
 		</div>

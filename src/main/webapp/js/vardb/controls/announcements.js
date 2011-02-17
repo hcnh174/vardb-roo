@@ -1,6 +1,8 @@
 /*global Ext, nelson, vardb */
-nelson.vardb.widgets.Announcements = Ext.extend(Ext.grid.GridPanel,
-{	
+
+Ext.define('vardb.controls.Announcements',
+{
+	extend: 'Ext.grid.GridPanel',
 	title: 'Announcements',
 	enableHdMenu: false,
 	hideHeaders: true,
@@ -30,6 +32,21 @@ nelson.vardb.widgets.Announcements = Ext.extend(Ext.grid.GridPanel,
 	        )
 	    });
 		
+	    /*
+	    Ext.regModel('announcementmodel', {
+		    fields: [
+		        {type: 'string', name: 'identifier'},
+		        {type: 'string', name: 'name'}
+		    ]
+		});
+		
+		// The data store holding the states
+		var store = new Ext.data.Store({
+		    model: 'announcementmodel'
+		});
+		*/
+	    
+	    
 		var store = new Ext.data.Store({
 			url: utils.webapp+'/ajax/announcements.xml',
 			reader: new Ext.data.XmlReader({record: 'item'},fields),
@@ -63,7 +80,7 @@ nelson.vardb.widgets.Announcements = Ext.extend(Ext.grid.GridPanel,
 			})
 		};
 		Ext.apply(this, Ext.apply(this.initialConfig, config));
-		nelson.vardb.widgets.Announcements.superclass.initComponent.apply(this, arguments);
+		vardb.controls.Announcements.superclass.initComponent.apply(this, arguments);
 	},
 	
 	renderTitle:function(value, p, record)

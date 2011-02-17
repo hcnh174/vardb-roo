@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<groups xmlns="http://www.isdc.ro/wro"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.isdc.ro/wro wro.xsd">
+
+  <group name="global">  	
+  	<css>/css/yui-grids.css</css>
+  	<!-- 
+	<css>/css/extjs-lightbox.css</css>
+	<css>/css/extjs-extensions.css</css>
+	<css>/css/extjs-fileuploadfield.css</css>
+	<css>/css/extjs-colview.css</css>
+	<css>/css/extjs-livegrid.css</css>
+	<css>/css/extjs-color-field.css</css>
+	<css>/css/extjs-lovcombo.css</css>
+	<css>/css/extjs-comboboxadd.css</css>
+	 -->
+	<css>/css/layout.css</css>
+	<css>/css/general.css</css>
+	<css>/css/text.css</css>
+	<css>/css/table.css</css>
+	<css>/css/navigation.css</css>
+	<!--
+	<css>/css/icons.css</css>
+	<css>/css/consensus.css</css>
+	<css>/css/explorer.css</css>
+	 -->
+  </group>
+
+  <group name="extensions">
+    <js>/js/extensions/extjs-color-field.js</js>
+    <js>/js/extensions/extjs-comboboxadd.js</js>
+    <js>/js/extensions/extjs-fileuploadfield.js</js>
+    <js>/js/extensions/extjs-pagesize.js</js>
+    <js>/js/extensions/extjs-propertygrid2.js</js>
+    <js>/js/extensions/extjs-remotevalidator.js</js>
+    <js>/js/extensions/extjs-rowexpander.js</js>
+    <js>/js/extensions/extjs-safari-fix.js</js>
+    <js>/js/extensions/extjs-select.js</js>
+	<js>/js/extensions/extjs-multiselect.js</js>
+	<js>/js/extensions/extjs-lightbox.js</js>
+	<js>/js/extensions/extjs-messagewindow.js</js>
+	<js>/js/extensions/extjs-xcheckboxgroup.js</js>
+	<js>/js/extensions/extjs-formqtip.js</js>
+	<js>/js/extensions/extjs-gridctxmenuplugin.js</js>
+	<js>/js/extensions/extjs-textbox.js</js>
+	<js>/js/extensions/extjs-lovcombo.js</js>
+	<js>/js/extensions/extjs-gridprinter.js</js>
+	<js>/js/extensions/livegrid-all-debug.js</js>
+	<js>/js/extensions/showdown.js</js>
+  </group>
+
+  <group name="browser">
+    <js>/js/browser/opengenes.js</js>
+    <js>/js/browser/browser.js</js>
+    <js>/js/browser/features.js</js>
+    <js>/js/browser/featurepopup.js</js>
+  </group>
+
+  <group name="vardb">
+	<js>/js/vardb/namespace.js</js>
+	<js>/js/vardb/constants.js</js>
+	<js>/js/vardb/vardb.js</js>
+	<js>/js/vardb/cart.js</js>
+	<js>/js/vardb/grid.js</js>
+	<js>/js/vardb/login.js</js>
+	<js>/js/vardb/selectlist.js</js>
+	<js>/js/vardb/newuserform.js</js>
+	<js>/js/vardb/feedback.js</js>
+	<js>/js/vardb/edituserform.js</js>
+	<js>/js/vardb/comment.js</js>
+	<js>/js/vardb/comments.js</js>
+	<js>/js/vardb/mainmenu.js</js>
+	
+	<js>/js/vardb/resources/abstractform.js</js>
+	<js>/js/vardb/resources/resourcegrid.js</js>
+	<js>/js/vardb/resources/renderer.js</js>
+	<js>/js/vardb/resources/columnbuilder.js</js>
+	<js>/js/vardb/resources/download.js</js>
+	<js>/js/vardb/resources/properties.js</js>
+	<js>/js/vardb/resources/downloadsequencesdialog.js</js>
+	<js>/js/vardb/resources/downloadpropertiesdialog.js</js>
+	<js>/js/vardb/resources/sequencegrid.js</js>
+	<js>/js/vardb/resources/livesequencegrid.js</js>
+	<js>/js/vardb/resources/alignments.js</js>
+	<js>/js/vardb/resources/announcements.js</js>
+	<js>/js/vardb/resources/browsebycategory.js</js>
+	<js>/js/vardb/resources/chains.js</js>
+	<js>/js/vardb/resources/chromosomes.js</js>
+	<js>/js/vardb/resources/countries.js</js>
+	<js>/js/vardb/resources/diseases.js</js>
+	<js>/js/vardb/resources/drugs.js</js>
+	<js>/js/vardb/resources/families.js</js>
+	<js>/js/vardb/resources/genes.js</js>
+	<js>/js/vardb/resources/genomes.js</js>
+	<js>/js/vardb/resources/hierarchies.js</js>
+	<js>/js/vardb/resources/hierarchy.js</js>
+	<js>/js/vardb/resources/jmolform.js</js>
+	<js>/js/vardb/resources/orthologfamilies.js</js>
+	<js>/js/vardb/resources/paralogs.js</js>
+	<js>/js/vardb/resources/pathogens.js</js>
+	<js>/js/vardb/resources/pfams.js</js>
+	<js>/js/vardb/resources/refs.js</js>
+	<js>/js/vardb/resources/structures.js</js>
+	<js>/js/vardb/resources/taxa.js</js>
+	<js>/js/vardb/resources/terms.js</js>
+	<js>/js/vardb/resources/map.js</js>
+	<js>/js/vardb/resources/usersequencegrid.js</js>
+	<js>/js/vardb/resources/analyses.js</js>
+	<js>/js/vardb/resources/fieldcombo.js</js>
+	<js>/js/vardb/resources/uniquevaluescombo.js</js>
+	<js>/js/vardb/resources/filterform.js</js>
+	<js>/js/vardb/resources/sortdialog.js</js>
+	<js>/js/vardb/resources/summary.js</js>
+	<js>/js/vardb/resources/useralignments.js</js>
+	<js>/js/vardb/resources/uploadsequencesdialog.js</js>
+	<js>/js/vardb/resources/uploadalignmentdialog.js</js>
+	<js>/js/vardb/resources/useralignmentselectlist.js</js>
+
+	<js>/js/vardb/tags/applytagdialog.js</js>
+	<js>/js/vardb/tags/attributedialog.js</js>
+	<js>/js/vardb/tags/attributesummarydialog.js</js>
+	<js>/js/vardb/tags/bundle.js</js>
+	<js>/js/vardb/tags/bundles.js</js>
+	<js>/js/vardb/tags/definitiondialog.js</js>
+	<js>/js/vardb/tags/downloadbundledialog.js</js>
+	<js>/js/vardb/tags/editbundledialog.js</js>
+	<js>/js/vardb/tags/edittagdialog.js</js>
+	<js>/js/vardb/tags/joindialog.js</js>
+	<js>/js/vardb/tags/namepromptdialog.js</js>
+	<js>/js/vardb/tags/newtagdialog.js</js>
+	<js>/js/vardb/tags/services.js</js>
+	<js>/js/vardb/tags/summarydialog.js</js>
+	<js>/js/vardb/tags/tagcloud.js</js>
+	<js>/js/vardb/tags/uploadbundledialog.js</js>
+	<js>/js/vardb/tags/uploadjoindialog.js</js>
+	<js>/js/vardb/tags/uploadtagsdialog.js</js>
+	
+	<js>/js/vardb/popups/popup.js</js>
+	<js>/js/vardb/popups/sequencepopup.js</js>
+	<js>/js/vardb/popups/pathogenpopup.js</js>
+	<js>/js/vardb/popups/familypopup.js</js>
+	<js>/js/vardb/popups/diseasepopup.js</js>
+	<js>/js/vardb/popups/orthologpopup.js</js>
+	<js>/js/vardb/popups/refpopup.js</js>
+	<js>/js/vardb/popups/countrypopup.js</js>
+	<js>/js/vardb/popups/structurepopup.js</js>
+	<js>/js/vardb/popups/subgrouppopup.js</js>
+	<js>/js/vardb/popups/taxonpopup.js</js>
+	<js>/js/vardb/popups/genomepopup.js</js>
+	<js>/js/vardb/popups/chromosomepopup.js</js>
+	<js>/js/vardb/popups/term.js</js>
+
+	<js>/js/vardb/charts/gcchart.js</js>
+	<js>/js/vardb/charts/variabilitychart.js</js>
+	<js>/js/vardb/charts/aachart.js</js>
+	<js>/js/vardb/charts/codonchart.js</js>
+	<js>/js/vardb/charts/lengthchart.js</js>
+	<js>/js/vardb/charts/selectonchart.js</js>
+
+	<js>/js/vardb/analysis/alignmentviewerform.js</js>
+	<js>/js/vardb/analysis/codonusageform.js</js>
+	<js>/js/vardb/analysis/codonusagetable.js</js>
+	<js>/js/vardb/analysis/gblocksform.js</js>
+	<js>/js/vardb/analysis/hvalignform.js</js>
+	<js>/js/vardb/analysis/jalviewform.js</js>
+	<js>/js/vardb/analysis/mafftform.js</js>
+	<js>/js/vardb/analysis/codonalignform.js</js>
+	<js>/js/vardb/analysis/variabilityform.js</js>
+	<js>/js/vardb/analysis/blastclustform.js</js>
+	<js>/js/vardb/analysis/variabilitygrid.js</js>
+	<js>/js/vardb/analysis/selectonform.js</js>
+	<js>/js/vardb/analysis/oligorepform.js</js>
+	<js>/js/vardb/analysis/selectongrid.js</js>
+
+	<js>/js/vardb/blast/form.js</js>
+	<js>/js/vardb/blast/blastform.js</js>
+	<js>/js/vardb/blast/phiblastform.js</js>
+	<js>/js/vardb/blast/psiblastform.js</js>
+	<js>/js/vardb/blast/netblastform.js</js>
+	<js>/js/vardb/blast/expander.js</js>
+	<js>/js/vardb/blast/blastreader.js</js>
+	<js>/js/vardb/blast/grid.js</js>
+	<js>/js/vardb/blast/netblastgrid.js</js>
+	<js>/js/vardb/blast/chainhitsgrid.js</js>
+	<js>/js/vardb/blast/results.js</js>
+
+	<js>/js/vardb/quickcart/quickcart.js</js>
+	<js>/js/vardb/quickcart/quickcart_form.js</js>
+	<js>/js/vardb/quickcart/quickcart_grid.js</js>
+	<js>/js/vardb/quickcart/quickcart_tree.js</js>
+	<js>/js/vardb/quickcart/quicksearch.js</js>
+	
+	<js>/js/vardb/explorer/copydialog.js</js>
+	<js>/js/vardb/explorer/batchlookupdialog.js</js>
+	<js>/js/vardb/explorer/regexdialog.js</js>
+	<js>/js/vardb/explorer/gagdialog.js</js>
+	<js>/js/vardb/explorer/weblogo.js</js>
+	<js>/js/vardb/explorer/bundletab.js</js>
+	<js>/js/vardb/explorer/alignmenttab.js</js>
+	<js>/js/vardb/explorer/aligndialog.js</js>
+	<js>/js/vardb/explorer/blastclustdialog.js</js>
+	<js>/js/vardb/explorer/groupdialog.js</js>
+	<js>/js/vardb/explorer/sequencegrid.js</js>
+	<js>/js/vardb/explorer/carttab.js</js>
+	<js>/js/vardb/explorer/joindialog.js</js>
+	<js>/js/vardb/explorer/joingrid.js</js>
+	<js>/js/vardb/explorer/toolbar.js</js>
+	<js>/js/vardb/explorer/cartgrid.js</js>
+	<js>/js/vardb/explorer/bundlegrid.js</js>
+	<js>/js/vardb/explorer/alignmentgrid.js</js>
+	<js>/js/vardb/explorer/taskgrid.js</js>
+	<js>/js/vardb/explorer/accordian.js</js>
+	<js>/js/vardb/explorer/explorer.js</js>
+	
+	<js>/js/vardb/regex/regexform.js</js>
+	<js>/js/vardb/regex/sequencegrid.js</js>
+	<js>/js/vardb/regex/matchgrid.js</js>
+	<js>/js/vardb/regex/weblogo.js</js>
+	<js>/js/vardb/regex/results.js</js>
+
+	<js>/js/vardb/search/search.js</js>
+	<js>/js/vardb/search/queryform.js</js>
+	<js>/js/vardb/search/grid.js</js>
+	<js>/js/vardb/search/toolbar.js</js>
+	<js>/js/vardb/search/results.js</js>
+	<js>/js/vardb/search/history.js</js>
+
+	<js>/js/vardb/viewer/util.js</js>
+	<js>/js/vardb/viewer/renderer.js</js>
+	<js>/js/vardb/viewer/consensus.js</js>
+	<js>/js/vardb/viewer/charts.js</js>
+	<js>/js/vardb/viewer/analysis.js</js>
+	<js>/js/vardb/viewer/viewer.js</js>
+	<js>/js/vardb/viewer/toolbar.js</js>
+	
+	<js>/js/vardb/admin/users.js</js>
+	<js>/js/vardb/admin/logreport.js</js>
+  </group>
+
+</groups>

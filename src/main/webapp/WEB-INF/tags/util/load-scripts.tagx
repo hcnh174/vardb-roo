@@ -2,40 +2,430 @@
 
   <jsp:output omit-xml-declaration="yes" />
 
-  <link rel="shortcut icon" href="${config.webapp}/images/favicon.ico"/>
-	
-  <link rel="stylesheet" type="text/css" media="all" href="${config.extjsurl}/resources/css/ext-all.css"/>
-  <link href="${config.webapp}/css/yui-grids.css" rel="stylesheet" type="text/css" />
-  <link href="${config.webapp}/css/layout.css" rel="stylesheet" type="text/css" />
-  
-  <link href="${config.webapp}/css/layout.css" rel="stylesheet" type="text/css" />
-  <link href="${config.webapp}/css/general.css" rel="stylesheet" type="text/css" />
-  <link href="${config.webapp}/css/text.css" rel="stylesheet" type="text/css" />
-  <link href="${config.webapp}/css/table.css" rel="stylesheet" type="text/css" />
-  <link href="${config.webapp}/css/navigation.css" rel="stylesheet" type="text/css" />
+  <c:set var="extjsurl" value="/ext-4.0-pr1"/>
+	<spring:url value="/" var="webapp_url" />
+  <spring:url value="/wro" var="wro_url" />
 
-  <script src="${config.extjsurl}/adapter/ext/ext-base.js" type="text/javascript"><!-- spacer --></script>
-  <script src="${config.extjsurl}/ext-all.js" type="text/javascript"><!-- spacer --></script>
+  <link rel="shortcut icon" href="${config.webapp}/images/favicon.ico"/>
+
+  <link href="${extjsurl}/resources/css/ext.css" rel="stylesheet" type="text/css" media="all" />
+  <link href="${wro_url}/global.css" rel="stylesheet" type="text/css" />
+
+  <script src="${extjsurl}/bootstrap.js" type="text/javascript"><!-- spacer --></script>
   
-  <script src="${config.webapp}/api.js" type="text/javascript"><!-- spacer --></script>
-  <script src="${config.webapp}/js/vardb/namespace.js" type="text/javascript"><!-- spacer --></script>
-  <script src="${config.webapp}/js/vardb/vardb.js" type="text/javascript"><!-- spacer --></script>
-  <script src="${config.webapp}/js/vardb/util/utils.js" type="text/javascript"><!-- spacer --></script>
-  <script src="${config.webapp}/js/vardb/controls/announcements.js" type="text/javascript"><!-- spacer --></script>
-  <script src="${config.webapp}/js/vardb/controls/browsebycategory.js" type="text/javascript"><!-- spacer --></script>
-  <script src="${config.webapp}/js/vardb/controls/comment.js" type="text/javascript"><!-- spacer --></script>
-  <script src="${config.webapp}/js/vardb/controls/comments.js" type="text/javascript"><!-- spacer --></script>
-  <script src="${config.webapp}/js/vardb/controls/feedback.js" type="text/javascript"><!-- spacer --></script>
-  <script src="${config.webapp}/js/vardb/controls/login.js" type="text/javascript"><!-- spacer --></script>
-  <script src="${config.webapp}/js/vardb/controls/mainmenu.js" type="text/javascript"><!-- spacer --></script>
-  <script src="${config.webapp}/js/vardb/controls/navigation.js" type="text/javascript"><!-- spacer --></script>
+  <script src="${extjsurl}/examples/ux/RowExpander.js" type="text/javascript"><!-- spacer --></script>
+  
+  <script src="${webapp_url}api.js" type="text/javascript"><!-- spacer --></script>
+
+  <script src="${wro_url}/vardb.js" type="text/javascript"><!-- spacer --></script>
+  
+  <script src="/static/vardb.js" type="text/javascript"><!-- spacer --></script>
+  <script src="/static/util/utils.js" type="text/javascript"><!-- spacer --></script>
+  <script src="/static/controls/mainmenu.js" type="text/javascript"><!-- spacer --></script>
+  <script src="/static/controls/navigation.js" type="text/javascript"><!-- spacer --></script>
+  <script src="/static/controls/comment.js" type="text/javascript"><!-- spacer --></script>
+  <script src="/static/controls/comments.js" type="text/javascript"><!-- spacer --></script>
+  <script src="/static/controls/announcements.js" type="text/javascript"><!-- spacer --></script>
+  <script src="/static/controls/browsebycategory.js" type="text/javascript"><!-- spacer --></script>
+  
   
   <script type="text/javascript">
 
+  	var utils=null;
+  		
+	var navigation = {
+		sections:
+		[
+			{
+				"label": "Resources",
+				"links":
+				[
+					{
+						"label": "Homepage",
+						"href": "homepage.html",
+						"name": "homepage",
+						"tooltip": "Go back to the home page"
+					},
+					{
+						"label": "Gene families",
+						"href": "families.html",
+						"name": "families",
+						"tooltip": "Gene families involved in antigenic variation"
+					},
+					{
+						"label": "Pathogens",
+						"href": "pathogens.html",
+						"name": "pathogens",
+						"tooltip": "Pathogens and gene families involved in antigenic variation"
+					},
+					{
+						"label": "Infectious diseases",
+						"href": "diseases.html",
+						"name": "diseases",
+						"tooltip": "Diseases involving antigenic variation"
+					},			
+					{
+						"label": "Pfam families",
+						"href": "pfams.html",
+						"name": "pfam",
+						"tooltip": "Pfam families and domains"
+					},
+					{
+						"label": "Structures",
+						"href": "structures.html",
+						"name": "structures",
+						"tooltip": "PDB structures"
+					},
+					{
+						"label": "Alignments",
+						"href": "alignments.html",
+						"name": "alignments",
+						"tooltip": "Alignments"
+					},
+					{
+						"label": "Clinical data",
+						"href": "bundles.html",
+						"name": "bundles",
+						"tooltip": "Sequences annotated with published clinical data sets"
+					}
+				]
+			},
+			{
+				"label": "BLAST",
+				"links":
+				[
+					{
+						"label": "BLAST",
+						"href": "blast/blast.html",
+						"name": "blast",
+						"tooltip": "Perform a local BLAST search on sequences in varDB"
+					},
+					{
+						"label": "PSI-BLAST",
+						"href": "blast/psiblast.html",
+						"name": "psiblast",
+						"tooltip": "Perform a local PSI-BLAST search on sequences in varDB"
+					},
+					{
+						"label": "PHI-BLAST",
+						"href": "blast/phiblast.html",
+						"name": "phiblast",
+						"tooltip": "Perform a local PHI-BLAST search on sequences in varDB"
+					},
+					{
+						"label": "Netblast",
+						"href": "analysis/netblast.html",
+						"name": "netblast",
+						"tooltip": "Perform a remote BLAST search on sequences in GenBank"
+					},			
+					{
+						"label": "BLASTClust",
+						"href": "analysis/blastclust.html",
+						"name": "blastblast",
+						"tooltip": "Cluster sequences based on similarity using BLASTClust"
+					}
+				]
+			},
+			{
+				"label": "Tools",
+				"links":
+				[
+					{
+						"label": "MAFFT",
+						"href": "mafft.html",
+						"name": "mafft",
+						"tooltip": "Align sequences using MAFFT"
+					},
+					{
+						"label": "Alignment viewer",
+						"href": "alignments/view.html",
+						"name": "viewer",
+						"tooltip": "View multiple sequence alignment in simple browser-based alignment viewer"
+					},
+					{
+						"label": "Jalview",
+						"href": "jalview.html",
+						"name": "jalview",
+						"tooltip": "View multiple sequence alignment using Jalview"
+					},
+					{
+						"label": "H/V alignment tool",
+						"href": "analysis/hvalign.html",
+						"name": "hvalign",
+						"tooltip": "Align sequences with hypervariable regions"
+					},
+					{
+						"label": "RevTrans/PAL2NAL",
+						"href": "analysis/codonalign.html",
+						"name": "codonalign"
+					},
+					{
+						"label": "Pattern search",
+						"href": "regex/search.html",
+						"name": "regex",
+						"tooltip": "Search sequences using PROSITE or regular expression syntax"
+					},
+					{
+						"label": "Gblocks",
+						"href": "analysis/gblocks.html",
+						"name": "gblocks"
+					},
+					{
+						"label": "Analyze variability",
+						"href": "analysis/variability.html",
+						"name": "variability"
+					},
+					{
+						"label": "Codon usage",
+						"href": "analysis/codonusage.html",
+						"name": "codonusage",
+						"tooltip": "Analyze codon usage"
+					}
+				]
+			},
+			{
+				"label": "Documentation",
+				"links":
+				[
+					{
+						"label": "Tutorials",
+						"href": "tutorials.html",
+						"name": "tutorial",
+						"tooltip": "Demonstration of varDB features"
+					},
+					{
+						"label": "Antigenic variation",
+						"href": "antigenicvariation.html",
+						"name": "antigenicvariation",
+						"tooltip": "Mechanisms of antigenic variation"
+					},
+					{
+						"label": "varDB construction",
+						"href": "database.html",
+						"name": "database",
+						"tooltip": "Construction of varDB"
+					},
+					{
+						"label": "Terms",
+						"href": "terms.html",
+						"name": "terms",
+						"tooltip": "Antigenic variation related terms"
+					},
+					{
+						"label": "Links",
+						"href": "links.html",
+						"name": "links",
+						"tooltip": "Selected links to sites concerning infectious diseases, genomics, and antigenic variation"
+					},
+					{
+						"label": "Contact us",
+						"href": "contact.html",
+						"name": "contact",
+						"tooltip": "Contact the varDB staff"
+					}
+				]
+			}
+		]
+	};
+	
+	var categories = {"families":[{"identifier":"families","name":"All families"},{"identifier":
+	      "anaplasma.marginale.msp2","name":
+	      "Anaplasma marginale msp2 (440 sequences)"},{"identifier":
+	      "anaplasma.phagocytophilum.p44","name":
+	      "Anaplasma phagocytophilum p44 (383 sequences)"},{"identifier":
+	      "babesia.bovis.ves1","name":"Babesia bovis ves1a (462 sequences)"},{
+	      "identifier":"bordetella.pertussis.prnp","name":
+	      "Bordetella pertussis prn (191 sequences)"},{"identifier":
+	      "borrelia.burgdorferi.ospc","name":
+	      "Borrelia burgdorferi ospC (485 sequences)"},{"identifier":
+	      "borrelia.burgdorferi.vlse","name":
+	      "Borrelia burgdorferi vlsE (2439 sequences)"},{"identifier":
+	      "borrelia.duttonii.vlp","name":
+	      "Borrelia duttonii vlp (381 sequences)"},{"identifier":
+	      "borrelia.duttonii.vsp","name":
+	      "Borrelia duttonii vsp (42 sequences)"},{"identifier":
+	      "borrelia.hermsii.vlp","name":"Borrelia hermsii vlp (144 sequences)"},{
+	      "identifier":"borrelia.hermsii.vsp","name":
+	      "Borrelia hermsii vsp (37 sequences)"},{"identifier":
+	      "echinococcus.granulosus.agb","name":
+	      "Echinococcus granulosus antigen B (153 sequences)"},{"identifier":
+	      "ehrlichia.canis.msp4","name":"Ehrlichia canis msp4 (83 sequences)"},{
+	      "identifier":"ehrlichia.chaffeensis.omp","name":
+	      "Ehrlichia chaffeensis omp (123 sequences)"},{"identifier":
+	      "ehrlichia.ruminantium.map1","name":
+	      "Ehrlichia ruminantium MAP1 (157 sequences)"},{"identifier":
+	      "erysipelothrix.rhusiopathiae.spaa","name":
+	      "Erysipelothrix rhusiopathiae spaA (17 sequences)"},{"identifier":
+	      "giardia.lamblia.vsp","name":"Giardia lamblia VSP (3200 sequences)"},{
+	      "identifier":"human.immunodeficiency.virus.1.env","name":
+	      "HIV-1 ENV (1124 sequences)"},{"identifier":
+	      "human.immunodeficiency.virus.1.gag","name":
+	      "HIV-1 gag (1178 sequences)"},{"identifier":
+	      "human.immunodeficiency.virus.1.nef","name":
+	      "HIV-1 nef (1164 sequences)"},{"identifier":"hepatitis.c.virus.core",
+	      "name":"Hepatitis C virus Core (984 sequences)"},{"identifier":
+	      "hepatitis.c.virus.e2","name":"Hepatitis C virus E2 (536 sequences)"},{
+	      "identifier":"hepatitis.c.virus.polyprotein","name":
+	      "Hepatitis C virus Polyprotein (867 sequences)"},{"identifier":
+	      "influenza.a.virus.ha","name":
+	      "Influenza A virus HA (10564 sequences)"},{"identifier":
+	      "influenza.a.virus.na","name":
+	      "Influenza A virus NA (4811 sequences)"},{"identifier":
+	      "mycobacterium.tuberculosis.pe","name":
+	      "Mycobacterium tuberculosis pe (477 sequences)"},{"identifier":
+	      "mycobacterium.tuberculosis.ppe","name":
+	      "Mycobacterium tuberculosis ppe (371 sequences)"},{"identifier":
+	      "neisseria.gonorrhoeae.opa","name":
+	      "Neisseria gonorrhoeae opa (51 sequences)"},{"identifier":
+	      "neisseria.gonorrhoeae.opc","name":
+	      "Neisseria gonorrhoeae opc (4 sequences)"},{"identifier":
+	      "neisseria.gonorrhoeae.pilc","name":
+	      "Neisseria gonorrhoeae pilC (6 sequences)"},{"identifier":
+	      "neisseria.gonorrhoeae.pora","name":
+	      "Neisseria gonorrhoeae porA (1015 sequences)"},{"identifier":
+	      "neisseria.meningitidis.opa","name":
+	      "Neisseria meningitidis opa (581 sequences)"},{"identifier":
+	      "neisseria.meningitidis.opc","name":
+	      "Neisseria meningitidis opc (22 sequences)"},{"identifier":
+	      "neisseria.meningitidis.pilc","name":
+	      "Neisseria meningitidis pilC (19 sequences)"},{"identifier":
+	      "neisseria.meningitidis.pile_s","name":
+	      "Neisseria meningitidis pilE_S (68 sequences)"},{"identifier":
+	      "neisseria.meningitidis.pora","name":
+	      "Neisseria meningitidis porA (1486 sequences)"},{"identifier":
+	      "paracoccidioides.brasiliensis.gp43","name":
+	      "Paracoccidioides brasiliensis gp43 (253 sequences)"},{"identifier":
+	      "plasmodium.berghei.bir","name":
+	      "Plasmodium berghei bir (2483 sequences)"},{"identifier":
+	      "plasmodium.chabaudi.cir","name":
+	      "Plasmodium chabaudi cir (1619 sequences)"},{"identifier":
+	      "plasmodium.falciparum.rifin_stevor","name":
+	      "Plasmodium falciparum rifin_stevor (1172 sequences)"},{"identifier":
+	      "plasmodium.falciparum.var","name":
+	      "Plasmodium falciparum var (40252 sequences)"},{"identifier":
+	      "plasmodium.knowlesi.kir","name":
+	      "Plasmodium knowlesi kir (208 sequences)"},{"identifier":
+	      "plasmodium.vivax.vir","name":
+	      "Plasmodium vivax vir (2136 sequences)"},{"identifier":
+	      "plasmodium.yoelii.yir","name":
+	      "Plasmodium yoelii yir (4170 sequences)"},{"identifier":
+	      "pneumocystis.carinii.msg","name":
+	      "Pneumocystis carinii msg (73 sequences)"},{"identifier":
+	      "pneumocystis.jirovecii.msg","name":
+	      "Pneumocystis jirovecii msg (24 sequences)"},{"identifier":
+	      "streptococcus.pyogenes.m","name":
+	      "Streptococcus pyogenes M Protein (499 sequences)"},{"identifier":
+	      "theileria.sergenti.mpsp","name":
+	      "Theileria sergenti major piroplasm surface protein (19 sequences)"},{
+	      "identifier":"treponema.pallidum.tpr","name":
+	      "Treponema pallidum tpr (3 sequences)"},{"identifier":
+	      "trypanosoma.brucei.vsg","name":
+	      "Trypanosoma brucei vsg (1192 sequences)"}],"pathogens":[{"identifier":
+	      "pathogens","name":"All pathogens"},{"identifier":
+	      "anaplasma.marginale","name":"Anaplasma marginale (440 sequences)"},{
+	      "identifier":"anaplasma.phagocytophilum","name":
+	      "Anaplasma phagocytophilum (383 sequences)"},{"identifier":
+	      "babesia.bovis","name":"Babesia bovis (462 sequences)"},{"identifier":
+	      "bordetella.pertussis","name":"Bordetella pertussis (191 sequences)"},{
+	      "identifier":"borrelia.burgdorferi","name":
+	      "Borrelia burgdorferi (2924 sequences)"},{"identifier":
+	      "borrelia.duttonii","name":"Borrelia duttonii (423 sequences)"},{
+	      "identifier":"borrelia.hermsii","name":
+	      "Borrelia hermsii (181 sequences)"},{"identifier":
+	      "echinococcus.granulosus","name":
+	      "Echinococcus granulosus (153 sequences)"},{"identifier":
+	      "ehrlichia.canis","name":"Ehrlichia canis (83 sequences)"},{
+	      "identifier":"ehrlichia.chaffeensis","name":
+	      "Ehrlichia chaffeensis (123 sequences)"},{"identifier":
+	      "ehrlichia.ruminantium","name":
+	      "Ehrlichia ruminantium (157 sequences)"},{"identifier":
+	      "erysipelothrix.rhusiopathiae","name":
+	      "Erysipelothrix rhusiopathiae (17 sequences)"},{"identifier":
+	      "giardia.lamblia","name":"Giardia lamblia (3200 sequences)"},{
+	      "identifier":"human.immunodeficiency.virus.1","name":
+	      "HIV-1 (3466 sequences)"},{"identifier":"hepatitis.c.virus","name":
+	      "Hepatitis C virus (2387 sequences)"},{"identifier":
+	      "influenza.a.virus","name":"Influenza A virus (15375 sequences)"},{
+	      "identifier":"mycobacterium.tuberculosis","name":
+	      "Mycobacterium tuberculosis (848 sequences)"},{"identifier":
+	      "neisseria.gonorrhoeae","name":
+	      "Neisseria gonorrhoeae (1076 sequences)"},{"identifier":
+	      "neisseria.meningitidis","name":
+	      "Neisseria meningitidis (2176 sequences)"},{"identifier":
+	      "paracoccidioides.brasiliensis","name":
+	      "Paracoccidioides brasiliensis (253 sequences)"},{"identifier":
+	      "plasmodium.berghei","name":"Plasmodium berghei (2483 sequences)"},{
+	      "identifier":"plasmodium.chabaudi","name":
+	      "Plasmodium chabaudi (1619 sequences)"},{"identifier":
+	      "plasmodium.falciparum","name":
+	      "Plasmodium falciparum (41424 sequences)"},{"identifier":
+	      "plasmodium.knowlesi","name":"Plasmodium knowlesi (208 sequences)"},{
+	      "identifier":"plasmodium.vivax","name":
+	      "Plasmodium vivax (2136 sequences)"},{"identifier":
+	      "plasmodium.yoelii","name":"Plasmodium yoelii (4170 sequences)"},{
+	      "identifier":"pneumocystis.carinii","name":
+	      "Pneumocystis carinii (73 sequences)"},{"identifier":
+	      "pneumocystis.jirovecii","name":
+	      "Pneumocystis jirovecii (24 sequences)"},{"identifier":
+	      "streptococcus.pyogenes","name":
+	      "Streptococcus pyogenes (499 sequences)"},{"identifier":
+	      "theileria.sergenti","name":"Theileria sergenti (19 sequences)"},{
+	      "identifier":"treponema.pallidum","name":
+	      "Treponema pallidum (3 sequences)"},{"identifier":
+	      "trypanosoma.brucei","name":"Trypanosoma brucei (1192 sequences)"}],
+	  "diseases":[{"identifier":"diseases","name":"All diseases"},{"identifier":
+	      "anaplasmosis","name":"Anaplasmosis/Erlichiosis (440 sequences)"},{
+	      "identifier":"babesiosis","name":"Babesiosis (462 sequences)"},{
+	      "identifier":"cowdriosis","name":"Cowdriosis (157 sequences)"},{
+	      "identifier":"echinococcosis","name":
+	      "Echinococcosis (153 sequences)"},{"identifier":"ehrlichiosis","name":
+	      "Ehrlichiosis (589 sequences)"},{"identifier":"erysipelas","name":
+	      "Erysipelas (17 sequences)"},{"identifier":"giardiasis","name":
+	      "Giardiasis (3200 sequences)"},{"identifier":"gonorrhea","name":
+	      "Gonorrhea (1076 sequences)"},{"identifier":"hiv","name":
+	      "HIV (3466 sequences)"},{"identifier":"hepatitis","name":
+	      "Hepatitis (2387 sequences)"},{"identifier":"influenza","name":
+	      "Influenza (15375 sequences)"},{"identifier":"lyme_disease","name":
+	      "Lyme borreliosis (2924 sequences)"},{"identifier":"malaria","name":
+	      "Malaria (52040 sequences)"},{"identifier":"meningococcal_disease",
+	      "name":"Meningococcal Disease (2176 sequences)"},{"identifier":
+	      "paracoccidioidomycosis","name":
+	      "Paracoccidioidomycosis (253 sequences)"},{"identifier":"pertussis",
+	      "name":"Pertussis (191 sequences)"},{"identifier":
+	      "pneumocystis_pneumonia","name":
+	      "Pneumocystis pneumonia (97 sequences)"},{"identifier":
+	      "relapsing_fever","name":"Relapsing fever (604 sequences)"},{
+	      "identifier":"streptococcal_pharyngitis","name":
+	      "Streptococcal pharyngitis (499 sequences)"},{"identifier":
+	      "syphilis","name":"Syphilis (3 sequences)"},{"identifier":
+	      "theilerosis","name":"Theilerosis (19 sequences)"},{"identifier":
+	      "trypanosomiasis","name":"Trypanosomiasis (1192 sequences)"},{
+	      "identifier":"tuberculosis","name":"Tuberculosis (848 sequences)"}],
+	  "statistics":{"ntsequences":88539,"aasequences":50904}}
+	;
+
+	
 	Ext.onReady(function()
 	{
 		Ext.Direct.addProvider(Ext.app.REMOTING_API);
-		//alert("I'm ready!");
+		utils=vardb.util.Utils;
+
+		new vardb.controls.Navigation({renderTo: 'nav', data: navigation, cur: 'homepage'});
+		
+		new vardb.controls.MainMenu(
+		{
+			renderTo: 'mainmenudiv'
+		});
+		
+		var commentsgrid=new vardb.controls.Comments(
+		{
+			renderTo: 'commentsdiv',
+			type: 'PAGE',
+			identifier: 'homepage'
+		});
+		
+		new vardb.controls.Announcements({renderTo: 'announcements'});
+		new vardb.controls.BrowseByCategory({renderTo: 'browse_by_category', data: categories});
 	});
 	</script>
 </jsp:root>

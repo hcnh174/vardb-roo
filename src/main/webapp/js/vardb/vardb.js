@@ -1,32 +1,30 @@
-/*global Ext, nelson, utils, alert, VardbDirect */
-(vardb.Vardb=function()
+/*global Ext, utils, alert, VardbDirect */
+Ext.define('vardb.Vardb',
 {	
-	var webapp=utils.webapp;
-	
 	// init code
-	Ext.BLANK_IMAGE_URL = webapp+'/images/extjs/s.gif';
-	Ext.ux.GridPrinter.stylesheetPath=webapp+'/css/printgrid.css';
-	Ext.Ajax.timeout=600000;
+	//Ext.BLANK_IMAGE_URL = webapp+'/images/extjs/s.gif';
+	//Ext.ux.GridPrinter.stylesheetPath=webapp+'/css/printgrid.css';
+	//Ext.Ajax.timeout=600000;
 	
-	return {
-	
-	//webapp: utils.webapp,
-	chartswf: this.webapp+'/images/extjs/charts.swf',
-	
-	onReady:function()
+	statics:
 	{
-		Ext.QuickTips.init();
-		utils.createSpinner();
-		Ext.ux.Lightbox.register('a[rel^=lightbox]');
-		Ext.Direct.addProvider(VardbDirect);
-	},
-	
-	getTerm:function(identifier)
-	{
-		VardbDirect.term(identifier, function(provider, response)
+		onReady:function()
 		{
-			var popup=new nelson.vardb.popups.TermPopup({term: response.result});
-	    });
+			//Ext.QuickTips.init();
+			//utils.createSpinner();
+			//Ext.ux.Lightbox.register('a[rel^=lightbox]');
+			//Ext.Direct.addProvider(VardbDirect);
+		},
+		
+		getTerm:function(identifier)
+		{
+			VardbDirect.term(identifier, function(result,evt)
+			{
+				alert(result);
+				//var popup=new vardb.popups.TermPopup({term: response.result});
+		    });
+		}
 	}
-};}());
+});
+
 

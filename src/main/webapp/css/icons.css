@@ -1,0 +1,79 @@
+.upload-icon
+{
+	background: url('../images/icons/fileupload.png') no-repeat 0 0 !important;
+}
+
+.login-icon
+{
+	background: url('../images/icons/extjs-logindialog-locked.png') no-repeat 0 0 !important;
+}
+
+.icon-info
+{
+	background: url('../images/icons/silk-information.png') no-repeat 0 0 !important;
+}
+
+.icon-add
+{
+	background: url('../images/icons/silk-add.png') no-repeat 0 0 !important;
+}
+
+.icon-delete
+{
+	background: url('../images/icons/silk-cross.png') no-repeat 0 0 !important;
+}
+
+.icon-revolve
+{
+	background: url('../images/icons/silk-arrow_switch.png') no-repeat 0 0 !important;
+}
+
+.icon-print
+{
+	background: url('../images/icons/silk-printer.png') 0 no-repeat !important;
+}
+
+.icon-rss
+{
+	background: url('../images/icons/feed.png') 0 no-repeat !important;
+}
+
+.icon-email
+{
+	background: url('../images/icons/email.png') 0 no-repeat !important;
+}
+
+.icon-basket
+{
+	background: url('../images/icons/basket.png') 0 no-repeat !important;
+}
+
+.icon-basket_put
+{
+	background: url('../images/icons/basket_put.png') 0 no-repeat !important;
+}
+
+.icon-basket_remove
+{
+	background: url('../images/icons/basket_remove.png') 0 no-repeat !important;
+}
+
+.icon-excel
+{
+	background: url('../images/icons/page_white_excel.png') 0 no-repeat !important;
+}
+
+.icon-pdf
+{
+	background: url('../images/icons/page_white_acrobat.png') 0 no-repeat !important;
+}
+
+.icon-user_comment
+{
+	background: url('../images/icons/user_comment.png') 0 no-repeat !important;
+}
+
+.icon-chart_organisation
+{
+	background: url('../images/icons/chart_organisation.png') 0 no-repeat !important;
+}

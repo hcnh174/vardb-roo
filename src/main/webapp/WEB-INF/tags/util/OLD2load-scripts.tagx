@@ -1,0 +1,48 @@
+<jsp:root xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:fn="http://java.sun.com/jsp/jstl/functions" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+
+  <jsp:output omit-xml-declaration="yes" />
+
+  <c:set var="extjsurl" value="/ext-4.0-pr1"/>
+
+  <link rel="shortcut icon" href="${config.webapp}/images/favicon.ico"/>
+
+  <spring:url value="/wro" var="wro_url" />
+  
+  extensions
+
+  <link href="${extjsurl}/resources/css/ext-all.css" rel="stylesheet" type="text/css" media="all" />
+  <link href="${wro_url}/global.css" rel="stylesheet" type="text/css" />
+  <link href="${config.webapp}/css/layout.css" rel="stylesheet" type="text/css" />
+  
+  <link href="${config.webapp}/css/layout.css" rel="stylesheet" type="text/css" />
+  <link href="${config.webapp}/css/general.css" rel="stylesheet" type="text/css" />
+  <link href="${config.webapp}/css/text.css" rel="stylesheet" type="text/css" />
+  <link href="${config.webapp}/css/table.css" rel="stylesheet" type="text/css" />
+  <link href="${config.webapp}/css/navigation.css" rel="stylesheet" type="text/css" />
+
+  <script src="${config.extjsurl}/adapter/ext/ext-base.js" type="text/javascript"><!-- spacer --></script>
+  <script src="${config.extjsurl}/ext-all.js" type="text/javascript"><!-- spacer --></script>
+  
+  <script src="${config.webapp}/api.js" type="text/javascript"><!-- spacer --></script>
+  <script src="${config.webapp}/js/vardb/namespace.js" type="text/javascript"><!-- spacer --></script>
+  <script src="${config.webapp}/js/vardb/vardb.js" type="text/javascript"><!-- spacer --></script>
+  <script src="${config.webapp}/js/vardb/util/utils.js" type="text/javascript"><!-- spacer --></script>
+  <script src="${config.webapp}/js/vardb/controls/announcements.js" type="text/javascript"><!-- spacer --></script>
+  <script src="${config.webapp}/js/vardb/controls/browsebycategory.js" type="text/javascript"><!-- spacer --></script>
+  <script src="${config.webapp}/js/vardb/controls/comment.js" type="text/javascript"><!-- spacer --></script>
+  <script src="${config.webapp}/js/vardb/controls/comments.js" type="text/javascript"><!-- spacer --></script>
+  <script src="${config.webapp}/js/vardb/controls/feedback.js" type="text/javascript"><!-- spacer --></script>
+  <script src="${config.webapp}/js/vardb/controls/login.js" type="text/javascript"><!-- spacer --></script>
+  <script src="${config.webapp}/js/vardb/controls/mainmenu.js" type="text/javascript"><!-- spacer --></script>
+  <script src="${config.webapp}/js/vardb/controls/navigation.js" type="text/javascript"><!-- spacer --></script>
+  
+  <script type="text/javascript">
+
+	Ext.onReady(function()
+	{
+		Ext.Direct.addProvider(Ext.app.REMOTING_API);
+		//alert("I'm ready!");
+	});
+	</script>
+</jsp:root>
+

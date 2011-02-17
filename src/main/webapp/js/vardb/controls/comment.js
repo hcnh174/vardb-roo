@@ -1,6 +1,7 @@
 /*global Ext, vardb, utils */
-vardb.controls.CommentWindow = Ext.extend(Ext.Window,
+Ext.define('vardb.controls.CommentWindow',
 {
+	extend: 'Ext.window.Window',
 	title: 'Enter a comment',
 	//width: 500,
 	closable: true,

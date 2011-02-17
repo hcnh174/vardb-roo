@@ -1,6 +1,7 @@
-/*global Ext, nelson, vardb, utils */
-vardb.controls.MainMenu = Ext.extend(Ext.Toolbar,
+/*global Ext, vardb, utils */
+Ext.define('vardb.controls.MainMenu',
 {
+	extend: 'Ext.toolbar.Toolbar',
 	height: 25,
 	anonymous: true,
 	admin: false,
@@ -12,7 +13,7 @@ vardb.controls.MainMenu = Ext.extend(Ext.Toolbar,
 			defaults: {enableScrolling: false},
 			items:
 			[
-				this.createHomepageMenu(),'-',
+				this.createHomepageMenu(),'-',				
 				this.createResourceMenu(),'-',
 				this.createBlastMenu(),'-',
 				this.createToolMenu(),'-',
@@ -20,7 +21,7 @@ vardb.controls.MainMenu = Ext.extend(Ext.Toolbar,
 				this.createAdminMenu(),
 				'->',
 				this.createSearchSelect(),
-				this.createSearchTextBox(),'-',
+				this.createSearchTextBox(),
 				this.createSearchButton()
 			 ]
 		};
@@ -147,7 +148,7 @@ vardb.controls.MainMenu = Ext.extend(Ext.Toolbar,
 	createAdminMenu:function()
 	{
 		if (!this.admin)
-			{return '';}
+			{return ' ';}
 		var menu=
 		{
 			text: 'Admin',
@@ -169,6 +170,38 @@ vardb.controls.MainMenu = Ext.extend(Ext.Toolbar,
 	
 	createSearchSelect:function()
 	{
+		// Define the model for a State
+		Ext.regModel('searchtypemodel', {
+		    fields: [
+		        {type: 'string', name: 'value'},
+		        {type: 'string', name: 'display'}
+		    ]
+		});
+		
+		// The data store holding the states
+		var store = new Ext.data.Store({
+		    model: 'searchtypemodel',
+		    data:
+		    [
+		    	{value: 'SEQUENCES', display: 'Sequences'},
+		    	{value: 'GOOGLE', display: 'Google'}
+		    ]
+		});
+		
+		// Simple ComboBox using the data store
+		var combo = new Ext.form.ComboBox({
+		    //fieldLabel: 'Select a single state',
+		    displayField: 'display',
+		    width: 110,
+		    labelWidth: 0,
+		    //labelWidth: 130,
+		    store: store,
+		    queryMode: 'local',
+		    value: 'SEQUENCES',
+		    typeAhead: true
+		});
+		
+		/*
 		var combo=new Ext.form.ComboBox(
 		{
 			store: new Ext.data.ArrayStore(
@@ -177,23 +210,72 @@ vardb.controls.MainMenu = Ext.extend(Ext.Toolbar,
 				data: [['SEQUENCES','Sequences'],['GOOGLE','Google']]
 			}),
 			itemId: 'searchtype',
-			hiddenName: 'type',
+			//hiddenName: 'type',
 			valueField: 'value',
 			displayField: 'display',
 			width: 110,
-			mode: 'local',
+			//mode: 'local',
 			triggerAction: 'all',
 			value: 'SEQUENCES',
 			selectOnFocus: true,
 			forceSelection: true
 		});
+		*/
 		return combo;
 	},
-	
+
 	createSearchTextBox:function()
 	{
 		var self=this;
 		
+		Ext.regModel('suggestionmodel', {
+		    fields: [
+		        {type: 'string', name: 'value'},
+		        {type: 'string', name: 'display'}
+		    ]
+		});
+		
+		// The data store holding the states
+		var store = new Ext.data.Store({
+		    model: 'suggestionmodel',
+		    data:
+		    [
+		    	{value: 'pathogen:plasmodium.falciparum', display: 'Plasmodium falciparum'},
+		    	{value: 'pathogen:babesia.bovia', display: 'Babesia bovia'}
+		    ]
+		});
+		
+		var combo=new Ext.form.ComboBox(
+		{
+			itemId: 'searchtextbox',
+			store: store,
+			minChars: 2,
+			displayField: 'display', //'keyword',
+			listLoadingText: 'Searching...',
+			labelWidth: 0,
+			width: 150,
+			listWidth: 200,
+			hideTrigger: true,
+			emptyText: 'Search...',
+			queryDelay: 800,
+			forceSelection: false,
+			foundMatch: false,
+			listeners:
+			{
+				select: function(field,record,index)
+				{
+					this.foundMatch=true;
+				},
+				specialkey: function(field,e)
+				{
+					if (e.getKey()===e.ENTER && this.foundMatch)
+						{self.submitSearchHandler();}
+				}
+			}
+		});
+		return combo;
+		
+		/*
 		var store = new Ext.data.Store(
 		{
 			url: utils.webapp+'/search/ajax/suggestions.json',
@@ -210,8 +292,7 @@ vardb.controls.MainMenu = Ext.extend(Ext.Toolbar,
 			]),
 			baseParams: {limit:20}
 		});
-	
-		//var tpl=new Ext.XTemplate('<tpl for"."><div class="x-combo-list-item">{keyword} ({type})</div>');
+				
 		var combo=new Ext.form.ComboBox(
 		{
 			itemId: 'searchtextbox',
@@ -242,11 +323,12 @@ vardb.controls.MainMenu = Ext.extend(Ext.Toolbar,
 			}
 		});
 		return combo;
+		*/
 	},
 	
 	createSearchButton:function()
 	{
-		var button=new Ext.Button(
+		var button=new Ext.button.Button(
 		{
 			text: 'Go',
 			width: 32,

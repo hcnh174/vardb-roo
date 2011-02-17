@@ -24,6 +24,7 @@ public class VardbController {
 
 	@Resource(name="userService") private UserService userService;	
 	
+	/*
 	@ModelAttribute("config")
 	public Map<String,Object> preloadConfig(HttpServletRequest request, HttpServletResponse response, Principal user)
 	{
@@ -37,6 +38,7 @@ public class VardbController {
 		config.put("lastUpdated", new Date());//getLastUpdatedDate());  // hack!
 		return config;
 	}
+	*/
 	
 	/*
 	public static Date getLastUpdatedDate()
@@ -47,10 +49,10 @@ public class VardbController {
 		return date;
 	}
 	*/
-    @RequestMapping("/homepage.html")
+    @RequestMapping("/index.html")
     public String homepage() {
     	userService.testUserRepository();
-        return "homepage";
+        return "index";
     }
     
     @RequestMapping("/login.html")
@@ -80,6 +82,7 @@ public class VardbController {
 	}
 	
 	/////////////////////////////////////////////////////////////
+	
 	
 	@RequestMapping("/ajax/announcements.xml")
 	public void announcementsRss(HttpServletResponse response)

@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
-<web-app xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.0"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+	http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
 
     
     <display-name>vardb-roo</display-name>
     
-    <description>Roo generated vardb-roo application</description>
+    <description>VarDB based on Roo and Maven</description>
 
     
     <!-- Enable escaping of form submission contents -->
@@ -122,6 +125,7 @@
      
     <session-config>
         <session-timeout>10</session-timeout>
+        <tracking-mode>COOKIE</tracking-mode>
     </session-config>
     
     <error-page>
@@ -133,4 +137,5 @@
         <error-code>404</error-code>
         <location>/resourceNotFound</location>
     </error-page>
+
 </web-app>

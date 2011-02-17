@@ -1,6 +1,7 @@
 /*global Ext, vardb */
-vardb.controls.Comments = Ext.extend(Ext.Panel,
-{	
+Ext.define('vardb.controls.Comments',
+{
+	extend: 'Ext.panel.Panel',
 	width: '600',
 	autoScroll: true,
 	pagesize: 5,
@@ -14,6 +15,32 @@ vardb.controls.Comments = Ext.extend(Ext.Panel,
 		if (!this.identifier)
 			{throw 'vardb.controls.Comments: identifier not set';}
 			
+		
+
+		Ext.regModel('comment', {
+		    fields:
+			[
+				{name: 'id', type: 'int'},
+				{name: 'username'},
+				{name: 'type'},
+				{name: 'identifier'},
+				{name: 'text'},
+				{name: 'date'}
+			]
+		});
+		
+		var store=new Ext.data.Store({
+		    model: 'User',
+		    proxy: {
+		        type: 'ajax',
+		        url : utils.webapp+'/ajax/comments.json',
+		        reader: 'json'
+		    },
+		    autoLoad: true
+		});
+
+		
+		/*
 		var reader = new Ext.data.JsonReader(
 		{
 			root: 'comments',
@@ -29,7 +56,7 @@ vardb.controls.Comments = Ext.extend(Ext.Panel,
 				{name: 'date'}
 			]
 		});
-
+		
 		var store=new Ext.data.Store(
 		{
 			url: utils.webapp+'/ajax/comments.json',
@@ -38,6 +65,7 @@ vardb.controls.Comments = Ext.extend(Ext.Panel,
 			sortInfo: {field: 'date', direction: 'DESC'},
 			baseParams: {type: this.type, identifier: this.identifier}
 		});
+		*/
 		
 		// Custom rendering Template for the View
 		var resultTpl = new Ext.XTemplate('' +
@@ -95,7 +123,7 @@ vardb.controls.Comments = Ext.extend(Ext.Panel,
 	submitHandler:function()
 	{
 		var self=this;
-		var win=new nelson.vardb.widgets.CommentWindow(
+		var win=new vardb.controls.CommentWindow(
 		{
 			type: self.type,
 			identifier: self.identifier,
