@@ -31,6 +31,11 @@
     </scm>
 	<repositories>
 		<repository>
+			<id>weka-maven-repo</id>
+			<name>Weka repository</name>
+			<url>http://ir.dcs.gla.ac.uk/~bpiwowar/maven</url>	
+		</repository>
+		<repository>
 			<id>biojava-maven-repo</id>
 			<name>BioJava repository</name>
 			<url>http://www.biojava.org/download/maven/</url>	
@@ -574,7 +579,12 @@
 		    <groupId>servlets.com</groupId>
 		    <artifactId>cos</artifactId>
 		    <version>05Nov2002</version>
-		</dependency>	
+		</dependency>
+		<dependency>
+		   <groupId>weka</groupId>
+			<artifactId>weka</artifactId>
+			<version>3.6.0</version>	
+		</dependency>		
 		<!-- FINDME -->		
     <dependency>
             <groupId>org.springframework</groupId>
