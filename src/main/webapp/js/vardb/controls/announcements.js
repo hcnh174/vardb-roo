@@ -15,6 +15,7 @@ Ext.define('vardb.controls.Announcements',
 	
 	initComponent:function()
 	{
+		/*
 		var fields=
 		[
 			{name: 'title'},
@@ -24,24 +25,72 @@ Ext.define('vardb.controls.Announcements',
 			{name: 'description'},
 			{name: 'content'}
 		];
-
-		/*
-		var expander = new Ext.ux.grid.RowExpander({
-	        tpl : new Ext.Template(
+		
+		var expander = new Ext.ux.RowExpander({
+	        rowBodyTpl : new Ext.Template(
 	            '<p>{description}</p>'
 	        )
 	    });
-	    */
+		*/
 		
+		Ext.regModel('announcement', {
+		    fields:
+			[
+				{name: 'title'},
+				{name: 'author'},
+				{name: 'pubDate', type:'date'},
+				{name: 'link'},
+				{name: 'description'},
+				{name: 'content'}
+			]
+		});
+		
+		/*
+		var proxy = new Ext.data.AjaxProxy({
+		    model: 'User',
+		    reader: {
+		        type: 'xml',
+		        root: 'users'
+		    }
+		});
+		*/
+		
+		var store=new Ext.data.Store({
+		    model: 'announcement',
+		    proxy: {
+		        type: 'ajax',
+		        url : 'ajax/announcements.xml',
+		        reader: {
+			        type: 'xml',
+			        root: 'item'
+			    }
+		    },
+		    autoLoad: true
+		});
+		
+		
+		
+		/*
 		var store = new Ext.data.Store({
-			url: utils.webapp+'/ajax/announcements.xml',
+			url: 'ajax/announcements.xml',
 			reader: new Ext.data.XmlReader({record: 'item'},fields),
 			sortInfo: {field: 'pubDate', direction: 'DESC'}
 		});
-
+		*/
+		
+		/*
+		var expander = new Ext.ux.RowExpander({
+	        rowBodyTpl : new Ext.Template(
+	            '<p>{description}</p>'
+	        )
+	    });
+		*/
+		
+		/*
 		store.on('load', function(){
-			//expander.expandRow(0);
+			expander.expandRow(0);
 		});
+		*/
 		store.load();
 
 		var config=
@@ -55,7 +104,15 @@ Ext.define('vardb.controls.Announcements',
 				{header: "Date", dataIndex: 'pubDate', width: 50, renderer: Ext.util.Format.dateRenderer('M j, Y')},
 				{header: "Link", dataIndex: 'link', width: 20, renderer: this.renderLink}
 			],
-			//plugins: expander,
+			/*
+			plugins:
+			[
+				{
+		            ptype: 'rowexpander',
+		            rowBodyTpl : '<p>{description}</p>'
+        		}
+        	],
+        	*/
 			bbar: new Ext.PagingToolbar(
 			{
 				pageSize: 1,

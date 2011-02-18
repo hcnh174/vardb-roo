@@ -34,11 +34,11 @@
 						
 						Here is a term: <a href="javascript:vardb.Vardb.getTerm('antigenic_variation')" id='term_antigenic_variation_link'>antigenic variation</a><br/>
 	
-						<div id="announcements">spacer</div><br/>
-						<div id="browse_by_category">spacer</div><br/>
+						<div id="announcements"> </div><br/>
+						<div id="browse_by_category"> </div><br/>
 						
 						<br/>
-						<div id="commentsdiv">spacer</div>
+						<div id="commentsdiv"> </div>
 					</div>
 				</div>
 			</div>

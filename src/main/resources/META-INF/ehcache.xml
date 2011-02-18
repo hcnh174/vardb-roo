@@ -45,6 +45,12 @@
         eternal="true"
         overflowToDisk="false"
         />
+        
+    <cache name="users"
+        maxElementsInMemory="20"
+        eternal="true"
+        overflowToDisk="false"
+        />
 
 </ehcache>
 

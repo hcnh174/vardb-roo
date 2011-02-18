@@ -1,23 +1,22 @@
 package org.vardb.web;
 
-import java.security.Principal;
-import java.util.Date;
-import java.util.Map;
+import java.util.List;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.vardb.resources.Comment;
+import org.vardb.resources.CommentRepository;
 import org.vardb.users.UserService;
 import org.vardb.util.CWebHelper;
-
-import com.google.common.collect.Maps;
 
 @Controller
 public class VardbController {
@@ -91,5 +90,29 @@ public class VardbController {
 		String rssFeed="http://groups.google.com/group/vardb-announce/feed/rss_v2_0_msgs.xml";
 		int rssMax=10;
 		CWebHelper.write(response,CWebHelper.readRss(rssFeed,rssMax));
+	}
+	
+	//////////////////////////////////////////////////////////////
+	
+	@Autowired private CommentRepository commentRepository;
+	
+	@RequestMapping(value="/ajax/comments.json")
+	public void comments(Model model, HttpServletResponse response,
+			@RequestParam("type") String type,
+			@RequestParam("identifier") String identifier,
+			@RequestParam(value="start", required=false, defaultValue="0") Integer start,
+			@RequestParam(value="limit", required=false, defaultValue="10") Integer limit)
+	{
+		Pageable paging=new PageRequest(start,limit);
+		int total=(int)Comment.countComments();
+		List<Comment> comments=commentRepository.findByTypeAndIdentifier(type, identifier);
+		json(response,"total",total,"records",comments);
+	}
+	
+	/////////////////////////////////////////
+	
+	protected String json(HttpServletResponse response, Object... args)
+	{
+		return CWebHelper.json(response,args);
 	}
 }

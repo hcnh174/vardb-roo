@@ -13,7 +13,7 @@ Ext.define('vardb.popups.TermPopup',
 		var self=this;
 		var config=
 		{
-			items: new Ext.TabPanel(
+			items: new Ext.tab.TabPanel(
 			{
 				activeTab: 0,
 				deferredRender: false,

@@ -4,7 +4,7 @@ Ext.define('vardb.controls.NewUserForm',
 	extend: 'Ext.form.FormPanel',
 	title: 'User information',
 	labelWidth: 75,
-	url: utils.webapp+'/newuser.html',
+	//url: utils.webapp+'/newuser.html',
 	frame: true,
 	width: 550,
 	bodyStyle: 'padding: 5px 5px 0',
@@ -15,15 +15,16 @@ Ext.define('vardb.controls.NewUserForm',
 	{
 		var config=
 		{
-			initialConfig: {standardSubmit: true},
-			defaults: {width: 300, allowBlank: false},
+			//initialConfig: {standardSubmit: true},
+			paramsAsHash: true,
+			fieldDefaults: {width: 300, allowBlank: false},
 			items:
 			[
 				{
 					fieldLabel: 'Username*',
-					name: 'username',
-					plugins: [Ext.ux.plugins.RemoteValidator],
-					rvOptions: {url: vardb.webapp+'/ajax/validate/user.json'}
+					name: 'username'
+					//plugins: [Ext.ux.plugins.RemoteValidator],
+					//rvOptions: {url: vardb.webapp+'/ajax/validate/user.json'}
 				},
 				{
 					fieldLabel:'Password*',
@@ -65,17 +66,25 @@ Ext.define('vardb.controls.NewUserForm',
 			[
 				{
 					text: 'Submit',
-					formBind: true,
+					//formBind: true,
 					scope: this,
 					handler: this.submitHandler
 				},
 				{
 					text: 'Reset',
-					formBind: true,
+					//formBind: true,
 					scope: this,
 					handler: function(){this.getForm().reset();}
 				}			
-			]
+			],
+			initialConfig:
+			{
+				api:
+				{
+					load: vardbDirect.getNewUserForm,
+					submit: vardbDirect.postNewUserForm
+				}
+			}
 		};
 		
 		Ext.apply(this, Ext.apply(this.initialConfig, config));
@@ -85,12 +94,21 @@ Ext.define('vardb.controls.NewUserForm',
 	onRender:function()
 	{
 		vardb.controls.NewUserForm.superclass.onRender.apply(this, arguments);
-		this.on('afterlayout', function(){this.getForm().findField('username').focus();},this);
+		//this.on('afterlayout', function(){this.getForm().findField('username').focus();},this);
+		this.getForm().load();
+		this.getForm().findField('username').focus();
 	},
 	
 	submitHandler:function()
 	{
 		var form=this.getForm();
+		
+		form.getFields().each(function(field) {
+			field.validate();
+		});
+		if(!form.isValid())
+			{return;}
+		
 		var password1=form.findField('password1').getValue();
 		var password2=form.findField('password2').getValue();
 		if (password1!==password2)
@@ -110,8 +128,11 @@ Ext.define('vardb.controls.NewUserForm',
 			form.findField('email2').setValue('');
 			return;
 		}
+		form.submit();
+		/*
 		form.getEl().dom.action=utils.webapp+'/newuser.html';
 		form.getEl().dom.method='post';
 		form.getEl().dom.submit();
+		*/
 	}
 });

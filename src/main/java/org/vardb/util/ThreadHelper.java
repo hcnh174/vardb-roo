@@ -8,8 +8,8 @@ public final class ThreadHelper
 	public static void sleep(long millis)
 	{
 		System.out.println("going to sleep: "+millis+" milliseconds");
-		//CStopwatch stopwatch=new CStopwatch();
-		//stopwatch.start();
+		Stopwatch stopwatch=new Stopwatch();
+		stopwatch.start();
 		try
 		{
 			Thread.sleep(millis);
@@ -18,6 +18,6 @@ public final class ThreadHelper
 		{
 			CStringHelper.println("sleep interrupted: "+e);
 		}
-		//System.out.println("waking up after "+stopwatch.stop()+" milliseconds");
+		System.out.println("waking up after "+stopwatch.stop()+" milliseconds");
 	}
 }

@@ -14,7 +14,19 @@ Ext.define('vardb.controls.Comments',
 			{throw 'vardb.controls.Comments: type not set';}
 		if (!this.identifier)
 			{throw 'vardb.controls.Comments: identifier not set';}
-			
+
+			/*
+		var store = new Ext.data.DirectStore( {
+			id: 'commentstore',
+			paramsAsHash: true,
+			root: 'records',
+			totalProperty: 'total',
+			remoteSort: true,
+			directFn: vardbDirect.loadComments,
+			fields: ['id', 'accession', 'strain', 'description']
+		});
+		store.load({params:{start: 0, limit: 10}});
+		*/
 		
 
 		Ext.regModel('comment', {
@@ -30,15 +42,15 @@ Ext.define('vardb.controls.Comments',
 		});
 		
 		var store=new Ext.data.Store({
-		    model: 'User',
+		    model: 'comment',
 		    proxy: {
 		        type: 'ajax',
-		        url : utils.webapp+'/ajax/comments.json',
-		        reader: 'json'
+		        url : 'ajax/comments.json',
+		        reader: 'json',
+		        extraParams: {type: this.type, identifier: this.identifier}
 		    },
-		    autoLoad: true
+		    autoLoad: true		    
 		});
-
 		
 		/*
 		var reader = new Ext.data.JsonReader(

@@ -8,6 +8,7 @@ import javax.annotation.Resource;
 
 import org.dom4j.Element;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -17,6 +18,7 @@ import org.vardb.util.CBeanHelper;
 import org.vardb.util.CDateHelper;
 import org.vardb.util.CDom4jHelper;
 import org.vardb.util.CStringHelper;
+import org.vardb.util.ThreadHelper;
 import org.vardb.util.services.EmailService;
 
 @Service("userService")
@@ -59,8 +61,11 @@ public class UserServiceImpl implements UserService
 	*/
 	
 	@Override
+	//@Cacheable("users")
 	public UserDetails loadUserByUsername(String username)
 	{
+		//System.out.println("looking up user");
+		//ThreadHelper.sleep(5000);
 		User user=findUserByUsername(username);
 		if (user==null)
 			throw new UsernameNotFoundException(username);
