@@ -1,6 +1,7 @@
 /*global Ext, vardb */
-vardb.analysis.SelectonGrid = Ext.extend(vardb.util.Grid,
-{	
+Ext.define('vardb.analysis.SelectonGrid',
+{
+	extend: 'vardb.util.Grid',
 	frame: true,
 	width: 500,
 	height: 500,

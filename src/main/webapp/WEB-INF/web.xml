@@ -62,6 +62,14 @@
 	    <param-name>gzipResources</param-name>
 	    <param-value>FALSE</param-value>
 	  </init-param>
+	  <init-param>
+	      <param-name>cacheUpdatePeriod</param-name>
+	      <param-value>0</param-value>
+	    </init-param>
+	    <init-param>
+	      <param-name>modelUpdatePeriod</param-name>
+	      <param-value>0</param-value>
+	    </init-param>	  
 	</filter>
     
     <filter-mapping>

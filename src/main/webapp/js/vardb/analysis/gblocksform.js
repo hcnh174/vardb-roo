@@ -1,6 +1,7 @@
 /*global Ext, vardb */
-vardb.analysis.GblocksForm = Ext.extend(vardb.util.AbstractForm,
-{	
+Ext.define('vardb.analysis.GblocksForm',
+{
+	extend: 'vardb.util.AbstractForm',
 	title: 'Gblocks',
 	width: 580,
 	bodyStyle: 'padding: 10px 10px 0 10px;',

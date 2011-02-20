@@ -1,4 +1,4 @@
-/*global Ext, nelson, vardb */
+/*global Ext, vardb */
 Ext.define('vardb.controls.FeedbackForm',
 {
 	extend: 'Ext.form.FormPanel',

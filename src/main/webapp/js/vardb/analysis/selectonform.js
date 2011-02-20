@@ -1,6 +1,7 @@
 /*global Ext, vardb */
-vardb.analysis.SelectonForm = Ext.extend(vardb.util.AbstractForm,
-{	
+Ext.define('vardb.analysis.SelectonForm',
+{
+	extend: 'vardb.util.AbstractForm',
 	title: 'Selecton',
 	width: 580,
 	bodyStyle: 'padding: 10px 10px 0 10px;',

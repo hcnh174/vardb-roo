@@ -1,6 +1,7 @@
 /*global Ext, vardb */
-vardb.analysis.MafftForm = Ext.extend(vardb.util.AbstractForm,
+Ext.define('vardb.analysis.MafftForm',
 {
+	extend: 'vardb.util.AbstractForm',
 	title: 'Align sequences using MAFFT',
 	width: 600,
 	standardSubmit: true,

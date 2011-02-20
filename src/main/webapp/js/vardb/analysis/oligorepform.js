@@ -1,6 +1,7 @@
 /*global Ext, vardb */
-vardb.analysis.OligoRepForm = Ext.extend(vardb.util.AbstractForm,
-{	
+Ext.define('vardb.analysis.OligoRepForm',
+{
+	extend: 'vardb.util.AbstractForm',
 	title: 'Oligo Repeat Finder',
 	width: 580,
 	bodyStyle: 'padding: 10px 10px 0 10px;',

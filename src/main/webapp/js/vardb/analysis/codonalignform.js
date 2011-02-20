@@ -1,4 +1,7 @@
 /*global Ext, vardb */
+Ext.define('vardb.controls.FeedbackForm',
+{
+	extend: 'Ext.form.FormPanel',
 vardb.AbstractCodonAlignForm = Ext.extend(vardb.util.AbstractForm,
 {	
 	width: 580,

@@ -1,6 +1,7 @@
 /*global Ext, vardb, alert */
-vardb.util.Grid = Ext.extend(Ext.grid.GridPanel,
+Ext.define('vardb.util.Grid',
 {
+	extend: 'Ext.grid.GridPanel',
 	stripeRows: true,
 
 	initComponent:function()

@@ -1,6 +1,7 @@
 /*global Ext, vardb */
-vardb.analysis.BlastClustForm = Ext.extend(vardb.util.AbstractForm,
+Ext.define('vardb.analysis.BlastClustForm',
 {
+	extend: 'vardb.util.AbstractForm',
 	title: 'BLASTclust',
 	width: 580,
 	labelWidth: 35,

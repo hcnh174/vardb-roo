@@ -1,6 +1,7 @@
 /*global Ext, vardb */
-vardb.analysis.CodonUsageTable=Ext.extend(Ext.TabPanel,
+Ext.define('vardb.analysis.CodonUsageTable',
 {
+	extend: 'Ext.TabPanel',
 	title: 'Codon usage',
 	frame: true,
 	autoHeight: true,

@@ -1,6 +1,7 @@
 /*global Ext, vardb */
-vardb.analysis.CodonUsageForm = Ext.extend(vardb.util.AbstractForm,
-{	
+Ext.define('vardb.analysis.CodonUsageForm',
+{
+	extend: 'vardb.util.AbstractForm',
 	title: 'Codon Usage',
 	width: 580,
 	bodyStyle: 'padding: 10px 10px 0 10px;',

@@ -1,6 +1,8 @@
 /*global Ext, vardb */
-vardb.util.AbstractForm = Ext.extend(Ext.form.FormPanel,
-{	
+/*global Ext, vardb */
+Ext.define('vardb.util.AbstractForm',
+{
+	extend: 'Ext.form.FormPanel',
 	collapsible: false,
 	frame: true,
 	bodyStyle: 'padding: 5px 5px 0 5px;',

@@ -11,6 +11,15 @@ import com.google.common.collect.ForwardingTable;
 import com.google.common.collect.HashBasedTable;
 import com.google.common.collect.Table;
 
+
+/*
+DataFrame<Integer,String,String> dataframe=new DataFrame<Integer,String,String>();//("patientid","name","birthdate");
+dataframe.put(8888,"name","Bob Jones");
+dataframe.put(8888,"birthdate","1/1/2001");
+dataframe.put(9999,"name","Rita Smith");
+dataframe.put(9999,"birthdate","9/9/1999");
+System.out.println(dataframe.toString());
+*/
 public class DataFrame<R,C,V> extends ForwardingTable<R,C,V> {
 
 	protected HashBasedTable<R,C,V> dataframe=HashBasedTable.create();
@@ -22,6 +31,16 @@ public class DataFrame<R,C,V> extends ForwardingTable<R,C,V> {
 	public DataFrame(String... colnames)
 	{
 		this.colnames.addAll(Arrays.asList(colnames));
+	}
+	
+	public int getNumColumns()
+	{
+		return columnKeySet().size();
+	}
+	
+	public int getNumRows()
+	{
+		return rowKeySet().size();
 	}
 	
 	@Override

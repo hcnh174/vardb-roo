@@ -1,6 +1,7 @@
 /*global Ext, vardb */
-vardb.analysis.VariabilityForm = Ext.extend(vardb.util.AbstractForm,
-{	
+Ext.define('vardb.analysis.VariabilityForm',
+{
+	extend: 'vardb.util.AbstractForm',
 	title: 'Variability',
 	width: 580,
 	bodyStyle: 'padding: 10px 10px 0 10px;',

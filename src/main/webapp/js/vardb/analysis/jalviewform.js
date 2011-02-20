@@ -1,6 +1,7 @@
 /*global Ext, vardb */
-vardb.analysis.JalviewForm = Ext.extend(vardb.util.AbstractForm,
-{	
+Ext.define('vardb.analysis.JalviewForm',
+{
+	extend: 'vardb.util.AbstractForm',
 	title: 'Open alignment in Jalview',
 	width: 580,
 	labelWidth: 50,

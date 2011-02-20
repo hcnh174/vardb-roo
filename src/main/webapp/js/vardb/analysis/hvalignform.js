@@ -1,6 +1,7 @@
 /*global Ext, vardb */
-vardb.analysis.HvAlignForm = Ext.extend(vardb.util.AbstractForm,
-{	
+Ext.define('vardb.analysis.HvAlignForm',
+{
+	extend: 'vardb.util.AbstractForm',
 	title: 'Align protein hypervariable regions',
 	width: 580,
 	labelWidth: 50,

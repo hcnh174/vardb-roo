@@ -1,6 +1,7 @@
 /*global Ext, vardb */
-vardb.analysis.AlignmentViewerForm = Ext.extend(vardb.util.AbstractForm,
-{	
+Ext.define('vardb.analysis.AlignmentViewerForm',
+{
+	extend: 'Ext.extend(vardb.util.AbstractForm',
 	title: 'Inspect alignments using a simple browser-based alignment viewer',
 	width: 580,
 	labelWidth: 50,

@@ -17,23 +17,7 @@
   
   <script src="${webapp_url}api.js" type="text/javascript"><!-- spacer --></script>
 
-	<!-- 
-  <script src="${wro_url}/vardb.js" type="text/javascript">
-  //nothing
-  </script>
-   -->
-  <script src="/static/vardb.js" type="text/javascript"><!-- spacer --></script>
-  <script src="/static/util/utils.js" type="text/javascript"><!-- spacer --></script>
-  <script src="/static/controls/mainmenu.js" type="text/javascript"><!-- spacer --></script>
-  <script src="/static/controls/navigation.js" type="text/javascript"><!-- spacer --></script>
-  <script src="/static/controls/comment.js" type="text/javascript"><!-- spacer --></script>
-  <script src="/static/controls/comments.js" type="text/javascript"><!-- spacer --></script>
-  <script src="/static/controls/announcements.js" type="text/javascript"><!-- spacer --></script>
-  <script src="/static/controls/browsebycategory.js" type="text/javascript"><!-- spacer --></script>
-  <script src="/static/controls/newuserform.js" type="text/javascript"><!-- spacer --></script>
-  <script src="/static/graphics/demo.js" type="text/javascript"><!-- spacer --></script>
-  <script src="/static/popups/termpopup.js" type="text/javascript"><!-- spacer --></script>
-  
+  <script src="${wro_url}/vardb.js" type="text/javascript"><!-- spacer --></script>  
   
   <script type="text/javascript">
 

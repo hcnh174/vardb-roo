@@ -1,6 +1,7 @@
 /*global Ext, vardb */
-vardb.analysis.VariabilityGrid = Ext.extend(vardb.util.Grid,
-{	
+Ext.define('vardb.analysis.VariabilityGrid',
+{
+	extend: 'vardb.util.Grid',
 	frame: true,
 	width: 600,
 	height: 500,
