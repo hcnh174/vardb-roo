@@ -5,7 +5,7 @@ package org.vardb.setup;
 import javax.swing.JFrame;
 
 import org.vardb.util.CException;
-import org.vardb.weka.WekaHelper;
+import org.vardb.util.WekaHelper;
 
 import bsh.Interpreter;
 import bsh.util.JConsole;
