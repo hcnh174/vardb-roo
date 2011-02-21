@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.vardb.resources.Comment;
 import org.vardb.resources.CommentRepository;
 import org.vardb.users.UserService;
+import org.vardb.util.CFileHelper;
 import org.vardb.util.CWebHelper;
 
 @Controller
@@ -50,7 +51,8 @@ public class VardbController {
 	*/
     @RequestMapping("/index.html")
     public String homepage() {
-    	userService.testUserRepository();
+    	//userService.testUserRepository();
+    	System.out.println("pwd: "+CFileHelper.getFullPath("."));
         return "index";
     }
     

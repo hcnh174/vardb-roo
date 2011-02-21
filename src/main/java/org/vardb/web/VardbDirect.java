@@ -104,9 +104,9 @@ public class VardbDirect
 	}
 	
 	@ExtDirectMethod(ExtDirectMethodType.FORM_POST)
-	@ResponseBody
-	@RequestMapping(value="/postNewUserForm", method = RequestMethod.POST)
-	public ExtDirectResponse postNewUserForm(HttpServletRequest request, @Valid UserForm form, BindingResult result)
+	//@ResponseBody
+	@RequestMapping(value="/postNewUserForm", method = RequestMethod.POST) 
+	public @ResponseBody ExtDirectResponse postNewUserForm(HttpServletRequest request, @Valid UserForm form, BindingResult result)
 	{
 		if (!result.hasErrors())
 		{

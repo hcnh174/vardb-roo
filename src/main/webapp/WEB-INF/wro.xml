@@ -4,23 +4,23 @@
         xsi:schemaLocation="http://www.isdc.ro/wro wro.xsd">
 
   <group name="global">  	
-  	<css>file:d:/workspace/vardb-roo/src/main/webapp/css/yui-grids.css</css>
-	<css>file:d:/workspace/vardb-roo/src/main/webapp/css/layout.css</css>
-	<css>file:d:/workspace/vardb-roo/src/main/webapp/css/general.css</css>
-	<css>file:d:/workspace/vardb-roo/src/main/webapp/css/text.css</css>
-	<css>file:d:/workspace/vardb-roo/src/main/webapp/css/table.css</css>
-	<css>file:d:/workspace/vardb-roo/src/main/webapp/css/navigation.css</css>
+  	<css>file:../../../workspace/vardb-roo/src/main/webapp/css/yui-grids.css</css>
+	<css>file:../../../workspace/vardb-roo/src/main/webapp/css/layout.css</css>
+	<css>file:../../../workspace/vardb-roo/src/main/webapp/css/general.css</css>
+	<css>file:../../../workspace/vardb-roo/src/main/webapp/css/text.css</css>
+	<css>file:../../../workspace/vardb-roo/src/main/webapp/css/table.css</css>
+	<css>file:../../../workspace/vardb-roo/src/main/webapp/css/navigation.css</css>
   </group>
   
   <group name="vardb">
-	<js>file:d:/workspace/vardb-roo/src/main/webapp/js/vardb/vardb.js</js>
-  	<js>file:d:/workspace/vardb-roo/src/main/webapp/js/vardb/util/utils.js</js>
-	<js>file:d:/workspace/vardb-roo/src/main/webapp/js/vardb/controls/mainmenu.js</js>
-	<js>file:d:/workspace/vardb-roo/src/main/webapp/js/vardb/controls/navigation.js</js>
-	<js>file:d:/workspace/vardb-roo/src/main/webapp/js/vardb/controls/comment.js</js>
-	<js>file:d:/workspace/vardb-roo/src/main/webapp/js/vardb/controls/comments.js</js>
-	<!-- <js>file:d:/workspace/vardb-roo/src/main/webapp/js/vardb/controls/announcements.js</js> -->
-	<js>file:d:/workspace/vardb-roo/src/main/webapp/js/vardb/controls/browsebycategory.js</js>  
+	<js>file:../../../workspace/vardb-roo/src/main/webapp/js/vardb/vardb.js</js>
+  	<js>file:../../../workspace/vardb-roo/src/main/webapp/js/vardb/util/utils.js</js>
+	<js>file:../../../workspace/vardb-roo/src/main/webapp/js/vardb/controls/mainmenu.js</js>
+	<js>file:../../../workspace/vardb-roo/src/main/webapp/js/vardb/controls/navigation.js</js>
+	<js>file:../../../workspace/vardb-roo/src/main/webapp/js/vardb/controls/comment.js</js>
+	<js>file:../../../workspace/vardb-roo/src/main/webapp/js/vardb/controls/comments.js</js>
+	<!-- <js>file:../../../workspace/vardb-roo/src/main/webapp/js/vardb/controls/announcements.js</js> -->
+	<js>file:../../../workspace/vardb-roo/src/main/webapp/js/vardb/controls/browsebycategory.js</js>  
   </group>
 
 </groups>

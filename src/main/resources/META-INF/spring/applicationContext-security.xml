@@ -8,14 +8,14 @@
 
 	<!-- HTTP security configurations -->
     <http auto-config="true" use-expressions="true">
-    	<form-login login-processing-url="/resources/j_spring_security_check" login-page="/login" authentication-failure-url="/login?login_error=t"/>
+    	<form-login login-processing-url="/resources/j_spring_security_check" login-page="/login.html" authentication-failure-url="/login?login_error=t"/>
         <logout logout-url="/resources/j_spring_security_logout"/>
         
         <!-- Configure these elements to secure URIs in your application -->
         <intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')"/>
         <intercept-url pattern="/member/**" access="isAuthenticated()" />
         <intercept-url pattern="/resources/**" access="permitAll" />
-        <intercept-url pattern="/login" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+        <intercept-url pattern="/login.html" access="IS_AUTHENTICATED_ANONYMOUSLY" />
         <intercept-url pattern="/**" access="permitAll" />
     </http>
 
@@ -30,5 +30,12 @@
 		    </user-service>
     	</authentication-provider>
 	</authentication-manager>
+
+	<beans:bean class="org.springframework.security.authentication.dao.ReflectionSaltSource" id="saltSource">
+		<beans:property name="userPropertyToUse" value="salt"/>
+	</beans:bean>
+	
+	<beans:bean class="org.springframework.security.authentication.encoding.ShaPasswordEncoder" id="passwordEncoder"/>
+
 
 </beans:beans>

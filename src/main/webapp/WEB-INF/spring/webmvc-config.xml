@@ -24,7 +24,7 @@
 	
 	<!-- selects a static view for rendering without the need for an explicit controller -->
 	<mvc:view-controller path="/login"/>
-    <mvc:view-controller path="/" view-name="homepage"/>
+    <mvc:view-controller path="/" view-name="index"/>
 	<mvc:view-controller path="/uncaughtException"/>
 	<mvc:view-controller path="/resourceNotFound"/>
 	<mvc:view-controller path="/dataAccessFailure"/>
@@ -75,5 +75,14 @@
         <value>/WEB-INF/views/**/views.xml</value>
       </list>
     </property>
-  </bean>
+  	</bean>
+  
+  <bean id="wroFilter" class="ro.isdc.wro.http.ConfigurableWroFilter">
+	  <property name="debug" value="true"/>
+	  <property name="disableCache" value="true"/>	  
+	  <!-- 
+	  <property name="cacheUpdatePeriod" value="${application.wrofilter.cache-update-period}"/>
+	  <property name="modelUpdatePeriod" value="${application.wrofilter.model-update-period}"/>
+	   -->
+	</bean>
 </beans>

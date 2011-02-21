@@ -69,12 +69,26 @@
         <context:exclude-filter expression="org.springframework.stereotype.Controller" type="annotation"/>
     </context:component-scan>
  
+ 	<!-- 
      <bean class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close" id="dataSource">
         <property name="driverClassName" value="${database.driverClassName}"/>
         <property name="url" value="${database.url}"/>
         <property name="username" value="${database.username}"/>
         <property name="password" value="${database.password}"/>
     </bean>
+     -->
+     
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+		<property name="user" value="${database.username}"/>
+		<property name="password" value="${database.password}"/>
+		<property name="driverClass" value="${database.driverClassName}"/>
+		<property name="jdbcUrl" value="${database.url}"/>
+		<property name="initialPoolSize" value="0"/>
+		<property name="maxPoolSize" value="1"/>
+		<property name="minPoolSize" value="1"/>
+		<property name="acquireIncrement" value="1"/>
+		<property name="acquireRetryAttempts" value="0"/>
+	</bean> 
     
     <bean class="org.springframework.orm.jpa.JpaTransactionManager" id="transactionManager">
         <property name="entityManagerFactory" ref="entityManagerFactory"/>
@@ -107,12 +121,7 @@
 		</property>
 	</bean>
 	
-	<bean class="org.springframework.security.authentication.dao.ReflectionSaltSource" id="saltSource">
-		<property name="userPropertyToUse" value="salt"/>
-	</bean>
 	
-	<bean class="org.springframework.security.authentication.encoding.ShaPasswordEncoder" id="passwordEncoder"/>
-
 	<bean class="org.vardb.util.services.EmailServiceImpl" id="emailService">
 		<property name="fromAddress" value="${from.address}"/>
 		<property name="emailHostnames" value="${error.report.email.hostnames}"/>
@@ -130,4 +139,13 @@
 
 	<bean id="ehcache" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean" p:config-location="ehcache.xml"/>
 	 -->
+	 
+	 <bean id="wroFilter" class="ro.isdc.wro.http.ConfigurableWroFilter">
+	  <property name="debug" value="true"/>
+	  <property name="disableCache" value="true"/>	  
+	  <!-- 
+	  <property name="cacheUpdatePeriod" value="${application.wrofilter.cache-update-period}"/>
+	  <property name="modelUpdatePeriod" value="${application.wrofilter.model-update-period}"/>
+	   -->
+	</bean>
 </beans>
