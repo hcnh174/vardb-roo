@@ -21,6 +21,11 @@
 	<js>file:../../../workspace/vardb-roo/src/main/webapp/js/vardb/controls/comments.js</js>
 	<!-- <js>file:../../../workspace/vardb-roo/src/main/webapp/js/vardb/controls/announcements.js</js> -->
 	<js>file:../../../workspace/vardb-roo/src/main/webapp/js/vardb/controls/browsebycategory.js</js>  
+	<js>file:../../../workspace/vardb-roo/src/main/webapp/js/vardb/popups/termpopup.js</js>
+	
+	<js>file:../../../workspace/vardb-roo/src/main/webapp/js/vardb/graphics/location.js</js>
+	<js>file:../../../workspace/vardb-roo/src/main/webapp/js/vardb/graphics/sequence.js</js>
+	<js>file:../../../workspace/vardb-roo/src/main/webapp/js/vardb/graphics/alignment.js</js>
   </group>
 
 </groups>

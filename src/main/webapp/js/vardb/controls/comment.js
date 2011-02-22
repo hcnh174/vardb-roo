@@ -64,7 +64,7 @@ Ext.define('vardb.controls.CommentWindow',
 		var self=this;
 		// get rid of the annoying extra character
 		var value=this.form.getForm().findField('text').getValue().trim();
-		VardbDirect.submitComment(type, identifier, value, function(result, evt)
+		vardbDirect.submitComment(this.type, this.identifier, value, function(result, evt)
 		{
 			if (self.callback)
 				{self.callback();}

@@ -141,7 +141,8 @@ Ext.define('vardb.controls.Comments',
 			identifier: self.identifier,
 			callback: function()
 			{
-				self.store.reload();
+				self.store.load({params: {start: 0, limit: self.pagesize}});
+				//self.store.reload();
 			}
 		});
 	}

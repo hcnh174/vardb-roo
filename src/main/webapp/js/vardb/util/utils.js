@@ -165,6 +165,23 @@ Ext.define('vardb.util.Utils',
 				case Ext.form.Action.SERVER_INVALID:
 				   Ext.Msg.alert("Failure", action.response.responseText);
 			}
+		},
+		
+		getRectPath: function(x, y, width, height)
+		{
+			var x1=x; x2=x+width; y1=y; y2=y+height;
+			var path='M'+x1+' '+y1+
+					'L'+x2+' '+y1+
+					'L'+x2+' '+y2+
+					'L'+x1+' '+y2+
+					'L'+x1+' '+y1+'z';
+			return path;
+		},
+		
+		getLinePath: function(x1, y1, x2, y2)
+		{
+			var path='M'+x1+' '+y1+'L'+x2+' '+y2+'z';
+			return path;
 		}
 	}
 });
