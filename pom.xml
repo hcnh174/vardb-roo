@@ -26,6 +26,11 @@
 			<artifactId>vardb-util</artifactId>
 			<version>0.1.0.BUILD-SNAPSHOT</version>
         </dependency>
+        <dependency>
+		    <groupId>org.springframework.integration</groupId>
+		    <artifactId>spring-integration-core</artifactId>
+		    <version>2.0.3.RELEASE</version>
+		</dependency>
  	</dependencies>
 	<build>
 		<plugins>
@@ -35,7 +40,8 @@
 				<artifactId>exec-maven-plugin</artifactId>
 				<version>1.1</version>				
 				<configuration>
-					<mainClass>org.vardb.setup.Setup</mainClass>
+					<!-- <mainClass>org.vardb.setup.Setup</mainClass> -->
+					<mainClass>org.vardb.integration.HelloWorldExample</mainClass>
 				</configuration>
 			</plugin>
         </plugins>
