@@ -1,0 +1,15 @@
+<div 
+	xmlns:spring="http://www.springframework.org/tags"
+	xmlns:util="urn:jsptagdir:/WEB-INF/tags/util"
+	xmlns:jsp="http://java.sun.com/JSP/Page">
+	
+<jsp:directive.page contentType="text/html;charset=UTF-8" />
+<jsp:output omit-xml-declaration="yes" />
+  
+<h2>${page.title}</h2>
+
+<div>
+${page.text}
+</div>
+
+</div>

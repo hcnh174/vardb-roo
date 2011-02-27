@@ -21,7 +21,7 @@ privileged aspect UserDataOnDemand_Roo_DataOnDemand {
         obj.setUsername("username_" + index);
         obj.setPassword("password_" + index);
         obj.setEnabled(Boolean.TRUE);
-        obj.setAdministrator(Boolean.TRUE);
+        obj.setAdministrator(false);
         obj.setFirstname("firstname_" + index);
         obj.setLastname("lastname_" + index);
         obj.setEmail("email_" + index);

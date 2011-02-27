@@ -80,6 +80,12 @@ privileged aspect User_Roo_Entity {
     }
     
     @Transactional
+    public void User.clear() {
+        if (this.entityManager == null) this.entityManager = entityManager();
+        this.entityManager.clear();
+    }
+    
+    @Transactional
     public User User.merge() {
         if (this.entityManager == null) this.entityManager = entityManager();
         User merged = this.entityManager.merge(this);

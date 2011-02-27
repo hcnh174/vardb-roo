@@ -4,16 +4,22 @@
     <jsp:output omit-xml-declaration="yes"/>
     <page:list id="pl_org_vardb_sequences_Sequence" items="${sequences}" z="HigkpgfXWjBVnYbYOnPcAIlw7aU=">
         <table:table data="${sequences}" id="l_org_vardb_sequences_Sequence" path="/sequences" z="PKUjBvp6XMSE3AXb88ZQ/F/as2U=">
-            <table:column id="c_org_vardb_sequences_Sequence_identifier" property="identifier" z="LohtRk+mgqSq6Qr8PFH7vyIZnZ8="/>
-            <table:column id="c_org_vardb_sequences_Sequence_accession" property="accession" z="cRef47ZniEf3L0Zlt3C1HPi55d4="/>
+            
+            
             
             
             
         
-        <table:column id="c_org_vardb_sequences_Sequence_genome" property="genome" z="87zBToRI3wvvHKk8iBGigdPxQfc="/>
-            <table:column id="c_org_vardb_sequences_Sequence_strain" property="strain" z="AJKMWDHPZqgcgZbY2e5zMYdMMLY="/>
-            <table:column id="c_org_vardb_sequences_Sequence_taxid" property="taxid" z="CQtmeBUJzq/BU/i4AZJEBtHUnN0="/>
-            <table:column id="c_org_vardb_sequences_Sequence_source" property="source" z="Toy3EZyUT2C3bgY4IJDmKP+t43c="/>
+        
+            
+            
+            
+        <table:column id="c_org_vardb_sequences_Sequence_end" property="end" z="QhBXUxywYmlpwKCClBzICKOoI8o="/>
+            <table:column id="c_org_vardb_sequences_Sequence_translation" property="translation" z="1upjaqCcrY6umOL6ENe1TjnTDyU="/>
+            <table:column id="c_org_vardb_sequences_Sequence_strand" property="strand" z="rJFj5+uAPu9QD+gxJpZ89+vLurs="/>
+            <table:column id="c_org_vardb_sequences_Sequence_numexons" property="numexons" z="NXexR5mxQk/YcjFoWL6WKbG6rLo="/>
+            <table:column id="c_org_vardb_sequences_Sequence_model" property="model" z="EoKlI2JjQbg9lqcN9+Sq3NfTk00="/>
+            <table:column id="c_org_vardb_sequences_Sequence_start" property="start" z="4qrSCfnIguH2bS31YjBlXs0NWRA="/>
         </table:table>
     </page:list>
 </div>

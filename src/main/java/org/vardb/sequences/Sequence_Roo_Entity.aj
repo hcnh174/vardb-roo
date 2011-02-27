@@ -76,6 +76,12 @@ privileged aspect Sequence_Roo_Entity {
     }
     
     @Transactional
+    public void Sequence.clear() {
+        if (this.entityManager == null) this.entityManager = entityManager();
+        this.entityManager.clear();
+    }
+    
+    @Transactional
     public Sequence Sequence.merge() {
         if (this.entityManager == null) this.entityManager = entityManager();
         Sequence merged = this.entityManager.merge(this);

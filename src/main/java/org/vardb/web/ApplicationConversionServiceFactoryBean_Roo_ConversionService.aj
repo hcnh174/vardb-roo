@@ -6,50 +6,20 @@ package org.vardb.web;
 import java.lang.String;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.format.FormatterRegistry;
-import org.vardb.resources.Disease;
-import org.vardb.resources.Family;
-import org.vardb.resources.Pathogen;
 import org.vardb.sequences.Sequence;
 
 privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService {
     
     Converter<Sequence, String> ApplicationConversionServiceFactoryBean.getSequenceConverter() {
         return new Converter<Sequence, String>() {
-            public String convert(Sequence source) {
-                return new StringBuilder().append(source.getIdentifier()).append(" ").append(source.getAccession()).append(" ").append(source.getGenome()).toString();
-            }
-        };
-    }
-    
-    Converter<Disease, String> ApplicationConversionServiceFactoryBean.getDiseaseConverter() {
-        return new Converter<Disease, String>() {
-            public String convert(Disease source) {
-                return new StringBuilder().append(source.getIdentifier()).append(" ").append(source.getName()).append(" ").append(source.getDescription()).toString();
-            }
-        };
-    }
-    
-    Converter<Pathogen, String> ApplicationConversionServiceFactoryBean.getPathogenConverter() {
-        return new Converter<Pathogen, String>() {
-            public String convert(Pathogen source) {
-                return new StringBuilder().append(source.getIdentifier()).append(" ").append(source.getName()).append(" ").append(source.getDescription()).toString();
-            }
-        };
-    }
-    
-    Converter<Family, String> ApplicationConversionServiceFactoryBean.getFamilyConverter() {
-        return new Converter<Family, String>() {
-            public String convert(Family source) {
-                return new StringBuilder().append(source.getIdentifier()).append(" ").append(source.getName()).append(" ").append(source.getDescription()).toString();
+            public String convert(Sequence sequence) {
+                return new StringBuilder().append(sequence.getIdentifier()).append(" ").append(sequence.getAccession()).append(" ").append(sequence.getGenome()).append(" ").append(sequence.getStrain()).toString();
             }
         };
     }
     
     public void ApplicationConversionServiceFactoryBean.installLabelConverters(FormatterRegistry registry) {
         registry.addConverter(getSequenceConverter());
-        registry.addConverter(getDiseaseConverter());
-        registry.addConverter(getPathogenConverter());
-        registry.addConverter(getFamilyConverter());
     }
     
     public void ApplicationConversionServiceFactoryBean.afterPropertiesSet() {

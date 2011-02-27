@@ -76,6 +76,12 @@ privileged aspect Feedback_Roo_Entity {
     }
     
     @Transactional
+    public void Feedback.clear() {
+        if (this.entityManager == null) this.entityManager = entityManager();
+        this.entityManager.clear();
+    }
+    
+    @Transactional
     public Feedback Feedback.merge() {
         if (this.entityManager == null) this.entityManager = entityManager();
         Feedback merged = this.entityManager.merge(this);

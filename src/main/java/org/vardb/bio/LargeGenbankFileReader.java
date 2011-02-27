@@ -82,7 +82,7 @@ public class LargeGenbankFileReader
 		if (SequenceHelper.Address.hasLocation(identifier))
 		{
 			RichSequence richsequence=getRichSequence(accession,genbank);
-			GenbankSequence sequence=GenbankParser.convert(richsequence,getLocation(identifier));
+			GenbankSequence sequence=CGenbankParser.convert(richsequence,getLocation(identifier));
 			if (sequence==null)
 				return notfound(identifier);
 			sequence.setAccession(identifier);
@@ -93,7 +93,7 @@ public class LargeGenbankFileReader
 		{
 			//System.out.println("parsing genbank entry for accession "+accession);
 			List<GenbankSequence> sequences=new ArrayList<GenbankSequence>();
-			GenbankParser.parse(genbank,sequences);
+			CGenbankParser.parse(genbank,sequences);
 			if (sequences.isEmpty())
 				return notfound(identifier);
 			else if (sequences.size()>1)
@@ -108,7 +108,7 @@ public class LargeGenbankFileReader
 		if (richsequence==null)
 		{
 			//System.out.println("parsing and caching richsequence for "+accession);
-			richsequence=GenbankParser.read(genbank);
+			richsequence=CGenbankParser.read(genbank);
 			this.cache.put(accession,richsequence);
 		}
 		//else System.out.println("using cached richsequence for "+accession);
@@ -118,7 +118,7 @@ public class LargeGenbankFileReader
 	public Location getLocation(String identifier)
 	{
 		SequenceHelper.Address address=new SequenceHelper.Address(identifier);
-		return GenbankParser.createLocation(address.getStart(),address.getEnd());
+		return CGenbankParser.createLocation(address.getStart(),address.getEnd());
 	}
 	
 	/*
@@ -129,7 +129,7 @@ public class LargeGenbankFileReader
 		index=location.indexOf("..");
 		int start=Integer.parseInt(location.substring(0,index));
 		int end=Integer.parseInt(location.substring(index+2));
-		return GenbankParser.createLocation(start, end);
+		return CGenbankParser.createLocation(start, end);
 	}
 	*/
 	/*

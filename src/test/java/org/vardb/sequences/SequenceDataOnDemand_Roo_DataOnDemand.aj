@@ -5,7 +5,10 @@ package org.vardb.sequences;
 
 import java.util.List;
 import java.util.Random;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.vardb.resources.FamilyDataOnDemand;
+import org.vardb.resources.PathogenDataOnDemand;
 import org.vardb.sequences.Sequence;
 
 privileged aspect SequenceDataOnDemand_Roo_DataOnDemand {
@@ -16,6 +19,12 @@ privileged aspect SequenceDataOnDemand_Roo_DataOnDemand {
     
     private List<Sequence> SequenceDataOnDemand.data;
     
+    @Autowired
+    private PathogenDataOnDemand SequenceDataOnDemand.pathogenDataOnDemand;
+    
+    @Autowired
+    private FamilyDataOnDemand SequenceDataOnDemand.familyDataOnDemand;
+    
     public Sequence SequenceDataOnDemand.getNewTransientSequence(int index) {
         org.vardb.sequences.Sequence obj = new org.vardb.sequences.Sequence();
         obj.setIdentifier("identifier_" + index);
@@ -25,11 +34,11 @@ privileged aspect SequenceDataOnDemand_Roo_DataOnDemand {
         obj.setTaxid("taxid_" + index);
         obj.setSource("source_" + index);
         obj.setChromosome("chromosome_" + index);
-        obj.setSequence(null);
-        obj.setCds(null);
-        obj.setTranslation(null);
+        obj.setSequence("sequence_" + index);
+        obj.setCds("cds_" + index);
+        obj.setTranslation("translation_" + index);
         obj.setStart("start_" + index);
-        obj.setEnd(null);
+        obj.setEnd("end_" + index);
         obj.setStrand("strand_" + index);
         obj.setNumexons("numexons_" + index);
         obj.setSplicing("splicing_" + index);
@@ -42,10 +51,10 @@ privileged aspect SequenceDataOnDemand_Roo_DataOnDemand {
         obj.setDescription("description_" + index);
         obj.setDomainnum(new Integer(index));
         obj.setTotaldomainnum(new Integer(index));
-        obj.setDomains(null);
+        obj.setDomains("domains_" + index);
         obj.setDisease(null);
-        obj.setPathogen(null);
-        obj.setFamily(null);
+        obj.setPathogen(pathogenDataOnDemand.getRandomPathogen());
+        obj.setFamily(familyDataOnDemand.getRandomFamily());
         return obj;
     }
     

@@ -7,7 +7,7 @@
         <field:display field="accession" id="s_org_vardb_sequences_Sequence_accession" object="${sequence}" z="UJdvdLopzXCJ4sFKhYePs+qygv4="/>
         <field:display field="sequence" id="s_org_vardb_sequences_Sequence_sequence" object="${sequence}" z="Tknbp8oAC9qRGtSoIfK0clFmn+8="/>
         <field:display field="pathogen" id="s_org_vardb_sequences_Sequence_pathogen" object="${sequence}" z="3FOZNNW1+AQNT7OsceaNmBwN05E="/>
-        <field:display field="family" id="s_org_vardb_sequences_Sequence_family" object="${sequence}" z="RnsZh5fjamxi5QvDzyksSqPnC90="/>
+        
     <field:display field="disease" id="s_org_vardb_sequences_Sequence_disease" object="${sequence}" z="+BaXLegmE52VY9QprT+ZlUsFWac="/>
     <field:display field="genome" id="s_org_vardb_sequences_Sequence_genome" object="${sequence}" z="HriVGB45w9GPFp+xr3WvBZgn1wo="/>
         <field:display field="strain" id="s_org_vardb_sequences_Sequence_strain" object="${sequence}" z="rgrXK+/bH7N4UX5VoHi4qCSsRTU="/>
@@ -31,5 +31,6 @@
     <field:display field="domainnum" id="s_org_vardb_sequences_Sequence_domainnum" object="${sequence}" z="363kfIvgf2Et+7zLaHTAbAZNdO4="/>
         <field:display field="totaldomainnum" id="s_org_vardb_sequences_Sequence_totaldomainnum" object="${sequence}" z="25aOC+fc+xbcaH1dPJ1Gimxl1TI="/>
         <field:display field="domains" id="s_org_vardb_sequences_Sequence_domains" object="${sequence}" z="5nzJDHC7ML27Qv3b7/2HNEL+aOY="/>
+    <field:display field="family" id="s_org_vardb_sequences_Sequence_family" object="${sequence}" z="RnsZh5fjamxi5QvDzyksSqPnC90="/>
     </page:show>
 </div>

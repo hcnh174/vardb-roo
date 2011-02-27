@@ -7,7 +7,7 @@
         <field:input field="accession" id="c_org_vardb_sequences_Sequence_accession" required="true" z="V7P2UEPMwg29Stz3f4f0LNYR570="/>
         <field:input field="sequence" id="c_org_vardb_sequences_Sequence_sequence" z="Fr22vr1Jpl134SomU6dKrm4sWko="/>
         <field:select field="pathogen" id="c_org_vardb_sequences_Sequence_pathogen" itemValue="id" items="${pathogens}" path="/pathogens" z="l9rCXzoOl/9Oqm17GMWGFX86YGA="/>
-        <field:select field="family" id="c_org_vardb_sequences_Sequence_family" itemValue="id" items="${familys}" path="/familys" z="m2e1p8pzZ7hA+VUXJD1g1llL2vw="/>
+        
     <field:select field="disease" id="c_org_vardb_sequences_Sequence_disease" itemValue="id" items="${diseases}" path="/diseases" z="keeD1UnaoZt4IXJFYW+oqsL0yKc="/>
     <field:input field="genome" id="c_org_vardb_sequences_Sequence_genome" z="sVZtSUddmEzFH0lBIO0ocgMz2MQ="/>
         <field:input field="strain" id="c_org_vardb_sequences_Sequence_strain" z="90jhTFpHnqBf7Y9T4FKtNLjJQ9Q="/>
@@ -31,6 +31,7 @@
     <field:input field="domainnum" id="c_org_vardb_sequences_Sequence_domainnum" validationMessageCode="field_invalid_integer" z="m3fIOgeDfi6aqNAbqt/1bTeLIN4="/>
         <field:input field="totaldomainnum" id="c_org_vardb_sequences_Sequence_totaldomainnum" validationMessageCode="field_invalid_integer" z="ia/z9rHmoKUMjmMmmOB4qXlASW8="/>
         <field:input field="domains" id="c_org_vardb_sequences_Sequence_domains" z="xj8sEtv7hVCN45hWZ/TRFdo408Y="/>
+    <field:select field="family" id="c_org_vardb_sequences_Sequence_family" itemValue="id" items="${familys}" path="/familys" z="m2e1p8pzZ7hA+VUXJD1g1llL2vw="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_org_vardb_sequences_Sequence" render="${not empty dependencies}" z="6di0WL0KUoTV3Cu3lPsD3BGIxeQ="/>
 </div>

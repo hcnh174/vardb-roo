@@ -76,6 +76,12 @@ privileged aspect Resource_Roo_Entity {
     }
     
     @Transactional
+    public void Resource.clear() {
+        if (this.entityManager == null) this.entityManager = entityManager();
+        this.entityManager.clear();
+    }
+    
+    @Transactional
     public Resource Resource.merge() {
         if (this.entityManager == null) this.entityManager = entityManager();
         Resource merged = this.entityManager.merge(this);
@@ -84,7 +90,7 @@ privileged aspect Resource_Roo_Entity {
     }
     
     public static final EntityManager Resource.entityManager() {
-        EntityManager em = new Resource(){
+        EntityManager em = new Resource() {
         }.entityManager;
         if (em == null) throw new IllegalStateException("Entity manager has not been injected (is the Spring Aspects JAR configured as an AJC/AJDT aspects library?)");
         return em;

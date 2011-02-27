@@ -10,11 +10,14 @@ privileged aspect User_Roo_ToString {
     public String User.toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Name: ").append(getName()).append(", ");
+        sb.append("Enabled: ").append(isEnabled()).append(", ");
+        sb.append("AccountNonExpired: ").append(isAccountNonExpired()).append(", ");
+        sb.append("AccountNonLocked: ").append(isAccountNonLocked()).append(", ");
+        sb.append("CredentialsNonExpired: ").append(isCredentialsNonExpired()).append(", ");
         sb.append("Roles: ").append(getRoles() == null ? "null" : getRoles().size()).append(", ");
         sb.append("Authorities: ").append(getAuthorities() == null ? "null" : getAuthorities().size()).append(", ");
         sb.append("Username: ").append(getUsername()).append(", ");
         sb.append("Password: ").append(getPassword()).append(", ");
-        sb.append("Enabled: ").append(getEnabled()).append(", ");
         sb.append("Administrator: ").append(getAdministrator()).append(", ");
         sb.append("Firstname: ").append(getFirstname()).append(", ");
         sb.append("Lastname: ").append(getLastname()).append(", ");

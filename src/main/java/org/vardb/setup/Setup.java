@@ -4,8 +4,8 @@ package org.vardb.setup;
 
 import javax.swing.JFrame;
 
+import org.vardb.bio.GenbankParser;
 import org.vardb.util.CException;
-import org.vardb.util.WekaHelper;
 
 import bsh.Interpreter;
 import bsh.util.JConsole;
@@ -16,9 +16,19 @@ public class Setup {
 	// mvn exec:java
 	public static void main(String ... args)
 	{
+		//GraphHelper.test();
+		GenbankParser.parseFile("d:/unzipped/hcv.gb");
+		
+		//RestTemplate template=new RestTemplate();
+		//String response=template.postForObject("http://www.google.co.jp/search?q={query}", "", String.class, "springsource");
+		//String response=template.getForObject("http://www.vardb.org/vardb/homepage.html?param={param}", String.class, "test");
+		//System.out.println(response);
+		//CFileHelper.writeFile("d:/temp/response.html", response);
+		
+		
 		//Setup setup=new Setup();
-		String filename="f:/analysis/personalized/svr.arff";
-		WekaHelper.test(filename);
+		//String filename="f:/analysis/personalized/svr.arff";
+		//WekaHelper.test(filename);
 	}
 	
 	

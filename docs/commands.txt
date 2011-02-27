@@ -6,6 +6,9 @@ git commit -m "first commit"
 git remote add origin git@github.com:hcnh174/vardb-roo.git
 git push origin master
 
+git clone git@github.com:hcnh174/vardb-roo.git
+
+
 
 # to overwrite any changes
 git checkout -f

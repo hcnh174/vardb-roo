@@ -1,0 +1,29 @@
+<project name="gblocks" default="run" basedir=".">
+
+	<property environment="env"/>
+	<property name="type" value="PROTEIN"/>
+	<property name="gaps" value="NONE"/>
+	<property name="minBlock" value="10"/>
+	<property name="similarityMatrices" value="Y"/>
+	<property name="minConserved" value="0.5"/>
+	<property name="minFlanking" value="0.85"/>
+	<property name="maxNonconserved" value="8"/>
+	<property name="resultsType" value="y"/>
+	
+	<!-- Gblocks nad3.pir -t=p -e=-gb1 -b4=5 -d=y -->
+	<!-- ant -buildfile gblocks.xml -Dinfile=d:/research/software/gblocks/nad3.pir -->
+	<target name="run">
+		<exec executable="d:/research/software/gblocks/Gblocks">
+			<arg value="${infile}"/>
+			<arg value="-t=${type}"/>
+			<arg value="-b1=${minConserved}"/>
+			<arg value="-b2=${minFlanking}"/>
+			<arg value="-b3=${maxNonconserved}"/>
+			<arg value="-b4=${minBlock}"/>
+			<arg value="-b5=${gaps}"/>
+			<arg value="-b6=${similarityMatrices}"/>
+			<arg value="-s=n"/>
+			<arg value="-p=${resultsType}"/>				
+		</exec>
+	</target>
+</project>

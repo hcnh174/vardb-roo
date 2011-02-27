@@ -10,9 +10,12 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.vardb.mongo.Page;
+import org.vardb.mongo.PageRepository;
 import org.vardb.resources.Comment;
 import org.vardb.resources.CommentRepository;
 import org.vardb.users.UserService;
@@ -109,6 +112,19 @@ public class VardbController {
 		int total=(int)Comment.countComments();
 		List<Comment> comments=commentRepository.findByTypeAndIdentifier(type, identifier);
 		json(response,"total",total,"records",comments);
+	}
+	
+	///////////////////////////////////////////////////////////////////
+	
+	@Autowired private PageRepository pageRepository;
+	
+	@RequestMapping(value="/pages/{identifier}.html")
+	public String page(Model model, HttpServletResponse response,
+			@PathVariable String identifier)
+	{
+		Page page=pageRepository.findById(identifier);
+		model.addAttribute("page", page);
+		return "page";
 	}
 	
 	/////////////////////////////////////////

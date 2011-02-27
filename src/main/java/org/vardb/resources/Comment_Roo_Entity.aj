@@ -76,6 +76,12 @@ privileged aspect Comment_Roo_Entity {
     }
     
     @Transactional
+    public void Comment.clear() {
+        if (this.entityManager == null) this.entityManager = entityManager();
+        this.entityManager.clear();
+    }
+    
+    @Transactional
     public Comment Comment.merge() {
         if (this.entityManager == null) this.entityManager = entityManager();
         Comment merged = this.entityManager.merge(this);
