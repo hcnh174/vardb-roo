@@ -30,7 +30,6 @@
         <field:input field="pseudogene" id="c_org_vardb_sequences_Sequence_pseudogene" z="S2RCd5g7dGYJA3c5Mjq2V8MjDj4="/>
         <field:input field="hmmloc" id="c_org_vardb_sequences_Sequence_hmmloc" z="jpEGDjbpR51PInJANhx6QRwmAeg="/>
         <field:input field="domainnum" id="c_org_vardb_sequences_Sequence_domainnum" validationMessageCode="field_invalid_integer" z="m3fIOgeDfi6aqNAbqt/1bTeLIN4="/>
-        
-    <field:select field="family" id="c_org_vardb_sequences_Sequence_family" itemValue="id" items="${familys}" path="/familys" z="m2e1p8pzZ7hA+VUXJD1g1llL2vw="/>
+        <field:select field="family" id="c_org_vardb_sequences_Sequence_family" itemValue="id" items="${familys}" path="/familys" z="m2e1p8pzZ7hA+VUXJD1g1llL2vw="/>
     </form:update>
 </div>

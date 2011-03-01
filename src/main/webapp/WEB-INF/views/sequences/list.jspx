@@ -14,6 +14,18 @@
             
             
             
+        
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
         <table:column id="c_org_vardb_sequences_Sequence_end" property="end" z="QhBXUxywYmlpwKCClBzICKOoI8o="/>
             <table:column id="c_org_vardb_sequences_Sequence_translation" property="translation" z="1upjaqCcrY6umOL6ENe1TjnTDyU="/>
             <table:column id="c_org_vardb_sequences_Sequence_strand" property="strand" z="rJFj5+uAPu9QD+gxJpZ89+vLurs="/>

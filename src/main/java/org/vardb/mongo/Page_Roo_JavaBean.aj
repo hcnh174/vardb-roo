@@ -7,12 +7,12 @@ import java.lang.String;
 
 privileged aspect Page_Roo_JavaBean {
     
-    public String Page.getIdentifier() {
-        return this.identifier;
+    public String Page.getId() {
+        return this.id;
     }
     
-    public void Page.setIdentifier(String identifier) {
-        this.identifier = identifier;
+    public void Page.setId(String id) {
+        this.id = id;
     }
     
     public String Page.getTitle() {

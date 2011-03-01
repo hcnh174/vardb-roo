@@ -9,7 +9,7 @@ privileged aspect Page_Roo_ToString {
     
     public String Page.toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Identifier: ").append(getIdentifier()).append(", ");
+        sb.append("Id: ").append(getId()).append(", ");
         sb.append("Title: ").append(getTitle()).append(", ");
         sb.append("Text: ").append(getText());
         return sb.toString();

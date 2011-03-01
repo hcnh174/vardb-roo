@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.util.UriUtils;
 import org.springframework.web.util.WebUtils;
 import org.vardb.resources.Disease;
+import org.vardb.resources.Family;
 import org.vardb.resources.Pathogen;
 import org.vardb.sequences.Sequence;
 
@@ -91,6 +92,11 @@ privileged aspect SequenceController_Roo_Controller {
     @ModelAttribute("diseases")
     public Collection<Disease> SequenceController.populateDiseases() {
         return Disease.findAllDiseases();
+    }
+    
+    @ModelAttribute("familys")
+    public java.util.Collection<Family> SequenceController.populateFamilys() {
+        return Family.findAllFamilys();
     }
     
     @ModelAttribute("pathogens")

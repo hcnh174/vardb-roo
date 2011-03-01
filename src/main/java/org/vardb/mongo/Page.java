@@ -10,7 +10,7 @@ import org.springframework.roo.addon.tostring.RooToString;
 @RooToString
 public class Page {
    
-    @Id private String identifier;
+    @Id private String id;
     @NotNull private String title;
     @NotNull private String text;
     
