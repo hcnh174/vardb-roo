@@ -2,7 +2,7 @@
 
   <jsp:output omit-xml-declaration="yes" />
 
-  <c:set var="extjsurl" value="/ext-4.0-pr1"/>
+  <c:set var="extjsurl" value="/ext-4.0-pr3"/>
 	<spring:url value="/" var="webapp_url" />
   <spring:url value="/wro" var="wro_url" />
 
