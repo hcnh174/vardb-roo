@@ -163,4 +163,6 @@
 	</bean>
 
     <mongo:repositories base-package="org.vardb.mongo" mongo-template-ref="mongoTemplate" />
+    
+    <mongo:repositories base-package="org.vardb.mongo" mongo-template-ref="mongoTemplate" />
 </beans>
