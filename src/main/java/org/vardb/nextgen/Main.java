@@ -1,29 +1,37 @@
 package org.vardb.nextgen;
 
-import org.springframework.batch.core.Job;
-import org.springframework.batch.core.JobExecution;
-import org.springframework.batch.core.JobParameters;
-import org.springframework.batch.core.launch.JobLauncher;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import java.util.List;
 
-public class Main {
+import org.vardb.util.CFileHelper;
 
-	public static void main(String ... args) throws Exception
+import com.google.common.collect.Lists;
+
+//read in directories and sample information
+// convert all files to fasta or at least fastq
+// trim reads using quality control
+// run velveth along with reference sequences
+// run velvetg
+// align contigs with reference sequence
+// call snps
+public class Main
+{
+	public static void main(String args[])
 	{
-		// read in directories and sample information
+		Params params=new Params();
+	
+		List<String> samples=NextGenUtils.getSampleFolders(params.dir, params.sampleRegex);
 		
-		// convert all files to fasta or at least fastq
+		String str=MaqHelper.easyrun(params, "ref/HHaa156.fasta", samples);
+		System.out.println(str);
 		
-		// trim reads using quality control
+		//NextGenUtils.concatenate(params, samples);
 		
-		// run velveth along with reference sequences
+		//NextGenUtils.qseq2fastq(params, samples);
+		//NextGenUtils.qseq2fastqDirect(params, params.dir+"samples/", params.outdir);
 		
-		// run velvetg
+		//NextGenUtils.fastq_btrim(params, samples);
 		
-		// align contigs with reference sequence
-		
-		// call snps
-		
+		//VelvetHelper.velveth(params,samples);
+		//VelvetHelper.velveth(params,"sample19");
 	}
 }
