@@ -122,7 +122,7 @@ public class VardbController {
 	public String page(Model model, HttpServletResponse response,
 			@PathVariable String identifier)
 	{
-		Page page=pageRepository.findById(identifier);
+		Page page=pageRepository.findOne(identifier);
 		model.addAttribute("page", page);
 		return "page";
 	}

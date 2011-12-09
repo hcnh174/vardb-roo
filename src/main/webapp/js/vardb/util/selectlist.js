@@ -30,7 +30,7 @@ Ext.define('vardb.util.SelectList',
 			store: new Ext.data.Store({
 			    model: 'selectlistmodel',
 			    data: this.prepareData(this.data)
-			});
+			})
 		};
 		
 		

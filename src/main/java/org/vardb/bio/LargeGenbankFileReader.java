@@ -323,7 +323,7 @@ public class LargeGenbankFileReader
 	public static void main(String[] args)
 	{
 		String table_filename="d:/projects/vardb/data/diego/sequences/var/var-p.falciparum-core.txt";
-		CTable diego_table=CTable.parseFile(table_filename);
+		CTable diego_table=CTable.parseFile(table_filename,"\t");
 		//String filename="d:/temp/load/plasmodium.falciparum.var.gbk";
 		//String filename="d:/projects/vardb.etc/diego/genbank/plasmodium.falciparum/core.gb";
 		//Index index=new Index(filename);
